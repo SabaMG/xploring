@@ -1,0 +1,7 @@
+- Lancement de la SAÉ : 22/04/2026
+- Analyse préliminaire des données et projection (t+2 semaines) (~ 8/05)
+    - ce qui est faisable / les deuils ...
+    - spécificité du rôle vs les analyse génériques utiles à tout le monde 
+- Vos choix techniques  : première pipeline fonctionnelle (~ 24/05)
+- Analyse des résultats, prise de recul : mise en valeur des résultats (mi-juin)
+- Livraison et présentation : début juillet
