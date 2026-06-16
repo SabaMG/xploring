@@ -1,0 +1,38 @@
+Config : {'STATE': 'CA', 'H3_RES': 8, 'PRIORITY_N': 50, 'GRAVE_THRESHOLD': 3, 'MAX_MODEL_ROWS': 800000}
+[cell  3] OK     0.7s  (total    0.7s)
+WARNING: Using incubator modules: jdk.incubator.vector
+26/06/16 18:00:35 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/06/16 18:00:36 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Spark 4.1.1
+[cell  5] OK     5.2s  (total    5.9s)
+h3 4.5.0
+[cell  7] OK     0.0s  (total    5.9s)
+CSV utilisé : C:\Users\vince\.cache\kagglehub\datasets\sobhanmoosavi\us-accidents\versions\13\US_Accidents_March23.csv
+[cell  9] OK    15.4s  (total   21.4s)
+[Stage 0:>                                                        (0 + 20) / 23][Stage 0:>                                                        (0 + 23) / 23][Stage 0:=================================================>       (20 + 3) / 23]                                                                                Lignes : 7,728,394 | colonnes : 46
+[cell 10] OK     4.6s  (total   25.9s)
+26/06/16 18:01:00 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+[Stage 3:>                                                        (0 + 20) / 23][Stage 3:==>                                                      (1 + 20) / 23][Stage 3:====>                                                    (2 + 20) / 23][Stage 3:=======>                                                 (3 + 20) / 23][Stage 3:=========>                                               (4 + 19) / 23][Stage 3:==============>                                          (6 + 17) / 23][Stage 3:===================>                                     (8 + 15) / 23][Stage 3:======================>                                  (9 + 14) / 23][Stage 3:==========================>                             (11 + 12) / 23][Stage 3:=============================>                          (12 + 11) / 23][Stage 3:=====================================>                   (15 + 8) / 23][Stage 3:=======================================>                 (16 + 7) / 23][Stage 3:==========================================>              (17 + 6) / 23][Stage 3:============================================>            (18 + 5) / 23][Stage 3:=================================================>       (20 + 3) / 23][Stage 3:====================================================>    (21 + 2) / 23][Stage 3:======================================================>  (22 + 1) / 23][Stage 4:>                                                        (0 + 20) / 23][Stage 4:=====================================>                   (15 + 8) / 23]                                                                                [Stage 7:=================================================>       (20 + 3) / 23]                                                                                Après nettoyage : 7,728,394 lignes
+Taux d'accidents graves (cible) : 19.5 %  -> classe déséquilibrée, à gérer (§C)
+[cell 12] OK    79.9s  (total  105.8s)
+[Stage 10:>                                                       (0 + 20) / 23][Stage 10:====>                                                   (2 + 20) / 23][Stage 10:==============>                                         (6 + 17) / 23][Stage 10:================================================>       (20 + 3) / 23]                                                                                [cell 15] OK     4.0s  (total  109.8s)
+[Stage 16:=================>                                      (7 + 16) / 23]                                                                                   severity    count   pct
+0         1    67366   0.9
+1         2  6156981  79.7
+2         3  1299337  16.8
+3         4   204710   2.6
+[cell 18] OK     1.6s  (total  111.4s)
+[Stage 24:>                                                       (0 + 20) / 23][Stage 24:============>                                           (5 + 18) / 23]                                                                                [cell 21] OK     1.7s  (total  113.1s)
+[Stage 32:>                                                       (0 + 20) / 23][Stage 32:================================================>       (20 + 3) / 23]                                                                                Sévérité par condition météo (regroupée) :
+  weather_bucket        n  part_grave
+0          Clear  3405216        16.9
+1          Cloud  3163750        21.7
+2           Rain   577214        23.0
+3          Other   218852        21.0
+4            Fog   189635        16.1
+5           Snow   173727        19.5
+[cell 22] OK     1.2s  (total  114.3s)
+[Stage 40:>                                                       (0 + 21) / 23][Stage 40:>                                                       (0 + 23) / 23][Stage 40:=======>                                                (3 + 20) / 23][Stage 40:===================================================>    (21 + 2) / 23]                                                                                
