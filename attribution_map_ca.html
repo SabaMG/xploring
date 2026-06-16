@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7a468921ae0bf1530739d63a56d0a7ab {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style='position:fixed;bottom:30px;left:30px;z-index:9999;background:white;padding:10px;border:1px solid #999;font-size:12px;'><b>Élément dominant</b><div><span style='background:#e74c3c;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>amenity</div><div><span style='background:#3498db;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>bump</div><div><span style='background:#2ecc71;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>crossing</div><div><span style='background:#9b59b6;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>diffus</div><div><span style='background:#f39c12;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>junction</div><div><span style='background:#1abc9c;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>no_exit</div><div><span style='background:#e67e22;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>railway</div><div><span style='background:#34495e;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>station</div><div><span style='background:#fd79a8;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>stop</div><div><span style='background:#00b894;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>traffic_calming</div><div><span style='background:#6c5ce7;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>traffic_signal</div></div>
+    
+            <div class="folium-map" id="map_7a468921ae0bf1530739d63a56d0a7ab" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7a468921ae0bf1530739d63a56d0a7ab = L.map(
+                "map_7a468921ae0bf1530739d63a56d0a7ab",
+                {
+                    center: [36.7783, -119.4179],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_38a5395532ebf101ca509a559629d665 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_38a5395532ebf101ca509a559629d665.addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            var polygon_39b22c8226bf4ea7cf54cd6d47b39822 = L.polygon(
+                [[33.936204494612305, -118.09221438068035], [33.939670348367756, -118.08765214279944], [33.94460653798692, -118.08889145149116], [33.94607671253824, -118.09469337389099], [33.94261071248815, -118.09925550610855], [33.937674684193794, -118.09801582162959], [33.936204494612305, -118.09221438068035]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_39b22c8226bf4ea7cf54cd6d47b39822.bindTooltip(
+                `<div>
+                     <b>#1</b> — 2,861 accidents<br>Charge : 7236<br>Dominant (2A) : <b>diffus</b> (lift 0.6)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_b916c98fd13b5abf1a0a35939ab8d047 = L.polygon(
+                [[34.032942614058825, -118.27417001002323], [34.03641284501445, -118.26961334748157], [34.04134213716158, -118.27086070877881], [34.04280103541551, -118.27666510671465], [34.039330658954604, -118.28122165931755], [34.034401529757304, -118.27997392396367], [34.032942614058825, -118.27417001002323]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_b916c98fd13b5abf1a0a35939ab8d047.bindTooltip(
+                `<div>
+                     <b>#2</b> — 2,543 accidents<br>Charge : 6350<br>Dominant (2A) : <b>junction</b> (lift 2.3)<br>Driver (2B) : <b>junction</b><br>Accord : oui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_ce83abbfcc528e54b686f24a0652b819 = L.polygon(
+                [[34.02819744204476, -118.21862082597605], [34.03166611861396, -118.21406144115915], [34.03659676104502, -118.21530662176593], [34.03805856455337, -118.22111156198355], [34.03458974235021, -118.22567083811889], [34.02965926228499, -118.22442528275838], [34.02819744204476, -118.21862082597605]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_ce83abbfcc528e54b686f24a0652b819.bindTooltip(
+                `<div>
+                     <b>#3</b> — 2,431 accidents<br>Charge : 5658<br>Dominant (2A) : <b>junction</b> (lift 1.8)<br>Driver (2B) : <b>junction</b><br>Accord : oui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_5935df60329856add8c5f8d4a09f05da = L.polygon(
+                [[37.80309977498463, -122.36614352818664], [37.80664141377639, -122.36166528243874], [37.811333368479914, -122.3631116342322], [37.81248349893392, -122.3690365712966], [37.80894174302947, -122.37351460477916], [37.80424997379368, -122.37206791351116], [37.80309977498463, -122.36614352818664]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fd79a8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_5935df60329856add8c5f8d4a09f05da.bindTooltip(
+                `<div>
+                     <b>#4</b> — 2,174 accidents<br>Charge : 5601<br>Dominant (2A) : <b>stop</b> (lift 22.5)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_6a717fabbc6a869e778fc37fd37ed6e2 = L.polygon(
+                [[33.92335904940436, -118.27904997799527], [33.92683038364316, -118.27449803866757], [33.93176293381051, -118.27574436390628], [33.93322398634798, -118.2815430017725], [33.92975250610672, -118.28609483126753], [33.9248201193427, -118.28484813276918], [33.92335904940436, -118.27904997799527]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_6a717fabbc6a869e778fc37fd37ed6e2.bindTooltip(
+                `<div>
+                     <b>#5</b> — 2,127 accidents<br>Charge : 5409<br>Dominant (2A) : <b>railway</b> (lift 30.4)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_fa3690dde06e6a56291943eda71a8798 = L.polygon(
+                [[34.0258662016036, -118.42994182583816], [34.02934095083961, -118.42539366586232], [34.034267061778486, -118.42664690021547], [34.03571825883846, -118.43244866654177], [34.03224336437289, -118.43699671310024], [34.027317418089034, -118.43574310679026], [34.0258662016036, -118.42994182583816]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_fa3690dde06e6a56291943eda71a8798.bindTooltip(
+                `<div>
+                     <b>#6</b> — 2,163 accidents<br>Charge : 5348<br>Dominant (2A) : <b>bump</b> (lift 11.4)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_a715bb6e3813a3732329cc94ef6c79ad = L.polygon(
+                [[34.01302358967985, -118.17674592644663], [34.0164911961608, -118.17218496778257], [34.021423210803135, -118.17342837378861], [34.02288745701005, -118.17923311369896], [34.01941970474587, -118.18379396465217], [34.01448785207037, -118.18255018344603], [34.01302358967985, -118.17674592644663]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00b894", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_a715bb6e3813a3732329cc94ef6c79ad.bindTooltip(
+                `<div>
+                     <b>#7</b> — 2,201 accidents<br>Charge : 5321<br>Dominant (2A) : <b>traffic_calming</b> (lift 3.0)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_cb35cfe102a044c99e0fbdaad48c6889 = L.polygon(
+                [[34.053761571136256, -118.24682431829173], [34.05723082998393, -118.2422653692267], [34.06216007233179, -118.24351191582605], [34.06361989326632, -118.24931778608607], [34.06015048895632, -118.25387662578572], [34.05522140918642, -118.25262970463103], [34.053761571136256, -118.24682431829173]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_cb35cfe102a044c99e0fbdaad48c6889.bindTooltip(
+                `<div>
+                     <b>#8</b> — 2,323 accidents<br>Charge : 4760<br>Dominant (2A) : <b>junction</b> (lift 2.5)<br>Driver (2B) : <b>junction</b><br>Accord : oui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_0a56ebe4f62cc3483d7457a91ec3fae3 = L.polygon(
+                [[34.02618730308911, -118.02783600005618], [34.02965048341531, -118.02326673557403], [34.034585288962404, -118.02450456613636], [34.03605675389783, -118.03031203845204], [34.032593427574035, -118.03488119855142], [34.02765878232487, -118.03364299075788], [34.02618730308911, -118.02783600005618]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_0a56ebe4f62cc3483d7457a91ec3fae3.bindTooltip(
+                `<div>
+                     <b>#9</b> — 2,085 accidents<br>Charge : 4707<br>Dominant (2A) : <b>diffus</b> (lift 0.9)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_b6f0f28cad9e766e820c5df25c509b16 = L.polygon(
+                [[33.8729674256346, -118.09806524413993], [33.87643400500515, -118.09350588859303], [33.881371996163914, -118.09474472171655], [33.88284324634763, -118.10054328571347], [33.87937652040032, -118.10510253558495], [33.87443869085843, -118.10386332717482], [33.8729674256346, -118.09806524413993]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_b6f0f28cad9e766e820c5df25c509b16.bindTooltip(
+                `<div>
+                     <b>#10</b> — 2,099 accidents<br>Charge : 4689<br>Dominant (2A) : <b>diffus</b> (lift 0.9)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_5a3b8452a3881b2b128b0840a173f816 = L.polygon(
+                [[33.77528241077577, -117.87826421633568], [33.7787434939944, -117.87369744541965], [33.783689117984906, -117.87492675178021], [33.78517349921733, -117.8807232065714], [33.78171226857954, -117.8852898769334], [33.77676680414102, -117.88406019309781], [33.77528241077577, -117.87826421633568]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_5a3b8452a3881b2b128b0840a173f816.bindTooltip(
+                `<div>
+                     <b>#11</b> — 2,079 accidents<br>Charge : 4666<br>Dominant (2A) : <b>junction</b> (lift 3.4)<br>Driver (2B) : <b>junction</b><br>Accord : oui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_16d1611b6b8cf8a3ffe9175cd0296d02 = L.polygon(
+                [[33.96981052894549, -118.07891936084687], [33.97327569896197, -118.0743550588437], [33.97821114479397, -118.07559422922509], [33.97968125956341, -118.08139807783594], [33.976215943383025, -118.08596227441141], [33.97128065860953, -118.08472272784368], [33.96981052894549, -118.07891936084687]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_16d1611b6b8cf8a3ffe9175cd0296d02.bindTooltip(
+                `<div>
+                     <b>#12</b> — 1,860 accidents<br>Charge : 4375<br>Dominant (2A) : <b>diffus</b> (lift 1.4)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_818e83341739a079bfbe08ed3a3f241f = L.polygon(
+                [[34.06176765986286, -118.004126459546], [34.06522982465512, -117.99955450664545], [34.070164037719834, -118.00079181844129], [34.071635926093606, -118.0066014609577], [34.06817361542391, -118.011173309944], [34.0632395622704, -118.00993562036811], [34.06176765986286, -118.004126459546]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_818e83341739a079bfbe08ed3a3f241f.bindTooltip(
+                `<div>
+                     <b>#13</b> — 1,733 accidents<br>Charge : 4331<br>Dominant (2A) : <b>diffus</b> (lift 0.9)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_ad9ebe7ba7b0a175d52b6a5a2df3359a = L.polygon(
+                [[37.83389872933247, -122.29763010380495], [37.83743814037945, -122.29314622099578], [37.8421306885273, -122.29459054274294], [37.843283640865934, -122.30051908811525], [37.83974411251806, -122.30500276003563], [37.83505174914252, -122.30355809752095], [37.83389872933247, -122.29763010380495]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_ad9ebe7ba7b0a175d52b6a5a2df3359a.bindTooltip(
+                `<div>
+                     <b>#14</b> — 1,735 accidents<br>Charge : 4302<br>Dominant (2A) : <b>bump</b> (lift 21.9)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_f651e09bb6e50cb6b353501f29f1559a = L.polygon(
+                [[33.73668582342685, -117.83612247149928], [33.74014602125166, -117.83155510081966], [33.74509369318912, -117.8327823607662], [33.746581008091546, -117.83857736918888], [33.74312066259657, -117.84314464033164], [33.738173149881874, -117.84191700262802], [33.73668582342685, -117.83612247149928]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_f651e09bb6e50cb6b353501f29f1559a.bindTooltip(
+                `<div>
+                     <b>#15</b> — 1,815 accidents<br>Charge : 4289<br>Dominant (2A) : <b>no_exit</b> (lift 3.1)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_b4cf5bc3f6c9e7667c1950b710bf0eec = L.polygon(
+                [[33.91181078765743, -118.17840890879985], [33.915279337926805, -118.17385216495063], [33.92021441850752, -118.17509450947207], [33.921680786478746, -118.18089397238238], [33.91821208996172, -118.18545060867835], [33.91327717173343, -118.18420788965732], [33.91181078765743, -118.17840890879985]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_b4cf5bc3f6c9e7667c1950b710bf0eec.bindTooltip(
+                `<div>
+                     <b>#16</b> — 1,700 accidents<br>Charge : 4259<br>Dominant (2A) : <b>diffus</b> (lift 0.5)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_41f21e88ef4e5744d57d98a4e791cff9 = L.polygon(
+                [[34.15041207286516, -118.46711423164118], [34.15388677886215, -118.46256295883384], [34.15880820905499, -118.46381901252985], [34.16025476867071, -118.46962671136984], [34.15677991809314, -118.47417786967233], [34.15185865249257, -118.4729214436803], [34.15041207286516, -118.46711423164118]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_41f21e88ef4e5744d57d98a4e791cff9.bindTooltip(
+                `<div>
+                     <b>#17</b> — 1,728 accidents<br>Charge : 4056<br>Dominant (2A) : <b>bump</b> (lift 6.0)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_22c831adb8ed53eac75aeab65f035afe = L.polygon(
+                [[34.04696391883546, -118.00041472490909], [34.05042611203291, -117.99584318520206], [34.05536086174124, -117.99708019003738], [34.0568332583408, -118.00288911234782], [34.05337091919155, -118.0074605482519], [34.048436329407046, -118.00622316568847], [34.04696391883546, -118.00041472490909]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_22c831adb8ed53eac75aeab65f035afe.bindTooltip(
+                `<div>
+                     <b>#18</b> — 1,676 accidents<br>Charge : 3975<br>Dominant (2A) : <b>railway</b> (lift 2.6)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_8c9a211f1c7ea180605b1e19296b2f90 = L.polygon(
+                [[33.92060423883408, -118.21320271317006], [33.92407371098604, -118.20864743215371], [33.92900777192354, -118.20989120716426], [33.93047219802251, -118.2156906373349], [33.927002579729276, -118.22024581000034], [33.92206868149063, -118.21900166088615], [33.92060423883408, -118.21320271317006]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_8c9a211f1c7ea180605b1e19296b2f90.bindTooltip(
+                `<div>
+                     <b>#19</b> — 1,543 accidents<br>Charge : 3931<br>Dominant (2A) : <b>railway</b> (lift 69.8)<br>Driver (2B) : <b>traffic_signal</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_f896a702d4bb29350f4e6ac938deb7be = L.polygon(
+                [[34.03329146390661, -118.31229923027226], [34.036762785527294, -118.30774455909621], [34.04169123798527, -118.30899338327102], [34.043148205474324, -118.31479725221985], [34.03967673842429, -118.31935181260053], [34.03474844932678, -118.31810261486805], [34.03329146390661, -118.31229923027226]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34495e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_f896a702d4bb29350f4e6ac938deb7be.bindTooltip(
+                `<div>
+                     <b>#20</b> — 1,638 accidents<br>Charge : 3918<br>Dominant (2A) : <b>station</b> (lift 8.6)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_98a5469eec946975b2d1163eeebd1a18 = L.polygon(
+                [[34.00264069833661, -117.82616135655614], [34.00609821668421, -117.82158261581932], [34.01103802537921, -117.8228124076492], [34.012520157568105, -117.82862131993909], [34.0090624927618, -117.83319996089051], [34.00412284223795, -117.83196978937713], [34.00264069833661, -117.82616135655614]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_98a5469eec946975b2d1163eeebd1a18.bindTooltip(
+                `<div>
+                     <b>#21</b> — 1,932 accidents<br>Charge : 3911<br>Dominant (2A) : <b>no_exit</b> (lift 50.4)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_33e0a7a321375b8e402bd09e1f148fff = L.polygon(
+                [[34.15880820905499, -118.46381901252985], [34.16228274543243, -118.45926722189816], [34.16720398596229, -118.460523244514], [34.16865052560103, -118.46633143019801], [34.165175844674735, -118.47088310638154], [34.16025476867071, -118.46962671136984], [34.15880820905499, -118.46381901252985]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_33e0a7a321375b8e402bd09e1f148fff.bindTooltip(
+                `<div>
+                     <b>#22</b> — 1,688 accidents<br>Charge : 3898<br>Dominant (2A) : <b>diffus</b> (lift 1.1)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_378698d9d767434598db6e9fb51a436a = L.polygon(
+                [[33.95496249393553, -118.2761776947194], [33.958433470765485, -118.27162431749468], [33.963365116722244, -118.27287088521544], [33.964825622604586, -118.27867120370955], [33.961354499913114, -118.28322447110388], [33.95642301721307, -118.28197752987471], [33.95496249393553, -118.2761776947194]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34495e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_378698d9d767434598db6e9fb51a436a.bindTooltip(
+                `<div>
+                     <b>#23</b> — 1,548 accidents<br>Charge : 3775<br>Dominant (2A) : <b>station</b> (lift 23.9)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_c9c0164f10751807742b5d8af7c648dd = L.polygon(
+                [[33.8697873425837, -118.19497266886866], [33.87325673335096, -118.19041850226719], [33.878192735624175, -118.19166101468315], [33.87965918445714, -118.19745806774279], [33.8761896472782, -118.20201212650038], [33.87125380769026, -118.20076924008222], [33.8697873425837, -118.19497266886866]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_c9c0164f10751807742b5d8af7c648dd.bindTooltip(
+                `<div>
+                     <b>#24</b> — 1,616 accidents<br>Charge : 3682<br>Dominant (2A) : <b>diffus</b> (lift 1.2)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_3203b205a87d5e83ed75ade12351abbb = L.polygon(
+                [[33.922045533826214, -118.36556973459595], [33.92551934895154, -118.36102240173905], [33.93045005524218, -118.36227201721483], [33.93190678207546, -118.36806933770197], [33.92843282111064, -118.37261655879158], [33.9235022791642, -118.37136657120159], [33.922045533826214, -118.36556973459595]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_3203b205a87d5e83ed75ade12351abbb.bindTooltip(
+                `<div>
+                     <b>#25</b> — 1,536 accidents<br>Charge : 3666<br>Dominant (2A) : <b>diffus</b> (lift 1.4)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_2e7eae8fb781dd4a9c3d75c062aeefcf = L.polygon(
+                [[33.82135097732654, -118.20448606863987], [33.82482105623324, -118.1999343693773], [33.82975832103895, -118.20117670850921], [33.83122534398547, -118.2069711204982], [33.82775511845932, -118.21152271179706], [33.82281801661837, -118.2102799991106], [33.82135097732654, -118.20448606863987]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_2e7eae8fb781dd4a9c3d75c062aeefcf.bindTooltip(
+                `<div>
+                     <b>#26</b> — 1,423 accidents<br>Charge : 3616<br>Dominant (2A) : <b>junction</b> (lift 2.1)<br>Driver (2B) : <b>junction</b><br>Accord : oui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_f1bae7ec75779ea46639d60ac3458686 = L.polygon(
+                [[33.94460653798692, -118.08889145149116], [33.94807222115167, -118.08432869769614], [33.95300822511722, -118.08556797186546], [33.95447838467223, -118.09137037575674], [33.95101255524556, -118.0959330239473], [33.94607671253824, -118.09469337389099], [33.94460653798692, -118.08889145149116]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_f1bae7ec75779ea46639d60ac3458686.bindTooltip(
+                `<div>
+                     <b>#27</b> — 1,444 accidents<br>Charge : 3614<br>Dominant (2A) : <b>bump</b> (lift 1.9)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_67c7d58ff90bcda20aa9f8a16393cde4 = L.polygon(
+                [[33.92134847175626, -118.28939944651079], [33.9248201193427, -118.28484813276918], [33.92975250610672, -118.28609483126753], [33.93121308177373, -118.29189321665807], [33.9277412881955, -118.29644442033906], [33.922809064954286, -118.29519734873027], [33.92134847175626, -118.28939944651079]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_67c7d58ff90bcda20aa9f8a16393cde4.bindTooltip(
+                `<div>
+                     <b>#28</b> — 1,526 accidents<br>Charge : 3591<br>Dominant (2A) : <b>railway</b> (lift 39.7)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_a8e3ee938142aa5d1d430c44cd3d5da4 = L.polygon(
+                [[33.85172976518747, -118.28809223760248], [33.855201973203236, -118.28354368654587], [33.86013650699505, -118.284789559629], [33.86159866902016, -118.29058435647238], [33.85812631468606, -118.29513279763458], [33.85319194465739, -118.29388655188791], [33.85172976518747, -118.28809223760248]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34495e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_a8e3ee938142aa5d1d430c44cd3d5da4.bindTooltip(
+                `<div>
+                     <b>#29</b> — 1,406 accidents<br>Charge : 3563<br>Dominant (2A) : <b>station</b> (lift 5.0)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_edc867ea0e4f012e1fbc435f7f1832af = L.polygon(
+                [[34.02982247374726, -118.17011027074724], [34.03328973803596, -118.16554827876926], [34.038221378088195, -118.16679161720785], [34.03968559203034, -118.17259732306435], [34.03621818202317, -118.17715920744836], [34.0312867038047, -118.17591549360996], [34.02982247374726, -118.17011027074724]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_edc867ea0e4f012e1fbc435f7f1832af.bindTooltip(
+                `<div>
+                     <b>#30</b> — 1,600 accidents<br>Charge : 3542<br>Dominant (2A) : <b>railway</b> (lift 5.4)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_4919574e6a09edab06c9c1e206b7b6a4 = L.polygon(
+                [[34.02454273397667, -118.2774787617445], [34.02801313466648, -118.27292261591222], [34.032942614058825, -118.27417001002323], [34.034401529757304, -118.27997392396367], [34.03093098352994, -118.28452995979941], [34.02600166715393, -118.28328219173154], [34.02454273397667, -118.2774787617445]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34495e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_4919574e6a09edab06c9c1e206b7b6a4.bindTooltip(
+                `<div>
+                     <b>#31</b> — 1,495 accidents<br>Charge : 3539<br>Dominant (2A) : <b>station</b> (lift 12.8)<br>Driver (2B) : <b>traffic_signal</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_8966fde54504484dd9d959c41c00e10b = L.polygon(
+                [[34.03224336437289, -118.43699671310024], [34.03571825883846, -118.43244866654177], [34.04064401822866, -118.43370224158708], [34.04209471845824, -118.4395042351375], [34.03861967880687, -118.44405216810779], [34.03369408412387, -118.44279822115634], [34.03224336437289, -118.43699671310024]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_8966fde54504484dd9d959c41c00e10b.bindTooltip(
+                `<div>
+                     <b>#32</b> — 1,466 accidents<br>Charge : 3491<br>Dominant (2A) : <b>amenity</b> (lift 4.6)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_6369b42e513a72c97e81ce4422ff1674 = L.polygon(
+                [[33.98556543218576, -118.39797255624379], [33.98903962173086, -118.39342434806312], [33.99396767382945, -118.39467591079338], [33.995421371935265, -118.40047605385504], [33.99194703690989, -118.40502414941567], [33.987019149271134, -118.40377221457504], [33.98556543218576, -118.39797255624379]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6c5ce7", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_6369b42e513a72c97e81ce4422ff1674.bindTooltip(
+                `<div>
+                     <b>#33</b> — 1,359 accidents<br>Charge : 3424<br>Dominant (2A) : <b>traffic_signal</b> (lift 5.5)<br>Driver (2B) : <b>traffic_signal</b><br>Accord : oui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_2c0d3d9614884ccdbee8e0dfe64845e2 = L.polygon(
+                [[34.05339432421713, -118.20867656284348], [34.05686248804333, -118.20411562753252], [34.061792567541495, -118.20536070790155], [34.063254321059496, -118.21116709867502], [34.05978601169619, -118.21572792547897], [34.054856094364325, -118.21448247005668], [34.05339432421713, -118.20867656284348]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34495e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_2c0d3d9614884ccdbee8e0dfe64845e2.bindTooltip(
+                `<div>
+                     <b>#34</b> — 1,369 accidents<br>Charge : 3372<br>Dominant (2A) : <b>station</b> (lift 7.8)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_b4a204cacd536fb889c1510e325ce15f = L.polygon(
+                [[34.05175183425868, -118.25718802736559], [34.05522140918642, -118.25262970463103], [34.06015048895632, -118.25387662578572], [34.06160983111337, -118.25968224412104], [34.058140110734065, -118.26424045726127], [34.05321119366156, -118.26299316170082], [34.05175183425868, -118.25718802736559]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34495e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_b4a204cacd536fb889c1510e325ce15f.bindTooltip(
+                `<div>
+                     <b>#35</b> — 1,592 accidents<br>Charge : 3367<br>Dominant (2A) : <b>station</b> (lift 1.7)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_4e4f3eddbe2e60abba41f94fd1e0349a = L.polygon(
+                [[33.910996231272215, -118.10217986677254], [33.914462595423295, -118.09761917616831], [33.919399340829884, -118.0988585882067], [33.920869560573244, -118.10465906637742], [33.91740305002922, -118.10921965114196], [33.91246646614719, -118.10797986361538], [33.910996231272215, -118.10217986677254]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_4e4f3eddbe2e60abba41f94fd1e0349a.bindTooltip(
+                `<div>
+                     <b>#36</b> — 1,376 accidents<br>Charge : 3341<br>Dominant (2A) : <b>railway</b> (lift 19.0)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_64eb657c3f007ae47328022937a88223 = L.polygon(
+                [[34.017415403476036, -118.19415868171951], [34.02088347229801, -118.1895984553045], [34.02581497582236, -118.19084257799597], [34.02727824839722, -118.19664730214434], [34.02381003384514, -118.20120742044855], [34.018878692460646, -118.19996292275535], [34.017415403476036, -118.19415868171951]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_64eb657c3f007ae47328022937a88223.bindTooltip(
+                `<div>
+                     <b>#37</b> — 1,389 accidents<br>Charge : 3313<br>Dominant (2A) : <b>diffus</b> (lift 0.9)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_658278a05d8fdf9dfdaf12085b44c3dc = L.polygon(
+                [[33.92298982078273, -118.24095239174207], [33.92646006765737, -118.23639846792301], [33.93139345528843, -118.23764333173327], [33.9328564330656, -118.24344249315912], [33.92938604011359, -118.24799630800022], [33.92445281547403, -118.24675107043353], [33.92298982078273, -118.24095239174207]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_658278a05d8fdf9dfdaf12085b44c3dc.bindTooltip(
+                `<div>
+                     <b>#38</b> — 1,415 accidents<br>Charge : 3304<br>Dominant (2A) : <b>railway</b> (lift 25.7)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_d09e00872be208ad47ca2929041cfef0 = L.polygon(
+                [[34.044995721910404, -118.21199186742669], [34.04846405687992, -118.20743144902528], [34.05339432421713, -118.20867656284348], [34.054856094364325, -118.21448247005668], [34.05138761382546, -118.21904277989283], [34.04645750872107, -118.21779729112124], [34.044995721910404, -118.21199186742669]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_d09e00872be208ad47ca2929041cfef0.bindTooltip(
+                `<div>
+                     <b>#39</b> — 1,419 accidents<br>Charge : 3285<br>Dominant (2A) : <b>no_exit</b> (lift 1.7)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_9f914c43032964ed83f9275599d83a39 = L.polygon(
+                [[33.919399340829884, -118.0988585882067], [33.92286553507854, -118.09429738192117], [33.92780209541828, -118.09553675954739], [33.9292723000638, -118.10133771908693], [33.925805959455, -118.1058988195915], [33.920869560573244, -118.10465906637742], [33.919399340829884, -118.0988585882067]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_9f914c43032964ed83f9275599d83a39.bindTooltip(
+                `<div>
+                     <b>#40</b> — 1,329 accidents<br>Charge : 3267<br>Dominant (2A) : <b>railway</b> (lift 3.7)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_7df51a265e1cb50b82a5eb81763c80bd = L.polygon(
+                [[37.68269796584191, -122.13429526885422], [37.686235046104294, -122.12980767766169], [37.69093827477112, -122.13124402964456], [37.692104239007186, -122.13716831523435], [37.68856704021409, -122.14165569973372], [37.68386399572581, -122.14021900538461], [37.68269796584191, -122.13429526885422]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_7df51a265e1cb50b82a5eb81763c80bd.bindTooltip(
+                `<div>
+                     <b>#41</b> — 1,382 accidents<br>Charge : 3266<br>Dominant (2A) : <b>bump</b> (lift 23.0)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_688448a4c60d0807e80236e7912a376d = L.polygon(
+                [[33.92098225461938, -118.25130436951731], [33.92445281547403, -118.24675107043353], [33.92938604011359, -118.24799630800022], [33.930848540799595, -118.25379521829825], [33.92737783387806, -118.25834840817588], [33.922444772349664, -118.25710279700178], [33.92098225461938, -118.25130436951731]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_688448a4c60d0807e80236e7912a376d.bindTooltip(
+                `<div>
+                     <b>#42</b> — 1,391 accidents<br>Charge : 3230<br>Dominant (2A) : <b>diffus</b> (lift 1.1)<br>Driver (2B) : <b>traffic_signal</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_7b023017625ac7a30542fae16b269bbb = L.polygon(
+                [[33.969756919681174, -118.27991811225303], [33.97322787407784, -118.27536432873468], [33.97815898533578, -118.27661120455619], [33.97961897896619, -118.28241223749448], [33.97614787878374, -118.28696591106946], [33.9712169307689, -118.28571866168976], [33.969756919681174, -118.27991811225303]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_7b023017625ac7a30542fae16b269bbb.bindTooltip(
+                `<div>
+                     <b>#43</b> — 1,442 accidents<br>Charge : 3193<br>Dominant (2A) : <b>amenity</b> (lift 3.7)<br>Driver (2B) : <b>traffic_signal</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_8928b3775247db44993b70a49acaf6d4 = L.polygon(
+                [[34.074574687268445, -118.21946490831341], [34.07804297068931, -118.21490367308323], [34.08297216144939, -118.21614940344172], [34.084432906595005, -118.22195674412478], [34.08096447775487, -118.22651787056404], [34.076035449200724, -118.22527176515139], [34.074574687268445, -118.21946490831341]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_8928b3775247db44993b70a49acaf6d4.bindTooltip(
+                `<div>
+                     <b>#44</b> — 1,379 accidents<br>Charge : 3191<br>Dominant (2A) : <b>diffus</b> (lift 1.0)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_6cb497dab79a0c5312236f467673e617 = L.polygon(
+                [[37.81874041786656, -122.26510250656997], [37.82227916780602, -122.26061723583327], [37.82697323068059, -122.26206017796694], [37.828128359041315, -122.26798873207132], [37.82458949160794, -122.27247379269492], [37.81989561331785, -122.27103050937568], [37.81874041786656, -122.26510250656997]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_6cb497dab79a0c5312236f467673e617.bindTooltip(
+                `<div>
+                     <b>#45</b> — 1,356 accidents<br>Charge : 3181<br>Dominant (2A) : <b>railway</b> (lift 22.3)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_27d44b15a80801e64e6fd181aa1501e9 = L.polygon(
+                [[33.99124661075751, -117.92664947490437], [33.994707168133985, -117.92207639022399], [33.99964520261979, -117.92330993615727], [34.00112252042584, -117.92911694511871], [33.997661816711584, -117.93368992776372], [33.992723941541634, -117.93245600352249], [33.99124661075751, -117.92664947490437]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_27d44b15a80801e64e6fd181aa1501e9.bindTooltip(
+                `<div>
+                     <b>#46</b> — 1,555 accidents<br>Charge : 3151<br>Dominant (2A) : <b>diffus</b> (lift 0.8)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_161c089c50c2a2bb53b36b3bb5b4f139 = L.polygon(
+                [[37.65921167885309, -122.10485840181177], [37.66274828447378, -122.10036998569763], [37.66745327354729, -122.10180495320422], [37.668621472959394, -122.10772867955015], [37.665084748600485, -122.11221688971158], [37.66037994357788, -122.11078157952787], [37.65921167885309, -122.10485840181177]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_161c089c50c2a2bb53b36b3bb5b4f139.bindTooltip(
+                `<div>
+                     <b>#47</b> — 1,289 accidents<br>Charge : 3124<br>Dominant (2A) : <b>bump</b> (lift 86.2)<br>Driver (2B) : <b>junction</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_b91fac4acb4a2c44bea90ae5a6468cdf = L.polygon(
+                [[33.96003055441194, -118.36977186932984], [33.963504161599545, -118.3652232123759], [33.96843361395879, -118.36647341297801], [33.96988929489269, -118.37227264288627], [33.9664155420503, -118.37682118790283], [33.96148625394093, -118.3755706149888], [33.96003055441194, -118.36977186932984]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6c5ce7", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_b91fac4acb4a2c44bea90ae5a6468cdf.bindTooltip(
+                `<div>
+                     <b>#48</b> — 1,266 accidents<br>Charge : 3112<br>Dominant (2A) : <b>traffic_signal</b> (lift 1.6)<br>Driver (2B) : <b>traffic_signal</b><br>Accord : oui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_355817625521e16e624aceeeaf862da1 = L.polygon(
+                [[37.35752434117313, -121.90218322609617], [37.36105945042721, -121.89769518153412], [37.36578214991081, -121.89911870937863], [37.3669695563424, -121.9050306257135], [37.36343432641939, -121.90951846995347], [37.358711810743955, -121.90809459822823], [37.35752434117313, -121.90218322609617]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_355817625521e16e624aceeeaf862da1.bindTooltip(
+                `<div>
+                     <b>#49</b> — 1,346 accidents<br>Charge : 3106<br>Dominant (2A) : <b>junction</b> (lift 2.4)<br>Driver (2B) : <b>junction</b><br>Accord : oui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_ae32754bf7a81ca4dc770d7961e85ce0 = L.polygon(
+                [[34.053395385134145, -118.44781462797215], [34.0568704023287, -118.44326629190932], [34.06179527073649, -118.44452051720366], [34.063244957216774, -118.45032345050534], [34.05976979495603, -118.45487167269455], [34.054845091293345, -118.45361707549618], [34.053395385134145, -118.44781462797215]],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 0.5}
+            ).addTo(map_7a468921ae0bf1530739d63a56d0a7ab);
+        
+    
+            polygon_ae32754bf7a81ca4dc770d7961e85ce0.bindTooltip(
+                `<div>
+                     <b>#50</b> — 1,262 accidents<br>Charge : 3084<br>Dominant (2A) : <b>crossing</b> (lift 4.4)<br>Driver (2B) : <b>traffic_signal</b><br>Accord : non
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
