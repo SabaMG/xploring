@@ -1,16 +1,17 @@
 # Pipeline DataValueXploring — versions figées pour reproductibilité.
 # Installer avec : pip install -r requirements.txt
-# Prérequis système : Python 3.11 et un JDK (Java 11+) pour PySpark.
+# Prérequis système : Python 3.12 et un JDK (Java 11+, testé sur Java 21) pour PySpark.
+# Versions figées = celles de l'environnement de développement (gel au moment du rendu).
 
 pyspark==4.1.1
-scikit-learn==1.8.0
-shap>=0.46,<0.52
-h3==4.5.0
-folium>=0.16
-branca>=0.7
-osmnx>=2.0
-kagglehub>=0.3
-pandas>=2.1
-numpy>=1.26
-matplotlib>=3.8
-scipy>=1.11
+scikit-learn==1.9.0
+shap==0.52.0
+h3==4.4.2
+folium==0.20.0
+branca==0.8.2
+osmnx==2.1.0
+kagglehub==1.0.1
+pandas==3.0.3
+numpy==2.4.5
+matplotlib==3.10.9
+scipy==1.17.1

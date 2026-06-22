@@ -38,9 +38,11 @@ Setup → Chargement (schéma explicite) → Nettoyage explicite & défensif
 
 ## Prérequis
 
-- **Python 3.11**
-- **Java 11+** (JDK) — requis par PySpark
+- **Python 3.12**
+- **Java 11+** (JDK ; testé sur Java 21) — requis par PySpark
 - ~4 Go d'espace disque pour le dataset (téléchargé automatiquement au 1er run)
+- Accès réseau au 1er run (téléchargement Kaggle + requêtes OSM ; l'exposition OSM est
+  désactivable via `RUN_OSM_EXPOSURE=False` pour un fonctionnement hors-ligne)
 
 ## Lancer
 
