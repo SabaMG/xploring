@@ -9,11 +9,11 @@ rank,h3_cell,n_accidents,charge,avg_severity,street_km,n_intersections,charge_pe
 30,8829a1d2b1fffff,1600,3542,2.214,,,,n/d (hors top OSM),railway,5.38,"junction, crossing, traffic_signal, railway",sécuriser le passage à niveau (barrières/feux),365.0
 38,8829a56c61fffff,1415,3304,2.335,,,,n/d (hors top OSM),railway,25.73,"crossing, traffic_signal, railway, station",sécuriser le passage à niveau (barrières/feux),323.0
 21,8829a0aec7fffff,1932,3911,2.024,,,,n/d (hors top OSM),no_exit,50.44,"junction, no_exit",sécuriser passage piéton,295.0
-15,8829a0b0dbfffff,1815,4289,2.363,,,,n/d (hors top OSM),no_exit,3.08,junction,sécuriser passage piéton,277.0
+15,8829a0b0dbfffff,1815,4289,2.363,8.24,46.0,520.54,réseau étendu (volume diffus),no_exit,3.08,junction,sécuriser passage piéton,277.0
 7,8829a1d283fffff,2201,5321,2.418,10.82,53.0,491.9,réseau étendu (volume diffus),traffic_calming,2.97,"junction, traffic_signal",sécuriser passage piéton,258.0
 20,8829a1d657fffff,1638,3918,2.392,,,,n/d (hors top OSM),station,8.65,"junction, station",installer des feux,244.0
 23,8829a56c3bfffff,1548,3775,2.439,,,,n/d (hors top OSM),station,23.93,"crossing, stop, station",installer des feux,231.0
-14,88283081e1fffff,1735,4302,2.48,,,,n/d (hors top OSM),bump,21.94,"junction, crossing, traffic_signal",stop / cédez-le-passage,227.0
+14,88283081e1fffff,1735,4302,2.48,5.43,29.0,791.96,point noir concentré,bump,21.94,"junction, crossing, traffic_signal",stop / cédez-le-passage,227.0
 17,8829a18859fffff,1728,4056,2.347,,,,n/d (hors top OSM),bump,6.03,"crossing, traffic_signal",stop / cédez-le-passage,226.0
 39,8829a1d70dfffff,1419,3285,2.315,,,,n/d (hors top OSM),no_exit,1.72,junction,sécuriser passage piéton,217.0
 29,8829a56e41fffff,1406,3563,2.534,,,,n/d (hors top OSM),station,4.98,"junction, crossing, station",installer des feux,210.0
