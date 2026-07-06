@@ -1,51 +1,51 @@
-rank,h3_cell,n_accidents,charge,avg_severity,street_km,n_intersections,charge_per_km,type_zone,dominant,lift,equip_present,amenagement,impact_charge
-5,8829a56c55fffff,2127,5409,2.543,12.65,58.0,427.55,réseau étendu (volume diffus),railway,30.38,"junction, railway, station",sécuriser le passage à niveau (barrières/feux),782.0
-18,8829a1d121fffff,1676,3975,2.372,,,,n/d (hors top OSM),railway,2.55,"junction, traffic_signal",sécuriser le passage à niveau (barrières/feux),616.0
-19,8829a56f37fffff,1543,3931,2.548,,,,n/d (hors top OSM),railway,69.81,"railway, station",sécuriser le passage à niveau (barrières/feux),567.0
-28,8829a56c51fffff,1526,3591,2.353,,,,n/d (hors top OSM),railway,39.69,"junction, traffic_signal, railway, station",sécuriser le passage à niveau (barrières/feux),561.0
-36,8829a569d3fffff,1376,3341,2.428,,,,n/d (hors top OSM),railway,19.0,"junction, traffic_signal, railway, station",sécuriser le passage à niveau (barrières/feux),506.0
-45,882830813dfffff,1356,3181,2.346,,,,n/d (hors top OSM),railway,22.34,"junction, railway",sécuriser le passage à niveau (barrières/feux),499.0
-40,8829a56999fffff,1329,3267,2.458,,,,n/d (hors top OSM),railway,3.68,traffic_signal,sécuriser le passage à niveau (barrières/feux),489.0
-30,8829a1d2b1fffff,1600,3542,2.214,,,,n/d (hors top OSM),railway,5.38,"junction, crossing, traffic_signal, railway",sécuriser le passage à niveau (barrières/feux),365.0
-38,8829a56c61fffff,1415,3304,2.335,,,,n/d (hors top OSM),railway,25.73,"crossing, traffic_signal, railway, station",sécuriser le passage à niveau (barrières/feux),323.0
-21,8829a0aec7fffff,1932,3911,2.024,,,,n/d (hors top OSM),no_exit,50.44,"junction, no_exit",sécuriser passage piéton,295.0
-15,8829a0b0dbfffff,1815,4289,2.363,8.24,46.0,520.54,réseau étendu (volume diffus),no_exit,3.08,junction,sécuriser passage piéton,277.0
-7,8829a1d283fffff,2201,5321,2.418,10.82,53.0,491.9,réseau étendu (volume diffus),traffic_calming,2.97,"junction, traffic_signal",sécuriser passage piéton,258.0
-20,8829a1d657fffff,1638,3918,2.392,,,,n/d (hors top OSM),station,8.65,"junction, station",installer des feux,244.0
-23,8829a56c3bfffff,1548,3775,2.439,,,,n/d (hors top OSM),station,23.93,"crossing, stop, station",installer des feux,231.0
-14,88283081e1fffff,1735,4302,2.48,5.43,29.0,791.96,point noir concentré,bump,21.94,"junction, crossing, traffic_signal",stop / cédez-le-passage,227.0
-17,8829a18859fffff,1728,4056,2.347,,,,n/d (hors top OSM),bump,6.03,"crossing, traffic_signal",stop / cédez-le-passage,226.0
-39,8829a1d70dfffff,1419,3285,2.315,,,,n/d (hors top OSM),no_exit,1.72,junction,sécuriser passage piéton,217.0
-29,8829a56e41fffff,1406,3563,2.534,,,,n/d (hors top OSM),station,4.98,"junction, crossing, station",installer des feux,210.0
-27,8829a1d26dfffff,1444,3614,2.503,,,,n/d (hors top OSM),bump,1.93,"junction, traffic_signal",sécuriser passage piéton,207.0
-34,8829a1d705fffff,1369,3372,2.463,,,,n/d (hors top OSM),station,7.77,"junction, station",installer des feux,204.0
-41,8828309b1dfffff,1382,3266,2.363,,,,n/d (hors top OSM),bump,23.01,"junction, crossing, traffic_signal, station",stop / cédez-le-passage,181.0
-35,8829a1d625fffff,1592,3367,2.115,,,,n/d (hors top OSM),station,1.73,"junction, traffic_signal",sécuriser passage piéton,156.0
-2,8829a1d663fffff,2543,6350,2.497,15.29,67.0,415.33,réseau étendu (volume diffus),junction,2.3,junction,sécuriser passage piéton,138.0
-3,8829a1d741fffff,2431,5658,2.327,11.7,58.0,483.77,réseau étendu (volume diffus),junction,1.8,junction,sécuriser passage piéton,132.0
-8,8829a1d719fffff,2323,4760,2.049,10.4,52.0,457.5,point noir concentré,junction,2.46,junction,sécuriser passage piéton,126.0
-33,8829a19b3bfffff,1359,3424,2.519,,,,n/d (hors top OSM),traffic_signal,5.46,traffic_signal,modération de trafic (ralentisseurs),122.0
-48,8829a19b63fffff,1266,3112,2.458,,,,n/d (hors top OSM),traffic_signal,1.64,"crossing, traffic_signal",modération de trafic (ralentisseurs),114.0
-4,8828308017fffff,2174,5601,2.576,3.18,12.0,1761.07,point noir concentré,stop,22.47,"junction, stop",modération de trafic (ralentisseurs),113.0
-11,8829a0b559fffff,2079,4666,2.244,16.85,60.0,276.95,réseau étendu (volume diffus),junction,3.37,junction,sécuriser passage piéton,112.0
-26,8829a561e5fffff,1423,3616,2.541,,,,n/d (hors top OSM),junction,2.1,junction,sécuriser passage piéton,77.0
-50,8829a199dbfffff,1262,3084,2.444,,,,n/d (hors top OSM),crossing,4.41,"crossing, traffic_signal",modération de trafic (ralentisseurs),76.0
-49,8828347101fffff,1346,3106,2.308,,,,n/d (hors top OSM),junction,2.37,junction,sécuriser passage piéton,73.0
-31,8829a1d66bfffff,1495,3539,2.367,,,,n/d (hors top OSM),station,12.76,"crossing, traffic_signal, railway, station",stop / cédez-le-passage,72.0
-32,8829a19831fffff,1466,3491,2.381,,,,n/d (hors top OSM),amenity,4.62,"junction, crossing, traffic_signal, station",stop / cédez-le-passage,41.0
-43,8829a56ce5fffff,1442,3193,2.214,,,,n/d (hors top OSM),amenity,3.73,"junction, crossing, traffic_signal",stop / cédez-le-passage,40.0
-42,8829a56c6bfffff,1391,3230,2.322,,,,n/d (hors top OSM),diffus,1.1,traffic_signal,investiguer facteur humain (vitesse / contrôle),0.0
+rank,h3_cell,n_accidents,charge,avg_severity,street_km,n_intersections,charge_per_km,type_zone,dominant,lift,equip_present,amenagement,impact_graves_evites
+2,8829a1d663fffff,2543,6350,2.497,15.29,67.0,415.33,réseau étendu (volume diffus),junction,2.3,junction,stop / cédez-le-passage,504.8
+3,8829a1d741fffff,2431,5658,2.327,11.7,58.0,483.77,point noir concentré,junction,1.8,junction,stop / cédez-le-passage,482.6
+8,8829a1d719fffff,2323,4760,2.049,10.4,52.0,457.5,point noir concentré,junction,2.46,junction,stop / cédez-le-passage,461.1
+5,8829a56c55fffff,2127,5409,2.543,12.65,58.0,427.55,réseau étendu (volume diffus),railway,30.38,"junction, railway, station",sécuriser le passage à niveau (barrières/feux),427.9
+11,8829a0b559fffff,2079,4666,2.244,16.85,60.0,276.95,réseau étendu (volume diffus),junction,3.37,junction,stop / cédez-le-passage,412.7
+18,8829a1d121fffff,1676,3975,2.372,7.91,32.0,502.33,point noir concentré,railway,2.55,"junction, traffic_signal",sécuriser le passage à niveau (barrières/feux),337.2
+19,8829a56f37fffff,1543,3931,2.548,10.04,52.0,391.7,réseau étendu (volume diffus),railway,69.81,"railway, station",sécuriser le passage à niveau (barrières/feux),310.4
+21,8829a0aec7fffff,1932,3911,2.024,3.73,14.0,1047.41,point noir concentré,no_exit,50.44,"junction, no_exit",sécuriser passage piéton,309.6
+28,8829a56c51fffff,1526,3591,2.353,10.24,57.0,350.74,réseau étendu (volume diffus),railway,39.69,"junction, traffic_signal, railway, station",sécuriser le passage à niveau (barrières/feux),307.0
+15,8829a0b0dbfffff,1815,4289,2.363,8.24,46.0,520.54,point noir concentré,no_exit,3.08,junction,sécuriser passage piéton,290.8
+7,8829a1d283fffff,2201,5321,2.418,10.82,53.0,491.9,point noir concentré,traffic_calming,2.97,"junction, traffic_signal",sécuriser passage piéton,283.9
+26,8829a561e5fffff,1423,3616,2.541,5.71,30.0,633.65,point noir concentré,junction,2.1,junction,stop / cédez-le-passage,282.5
+36,8829a569d3fffff,1376,3341,2.428,9.18,61.0,364.04,réseau étendu (volume diffus),railway,19.0,"junction, traffic_signal, railway, station",sécuriser le passage à niveau (barrières/feux),276.8
+45,882830813dfffff,1356,3181,2.346,,,,n/d (hors top OSM),railway,22.34,"junction, railway",sécuriser le passage à niveau (barrières/feux),272.8
+40,8829a56999fffff,1329,3267,2.458,9.46,56.0,345.2,réseau étendu (volume diffus),railway,3.68,traffic_signal,sécuriser le passage à niveau (barrières/feux),267.4
+49,8828347101fffff,1346,3106,2.308,,,,n/d (hors top OSM),junction,2.37,junction,stop / cédez-le-passage,267.2
+39,8829a1d70dfffff,1419,3285,2.315,10.08,58.0,325.88,réseau étendu (volume diffus),no_exit,1.72,junction,sécuriser passage piéton,227.4
+30,8829a1d2b1fffff,1600,3542,2.214,13.19,62.0,268.5,réseau étendu (volume diffus),railway,5.38,"junction, crossing, traffic_signal, railway",sécuriser le passage à niveau (barrières/feux),155.1
+38,8829a56c61fffff,1415,3304,2.335,9.78,55.0,337.73,réseau étendu (volume diffus),railway,25.73,"crossing, traffic_signal, railway, station",sécuriser le passage à niveau (barrières/feux),137.1
+4,8828308017fffff,2174,5601,2.576,3.18,12.0,1761.07,point noir concentré,stop,22.47,"junction, stop",sécuriser passage piéton,116.4
+33,8829a19b3bfffff,1359,3424,2.519,12.02,71.0,284.76,réseau étendu (volume diffus),traffic_signal,5.46,traffic_signal,sécuriser passage piéton,88.6
+20,8829a1d657fffff,1638,3918,2.392,11.78,57.0,332.73,réseau étendu (volume diffus),station,8.65,"junction, station",sécuriser passage piéton,85.8
+35,8829a1d625fffff,1592,3367,2.115,13.13,69.0,256.35,réseau étendu (volume diffus),station,1.73,"junction, traffic_signal",sécuriser passage piéton,83.4
+32,8829a19831fffff,1466,3491,2.381,11.09,51.0,314.67,réseau étendu (volume diffus),amenity,4.62,"junction, crossing, traffic_signal, station",stop / cédez-le-passage,72.4
+34,8829a1d705fffff,1369,3372,2.463,8.7,47.0,387.79,réseau étendu (volume diffus),station,7.77,"junction, station",sécuriser passage piéton,71.7
+43,8829a56ce5fffff,1442,3193,2.214,,,,n/d (hors top OSM),amenity,3.73,"junction, crossing, traffic_signal",stop / cédez-le-passage,71.2
+31,8829a1d66bfffff,1495,3539,2.367,7.86,50.0,450.44,point noir concentré,station,12.76,"crossing, traffic_signal, railway, station",stop / cédez-le-passage,69.3
+29,8829a56e41fffff,1406,3563,2.534,3.57,16.0,997.33,point noir concentré,station,4.98,"junction, crossing, station",stop / cédez-le-passage,65.2
+50,8829a199dbfffff,1262,3084,2.444,,,,n/d (hors top OSM),crossing,4.41,"crossing, traffic_signal",stop / cédez-le-passage,54.4
+48,8829a19b63fffff,1266,3112,2.458,,,,n/d (hors top OSM),traffic_signal,1.64,"crossing, traffic_signal",stop / cédez-le-passage,34.9
+23,8829a56c3bfffff,1548,3775,2.439,11.06,61.0,341.23,réseau étendu (volume diffus),station,23.93,"crossing, stop, station",installer des feux,32.1
+27,8829a1d26dfffff,1444,3614,2.503,11.89,74.0,303.86,réseau étendu (volume diffus),bump,1.93,"junction, traffic_signal",déjà équipé — revoir géométrie / abords,0.0
+41,8828309b1dfffff,1382,3266,2.363,5.39,49.0,605.99,point noir concentré,bump,23.01,"junction, crossing, traffic_signal, station",déjà équipé — revoir géométrie / abords,0.0
 6,8829a1983dfffff,2163,5348,2.472,7.33,35.0,730.02,point noir concentré,bump,11.44,"crossing, stop",déjà équipé — revoir géométrie / abords,0.0
 47,8828309b45fffff,1289,3124,2.424,,,,n/d (hors top OSM),bump,86.15,"junction, crossing, stop, traffic_signal, bump, traffic_calming",déjà équipé — revoir géométrie / abords,0.0
 46,8829a0a5d1fffff,1555,3151,2.026,,,,n/d (hors top OSM),diffus,0.82,junction,investiguer facteur humain (vitesse / contrôle),0.0
 9,8829a1d109fffff,2085,4707,2.258,5.23,25.0,899.65,point noir concentré,diffus,0.91,junction,investiguer facteur humain (vitesse / contrôle),0.0
 44,8829a1d731fffff,1379,3191,2.314,,,,n/d (hors top OSM),diffus,0.95,junction,investiguer facteur humain (vitesse / contrôle),0.0
 10,8829a56839fffff,2099,4689,2.234,8.43,42.0,556.16,point noir concentré,diffus,0.92,junction,investiguer facteur humain (vitesse / contrôle),0.0
-12,8829a1d353fffff,1860,4375,2.352,9.9,42.0,442.11,réseau étendu (volume diffus),diffus,1.44,"junction, traffic_signal",investiguer facteur humain (vitesse / contrôle),0.0
+42,8829a56c6bfffff,1391,3230,2.322,7.54,43.0,428.63,réseau étendu (volume diffus),diffus,1.1,traffic_signal,investiguer facteur humain (vitesse / contrôle),0.0
+12,8829a1d353fffff,1860,4375,2.352,9.9,42.0,442.11,point noir concentré,diffus,1.44,"junction, traffic_signal",investiguer facteur humain (vitesse / contrôle),0.0
+25,8829a56e99fffff,1536,3666,2.387,7.87,44.0,465.58,point noir concentré,diffus,1.41,"junction, traffic_signal",investiguer facteur humain (vitesse / contrôle),0.0
 13,8829a1dac9fffff,1733,4331,2.499,4.41,23.0,980.99,point noir concentré,diffus,0.92,junction,investiguer facteur humain (vitesse / contrôle),0.0
-16,8829a5689bfffff,1700,4259,2.505,,,,n/d (hors top OSM),diffus,0.52,junction,investiguer facteur humain (vitesse / contrôle),0.0
-37,8829a1d291fffff,1389,3313,2.385,,,,n/d (hors top OSM),diffus,0.87,"junction, traffic_signal",investiguer facteur humain (vitesse / contrôle),0.0
-22,8829a18851fffff,1688,3898,2.309,,,,n/d (hors top OSM),diffus,1.08,junction,investiguer facteur humain (vitesse / contrôle),0.0
-24,8829a56f69fffff,1616,3682,2.278,,,,n/d (hors top OSM),diffus,1.23,junction,investiguer facteur humain (vitesse / contrôle),0.0
-25,8829a56e99fffff,1536,3666,2.387,,,,n/d (hors top OSM),diffus,1.41,"junction, traffic_signal",investiguer facteur humain (vitesse / contrôle),0.0
+14,88283081e1fffff,1735,4302,2.48,5.43,29.0,791.96,point noir concentré,bump,21.94,"junction, crossing, traffic_signal",déjà équipé — revoir géométrie / abords,0.0
+37,8829a1d291fffff,1389,3313,2.385,9.3,56.0,356.06,réseau étendu (volume diffus),diffus,0.87,"junction, traffic_signal",investiguer facteur humain (vitesse / contrôle),0.0
+16,8829a5689bfffff,1700,4259,2.505,3.52,25.0,1210.25,point noir concentré,diffus,0.52,junction,investiguer facteur humain (vitesse / contrôle),0.0
+17,8829a18859fffff,1728,4056,2.347,11.75,57.0,345.25,réseau étendu (volume diffus),bump,6.03,"crossing, traffic_signal",déjà équipé — revoir géométrie / abords,0.0
+22,8829a18851fffff,1688,3898,2.309,8.64,40.0,451.11,point noir concentré,diffus,1.08,junction,investiguer facteur humain (vitesse / contrôle),0.0
+24,8829a56f69fffff,1616,3682,2.278,12.41,61.0,296.65,réseau étendu (volume diffus),diffus,1.23,junction,investiguer facteur humain (vitesse / contrôle),0.0
 1,8829a56997fffff,2861,7236,2.529,10.37,49.0,697.85,point noir concentré,diffus,0.63,junction,investiguer facteur humain (vitesse / contrôle),0.0

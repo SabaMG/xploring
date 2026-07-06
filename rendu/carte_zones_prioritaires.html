@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_371363c66e18238c9671a573bd7de7aa {
+                #map_3377d27a8f58094bd615bea2f9960f3e {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -53,16 +53,16 @@
 </head>
 <body>
     
-    <div style='position:fixed;bottom:30px;left:30px;z-index:9999;background:white;padding:10px;border:1px solid #999;font-size:11px;max-width:320px;'><b>Aménagement recommandé</b><br><i>taille = risque par km (OSM), sinon volume</i><div><span style='background:#e74c3c;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>déjà équipé — revoir géométrie / abords</div><div><span style='background:#3498db;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>installer des feux</div><div><span style='background:#2ecc71;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>investiguer facteur humain (vitesse / contrôle)</div><div><span style='background:#9b59b6;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>modération de trafic (ralentisseurs)</div><div><span style='background:#f39c12;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>stop / cédez-le-passage</div><div><span style='background:#1abc9c;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>sécuriser le passage à niveau (barrières/feux)</div><div><span style='background:#e67e22;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>sécuriser passage piéton</div></div>
+    <div style='position:fixed;bottom:30px;left:30px;z-index:9999;background:white;padding:10px;border:1px solid #999;font-size:11px;max-width:320px;'><b>Aménagement recommandé</b><br><i>taille = risque par km (OSM), sinon volume</i><div><span style='background:#e74c3c;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>déjà équipé — revoir géométrie / abords</div><div><span style='background:#3498db;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>installer des feux</div><div><span style='background:#2ecc71;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>investiguer facteur humain (vitesse / contrôle)</div><div><span style='background:#9b59b6;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>stop / cédez-le-passage</div><div><span style='background:#f39c12;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>sécuriser le passage à niveau (barrières/feux)</div><div><span style='background:#1abc9c;width:12px;height:12px;display:inline-block;margin-right:6px;'></span>sécuriser passage piéton</div></div>
     
-            <div class="folium-map" id="map_371363c66e18238c9671a573bd7de7aa" ></div>
+            <div class="folium-map" id="map_3377d27a8f58094bd615bea2f9960f3e" ></div>
         
 </body>
 <script>
     
     
-            var map_371363c66e18238c9671a573bd7de7aa = L.map(
-                "map_371363c66e18238c9671a573bd7de7aa",
+            var map_3377d27a8f58094bd615bea2f9960f3e = L.map(
+                "map_3377d27a8f58094bd615bea2f9960f3e",
                 {
                     center: [0.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -79,7 +79,7 @@
 
         
     
-            var tile_layer_710fc2ad76fb8a5d9aadd3a60fdde1aa = L.tileLayer(
+            var tile_layer_3177a79496c35aba762dfd3fd7850dfa = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -96,508 +96,24 @@
             );
         
     
-            tile_layer_710fc2ad76fb8a5d9aadd3a60fdde1aa.addTo(map_371363c66e18238c9671a573bd7de7aa);
+            tile_layer_3177a79496c35aba762dfd3fd7850dfa.addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var polygon_8f3e5d5d0b45bb22950ca5546eade519 = L.polygon(
-                [[33.92335904940436, -118.27904997799527], [33.92683038364316, -118.27449803866757], [33.93176293381051, -118.27574436390628], [33.93322398634798, -118.2815430017725], [33.92975250610672, -118.28609483126753], [33.9248201193427, -118.28484813276918], [33.92335904940436, -118.27904997799527]],
-                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_1a543ff5518dba15904481ab923500fa = L.circleMarker(
-                [33.92829160672487, -118.28029643856445],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.623619132438344, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_1a543ff5518dba15904481ab923500fa.bindTooltip(
-                `<div>
-                     <b>#5</b> - 2,127 accidents (428 charge/km)<br>Aléa local : <b>railway</b><br>Présent : junction, railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 782
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_76db367cc4740f444d44474993626e48 = L.polygon(
-                [[34.04696391883546, -118.00041472490909], [34.05042611203291, -117.99584318520206], [34.05536086174124, -117.99708019003738], [34.0568332583408, -118.00288911234782], [34.05337091919155, -118.0074605482519], [34.048436329407046, -118.00622316568847], [34.04696391883546, -118.00041472490909]],
-                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_96d9c818388a6c21db58c6d84bdd7f24 = L.circleMarker(
-                [34.05189867797487, -118.00165186747267],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.433526011560694, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_96d9c818388a6c21db58c6d84bdd7f24.bindTooltip(
-                `<div>
-                     <b>#18</b> - 1,676 accidents (exposition n/d)<br>Aléa local : <b>railway</b><br>Présent : junction, traffic_signal<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 616
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_fc9585d4f92961adac4ec5d6c8d66271 = L.polygon(
-                [[33.92060423883408, -118.21320271317006], [33.92407371098604, -118.20864743215371], [33.92900777192354, -118.20989120716426], [33.93047219802251, -118.2156906373349], [33.927002579729276, -118.22024581000034], [33.92206868149063, -118.21900166088615], [33.92060423883408, -118.21320271317006]],
-                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_7b186635c9eaa9fc7d3ec21b752f4b02 = L.circleMarker(
-                [33.925538307184524, -118.2144466240003],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.263969171483623, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_7b186635c9eaa9fc7d3ec21b752f4b02.bindTooltip(
-                `<div>
-                     <b>#19</b> - 1,543 accidents (exposition n/d)<br>Aléa local : <b>railway</b><br>Présent : railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 567
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_3111b25f1c2b3f9f803b584038e1a77a = L.polygon(
-                [[33.92134847175626, -118.28939944651079], [33.9248201193427, -118.28484813276918], [33.92975250610672, -118.28609483126753], [33.93121308177373, -118.29189321665807], [33.9277412881955, -118.29644442033906], [33.922809064954286, -118.29519734873027], [33.92134847175626, -118.28939944651079]],
-                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_252a8183f32d20dde6e443e7932f9d0a = L.circleMarker(
-                [33.92628086561142, -118.2906462802567],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.953757225433526, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_252a8183f32d20dde6e443e7932f9d0a.bindTooltip(
-                `<div>
-                     <b>#28</b> - 1,526 accidents (exposition n/d)<br>Aléa local : <b>railway</b><br>Présent : junction, traffic_signal, railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 561
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_58a702103d9a7d026338af35055738d4 = L.polygon(
-                [[33.910996231272215, -118.10217986677254], [33.914462595423295, -118.09761917616831], [33.919399340829884, -118.0988585882067], [33.920869560573244, -118.10465906637742], [33.91740305002922, -118.10921965114196], [33.91246646614719, -118.10797986361538], [33.910996231272215, -118.10217986677254]],
-                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_746964085556c12e5c382fc73a4421a8 = L.circleMarker(
-                [33.915932984488734, -118.10341941544159],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.990366088631984, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_746964085556c12e5c382fc73a4421a8.bindTooltip(
-                `<div>
-                     <b>#36</b> - 1,376 accidents (exposition n/d)<br>Aléa local : <b>railway</b><br>Présent : junction, traffic_signal, railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 506
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_32a03ce6c37447372d70773830ee01f6 = L.polygon(
-                [[37.81874041786656, -122.26510250656997], [37.82227916780602, -122.26061723583327], [37.82697323068059, -122.26206017796694], [37.828128359041315, -122.26798873207132], [37.82458949160794, -122.27247379269492], [37.81989561331785, -122.27103050937568], [37.81874041786656, -122.26510250656997]],
-                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_32ca81dbe2882910fd65c0cb82a7aaa1 = L.circleMarker(
-                [37.82343450541326, -122.26654556078807],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.373795761078998, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_32ca81dbe2882910fd65c0cb82a7aaa1.bindTooltip(
-                `<div>
-                     <b>#45</b> - 1,356 accidents (exposition n/d)<br>Aléa local : <b>railway</b><br>Présent : junction, railway<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 499
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_e8e79261f83661e0c37642613dd5ecce = L.polygon(
-                [[33.919399340829884, -118.0988585882067], [33.92286553507854, -118.09429738192117], [33.92780209541828, -118.09553675954739], [33.9292723000638, -118.10133771908693], [33.925805959455, -118.1058988195915], [33.920869560573244, -118.10465906637742], [33.919399340829884, -118.0988585882067]],
-                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_c8119ba84a607b009d34eff67541359b = L.circleMarker(
-                [33.92433590906698, -118.10009810250907],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.705202312138728, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_c8119ba84a607b009d34eff67541359b.bindTooltip(
-                `<div>
-                     <b>#40</b> - 1,329 accidents (exposition n/d)<br>Aléa local : <b>railway</b><br>Présent : traffic_signal<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 489
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_d5a18d6fea915e37107f2735d4000ff2 = L.polygon(
-                [[34.02982247374726, -118.17011027074724], [34.03328973803596, -118.16554827876926], [34.038221378088195, -118.16679161720785], [34.03968559203034, -118.17259732306435], [34.03621818202317, -118.17715920744836], [34.0312867038047, -118.17591549360996], [34.02982247374726, -118.17011027074724]],
-                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_eac67da5d7c71434bda9c79530e1381d = L.circleMarker(
-                [34.03475412234664, -118.171353745596],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.764932562620424, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_eac67da5d7c71434bda9c79530e1381d.bindTooltip(
-                `<div>
-                     <b>#30</b> - 1,600 accidents (exposition n/d)<br>Aléa local : <b>railway</b><br>Présent : junction, crossing, traffic_signal, railway<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 365
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_342c75a39a56eb3af9c7153b633aa230 = L.polygon(
-                [[33.92298982078273, -118.24095239174207], [33.92646006765737, -118.23639846792301], [33.93139345528843, -118.23764333173327], [33.9328564330656, -118.24344249315912], [33.92938604011359, -118.24799630800022], [33.92445281547403, -118.24675107043353], [33.92298982078273, -118.24095239174207]],
-                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_d2a520989e8195804362b8a0c97c9831 = L.circleMarker(
-                [33.92792321572779, -118.24219739116887],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.847784200385356, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_d2a520989e8195804362b8a0c97c9831.bindTooltip(
-                `<div>
-                     <b>#38</b> - 1,415 accidents (exposition n/d)<br>Aléa local : <b>railway</b><br>Présent : crossing, traffic_signal, railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 323
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_deb6517c2d8b07f3864db42320136bf6 = L.polygon(
-                [[34.00264069833661, -117.82616135655614], [34.00609821668421, -117.82158261581932], [34.01103802537921, -117.8228124076492], [34.012520157568105, -117.82862131993909], [34.0090624927618, -117.83319996089051], [34.00412284223795, -117.83196978937713], [34.00264069833661, -117.82616135655614]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_7474fc84afc9e20223cf2717008bb31b = L.circleMarker(
-                [34.007580516840434, -117.82739128730957],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.1868978805395, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_7474fc84afc9e20223cf2717008bb31b.bindTooltip(
-                `<div>
-                     <b>#21</b> - 1,932 accidents (exposition n/d)<br>Aléa local : <b>no_exit</b><br>Présent : junction, no_exit<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 295
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_a36a82f14c0204157c3bbfdeebb83caf = L.polygon(
-                [[33.73668582342685, -117.83612247149928], [33.74014602125166, -117.83155510081966], [33.74509369318912, -117.8327823607662], [33.746581008091546, -117.83857736918888], [33.74312066259657, -117.84314464033164], [33.738173149881874, -117.84191700262802], [33.73668582342685, -117.83612247149928]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_5d691b8d5750cc467f7971a77eeca4e1 = L.circleMarker(
-                [33.74163350282089, -117.83734986963715],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.626167558508181, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_5d691b8d5750cc467f7971a77eeca4e1.bindTooltip(
-                `<div>
-                     <b>#15</b> - 1,815 accidents (521 charge/km)<br>Aléa local : <b>no_exit</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 277
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_484ac97382a8a836a77485006aea1e94 = L.polygon(
-                [[34.01302358967985, -118.17674592644663], [34.0164911961608, -118.17218496778257], [34.021423210803135, -118.17342837378861], [34.02288745701005, -118.17923311369896], [34.01941970474587, -118.18379396465217], [34.01448785207037, -118.18255018344603], [34.01302358967985, -118.17674592644663]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_419adc43611c5965d5314b147b0e83f6 = L.circleMarker(
-                [34.01795561269505, -118.17798946877181],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.317361936642353, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_419adc43611c5965d5314b147b0e83f6.bindTooltip(
-                `<div>
-                     <b>#7</b> - 2,201 accidents (492 charge/km)<br>Aléa local : <b>traffic_calming</b><br>Présent : junction, traffic_signal<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 258
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_a599ff0237e31353a3cc8502ec7c0272 = L.polygon(
-                [[34.03329146390661, -118.31229923027226], [34.036762785527294, -118.30774455909621], [34.04169123798527, -118.30899338327102], [34.043148205474324, -118.31479725221985], [34.03967673842429, -118.31935181260053], [34.03474844932678, -118.31810261486805], [34.03329146390661, -118.31229923027226]],
-                {"bubblingMouseEvents": true, "color": "#3498db", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_ea584e7063da49949e1d73e9a9c816fb = L.circleMarker(
-                [34.0382199243299, -118.31354818979297],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.213872832369942, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_ea584e7063da49949e1d73e9a9c816fb.bindTooltip(
-                `<div>
-                     <b>#20</b> - 1,638 accidents (exposition n/d)<br>Aléa local : <b>station</b><br>Présent : junction, station<br>-> <b>installer des feux</b><br>Impact estimé : 244
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_73d35f58166fbb3e5c422a28a9cde63c = L.polygon(
-                [[33.95496249393553, -118.2761776947194], [33.958433470765485, -118.27162431749468], [33.963365116722244, -118.27287088521544], [33.964825622604586, -118.27867120370955], [33.961354499913114, -118.28322447110388], [33.95642301721307, -118.28197752987471], [33.95496249393553, -118.2761776947194]],
-                {"bubblingMouseEvents": true, "color": "#3498db", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_1b1d7dfee79268cc5812c17115551dd0 = L.circleMarker(
-                [33.95989414733255, -118.27742439786883],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.66281310211946, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_1b1d7dfee79268cc5812c17115551dd0.bindTooltip(
-                `<div>
-                     <b>#23</b> - 1,548 accidents (exposition n/d)<br>Aléa local : <b>station</b><br>Présent : crossing, stop, station<br>-> <b>installer des feux</b><br>Impact estimé : 231
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_2a8ec2e1befd6e3a82ad6a56387061e1 = L.polygon(
-                [[37.83389872933247, -122.29763010380495], [37.83743814037945, -122.29314622099578], [37.8421306885273, -122.29459054274294], [37.843283640865934, -122.30051908811525], [37.83974411251806, -122.30500276003563], [37.83505174914252, -122.30355809752095], [37.83389872933247, -122.29763010380495]],
-                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_1461a45ec967e776207773b4b88ea5ce = L.circleMarker(
-                [37.8385913021675, -122.2990745373898],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.552217538913876, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_1461a45ec967e776207773b4b88ea5ce.bindTooltip(
-                `<div>
-                     <b>#14</b> - 1,735 accidents (792 charge/km)<br>Aléa local : <b>bump</b><br>Présent : junction, crossing, traffic_signal<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 227
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_6a493f7bc530059be431e0c61de7768b = L.polygon(
-                [[34.15041207286516, -118.46711423164118], [34.15388677886215, -118.46256295883384], [34.15880820905499, -118.46381901252985], [34.16025476867071, -118.46962671136984], [34.15677991809314, -118.47417786967233], [34.15185865249257, -118.4729214436803], [34.15041207286516, -118.46711423164118]],
-                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_e52088275e9d45307541269eff6c9a95 = L.circleMarker(
-                [34.155333511377606, -118.46837041979357],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.745664739884393, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_e52088275e9d45307541269eff6c9a95.bindTooltip(
-                `<div>
-                     <b>#17</b> - 1,728 accidents (exposition n/d)<br>Aléa local : <b>bump</b><br>Présent : crossing, traffic_signal<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 226
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_d98dcda464f1ae027294187aa8593d6d = L.polygon(
-                [[34.044995721910404, -118.21199186742669], [34.04846405687992, -118.20743144902528], [34.05339432421713, -118.20867656284348], [34.054856094364325, -118.21448247005668], [34.05138761382546, -118.21904277989283], [34.04645750872107, -118.21779729112124], [34.044995721910404, -118.21199186742669]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_c755642f637ccc1aa52090a20b3e355d = L.circleMarker(
-                [34.049925997745646, -118.21323711737644],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.77456647398844, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_c755642f637ccc1aa52090a20b3e355d.bindTooltip(
-                `<div>
-                     <b>#39</b> - 1,419 accidents (exposition n/d)<br>Aléa local : <b>no_exit</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 217
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_01875b6ce95f7f0f96dfca2ca7197074 = L.polygon(
-                [[33.85172976518747, -118.28809223760248], [33.855201973203236, -118.28354368654587], [33.86013650699505, -118.284789559629], [33.86159866902016, -118.29058435647238], [33.85812631468606, -118.29513279763458], [33.85319194465739, -118.29388655188791], [33.85172976518747, -118.28809223760248]],
-                {"bubblingMouseEvents": true, "color": "#3498db", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_b342170a7692206feb3cbca3f2c5af6e = L.circleMarker(
-                [33.85666430546992, -118.28933824577484],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.845857418111754, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_b342170a7692206feb3cbca3f2c5af6e.bindTooltip(
-                `<div>
-                     <b>#29</b> - 1,406 accidents (exposition n/d)<br>Aléa local : <b>station</b><br>Présent : junction, crossing, station<br>-> <b>installer des feux</b><br>Impact estimé : 210
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_70ba513f94d44c6e857140b66c749c0c = L.polygon(
-                [[33.94460653798692, -118.08889145149116], [33.94807222115167, -118.08432869769614], [33.95300822511722, -118.08556797186546], [33.95447838467223, -118.09137037575674], [33.95101255524556, -118.0959330239473], [33.94607671253824, -118.09469337389099], [33.94460653798692, -118.08889145149116]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_f5f6ba5cc53d6ccabdd8db98cbd92f36 = L.circleMarker(
-                [33.94954255011197, -118.09013086247309],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.042389210019268, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_f5f6ba5cc53d6ccabdd8db98cbd92f36.bindTooltip(
-                `<div>
-                     <b>#27</b> - 1,444 accidents (exposition n/d)<br>Aléa local : <b>bump</b><br>Présent : junction, traffic_signal<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 207
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_175c9af77ad55763dbd01b386e378a20 = L.polygon(
-                [[34.05339432421713, -118.20867656284348], [34.05686248804333, -118.20411562753252], [34.061792567541495, -118.20536070790155], [34.063254321059496, -118.21116709867502], [34.05978601169619, -118.21572792547897], [34.054856094364325, -118.21448247005668], [34.05339432421713, -118.20867656284348]],
-                {"bubblingMouseEvents": true, "color": "#3498db", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_e6141aad23e22ed02540fe1161205121 = L.circleMarker(
-                [34.05832441230041, -118.20992177938955],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.109826589595375, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_e6141aad23e22ed02540fe1161205121.bindTooltip(
-                `<div>
-                     <b>#34</b> - 1,369 accidents (exposition n/d)<br>Aléa local : <b>station</b><br>Présent : junction, station<br>-> <b>installer des feux</b><br>Impact estimé : 204
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_68eb2806df54e97760f53835694c850e = L.polygon(
-                [[37.68269796584191, -122.13429526885422], [37.686235046104294, -122.12980767766169], [37.69093827477112, -122.13124402964456], [37.692104239007186, -122.13716831523435], [37.68856704021409, -122.14165569973372], [37.68386399572581, -122.14021900538461], [37.68269796584191, -122.13429526885422]],
-                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_6bc2ff3e627b3231474f4651dce5c20b = L.circleMarker(
-                [37.687401218522055, -122.1357317337485],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.701348747591522, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_6bc2ff3e627b3231474f4651dce5c20b.bindTooltip(
-                `<div>
-                     <b>#41</b> - 1,382 accidents (exposition n/d)<br>Aléa local : <b>bump</b><br>Présent : junction, crossing, traffic_signal, station<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 181
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_130821d03f6a11ab59d8d92897176d0e = L.polygon(
-                [[34.05175183425868, -118.25718802736559], [34.05522140918642, -118.25262970463103], [34.06015048895632, -118.25387662578572], [34.06160983111337, -118.25968224412104], [34.058140110734065, -118.26424045726127], [34.05321119366156, -118.26299316170082], [34.05175183425868, -118.25718802736559]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_e27b7e07a15b3aa02755090ea4af9e14 = L.circleMarker(
-                [34.056680922390676, -118.25843508432726],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.090558766859345, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_e27b7e07a15b3aa02755090ea4af9e14.bindTooltip(
-                `<div>
-                     <b>#35</b> - 1,592 accidents (exposition n/d)<br>Aléa local : <b>station</b><br>Présent : junction, traffic_signal<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 156
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_d21a0ef467687603c54aa933cc548c3e = L.polygon(
+            var polygon_f768cd9ae079a081cb17b7a34aed653b = L.polygon(
                 [[34.032942614058825, -118.27417001002323], [34.03641284501445, -118.26961334748157], [34.04134213716158, -118.27086070877881], [34.04280103541551, -118.27666510671465], [34.039330658954604, -118.28122165931755], [34.034401529757304, -118.27997392396367], [34.032942614058825, -118.27417001002323]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_16845547100768bb2f41c1cddcaddfe9 = L.circleMarker(
+            var circle_marker_b049b5910a90ae6cc5380393d95464a7 = L.circleMarker(
                 [34.03787191433192, -118.27541750695354],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.4918976537444735, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.69047551954362, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_16845547100768bb2f41c1cddcaddfe9.bindTooltip(
+            circle_marker_b049b5910a90ae6cc5380393d95464a7.bindTooltip(
                 `<div>
-                     <b>#2</b> - 2,543 accidents (415 charge/km)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 138
+                     <b>#2</b> - 2,543 accidents (415 charge/km)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 505 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -605,21 +121,21 @@
             );
         
     
-            var polygon_4f596626d36a4734e7f59d69ecd99345 = L.polygon(
+            var polygon_2f7691f429e05ffe3c0a002529eb3611 = L.polygon(
                 [[34.02819744204476, -118.21862082597605], [34.03166611861396, -118.21406144115915], [34.03659676104502, -118.21530662176593], [34.03805856455337, -118.22111156198355], [34.03458974235021, -118.22567083811889], [34.02965926228499, -118.22442528275838], [34.02819744204476, -118.21862082597605]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_76eda611e523dc6f535bb23ed1351a5d = L.circleMarker(
+            var circle_marker_44cfcb3b104e4beec1752dc05f132277 = L.circleMarker(
                 [34.033128092799664, -118.21986614262347],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.229686490384245, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.418165962258829, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_76eda611e523dc6f535bb23ed1351a5d.bindTooltip(
+            circle_marker_44cfcb3b104e4beec1752dc05f132277.bindTooltip(
                 `<div>
-                     <b>#3</b> - 2,431 accidents (484 charge/km)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 132
+                     <b>#3</b> - 2,431 accidents (484 charge/km)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 483 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -627,21 +143,21 @@
             );
         
     
-            var polygon_d0c9f4f9752fdafb6efdb9bb435887cc = L.polygon(
+            var polygon_79e5d6487fa8a192e61a785f28667303 = L.polygon(
                 [[34.053761571136256, -118.24682431829173], [34.05723082998393, -118.2422653692267], [34.06216007233179, -118.24351191582605], [34.06361989326632, -118.24931778608607], [34.06015048895632, -118.25387662578572], [34.05522140918642, -118.25262970463103], [34.053761571136256, -118.24682431829173]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_cc0fc64f7c2ac5b7811ee80e737c4b3d = L.circleMarker(
+            var circle_marker_70948fe617e6d40c2dec4dbeae0be456 = L.circleMarker(
                 [34.05869082190819, -118.2480710007812],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.946464825765528, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.138820859327214, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_cc0fc64f7c2ac5b7811ee80e737c4b3d.bindTooltip(
+            circle_marker_70948fe617e6d40c2dec4dbeae0be456.bindTooltip(
                 `<div>
-                     <b>#8</b> - 2,323 accidents (457 charge/km)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 126
+                     <b>#8</b> - 2,323 accidents (457 charge/km)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 461 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -649,21 +165,21 @@
             );
         
     
-            var polygon_8fbb9032685db9cb6d25742f591728d8 = L.polygon(
-                [[33.98556543218576, -118.39797255624379], [33.98903962173086, -118.39342434806312], [33.99396767382945, -118.39467591079338], [33.995421371935265, -118.40047605385504], [33.99194703690989, -118.40502414941567], [33.987019149271134, -118.40377221457504], [33.98556543218576, -118.39797255624379]],
-                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var polygon_b8c24c6c53095ab0c848bc94467f260f = L.polygon(
+                [[33.92335904940436, -118.27904997799527], [33.92683038364316, -118.27449803866757], [33.93176293381051, -118.27574436390628], [33.93322398634798, -118.2815430017725], [33.92975250610672, -118.28609483126753], [33.9248201193427, -118.28484813276918], [33.92335904940436, -118.27904997799527]],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_fafec6628d3d3ce08205d02012a876db = L.circleMarker(
-                [33.99049349146831, -118.39922425355687],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.310211946050096, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var circle_marker_341d584dccf3cfec376f491904cfbf04 = L.circleMarker(
+                [33.92829160672487, -118.28029643856445],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.820394076704773, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_fafec6628d3d3ce08205d02012a876db.bindTooltip(
+            circle_marker_341d584dccf3cfec376f491904cfbf04.bindTooltip(
                 `<div>
-                     <b>#33</b> - 1,359 accidents (exposition n/d)<br>Aléa local : <b>traffic_signal</b><br>Présent : traffic_signal<br>-> <b>modération de trafic (ralentisseurs)</b><br>Impact estimé : 122
+                     <b>#5</b> - 2,127 accidents (428 charge/km)<br>Aléa local : <b>railway</b><br>Présent : junction, railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 428 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -671,65 +187,21 @@
             );
         
     
-            var polygon_e0455616adf3955a13f92e1c0b4bd273 = L.polygon(
-                [[33.96003055441194, -118.36977186932984], [33.963504161599545, -118.3652232123759], [33.96843361395879, -118.36647341297801], [33.96988929489269, -118.37227264288627], [33.9664155420503, -118.37682118790283], [33.96148625394093, -118.3755706149888], [33.96003055441194, -118.36977186932984]],
-                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_2eb3e486fd165ce1dcb89ee7e02546e8 = L.circleMarker(
-                [33.964960013853776, -118.37102220466642],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.107899807321773, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_2eb3e486fd165ce1dcb89ee7e02546e8.bindTooltip(
-                `<div>
-                     <b>#48</b> - 1,266 accidents (exposition n/d)<br>Aléa local : <b>traffic_signal</b><br>Présent : crossing, traffic_signal<br>-> <b>modération de trafic (ralentisseurs)</b><br>Impact estimé : 114
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_6a165b8a4929fb8f5fcd276ab536c4d0 = L.polygon(
-                [[37.80309977498463, -122.36614352818664], [37.80664141377639, -122.36166528243874], [37.811333368479914, -122.3631116342322], [37.81248349893392, -122.3690365712966], [37.80894174302947, -122.37351460477916], [37.80424997379368, -122.37206791351116], [37.80309977498463, -122.36614352818664]],
-                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_0eb75bf2129a055f98ba6e443bb21f2e = L.circleMarker(
-                [37.807791753907274, -122.36758999116297],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_0eb75bf2129a055f98ba6e443bb21f2e.bindTooltip(
-                `<div>
-                     <b>#4</b> - 2,174 accidents (1761 charge/km)<br>Aléa local : <b>stop</b><br>Présent : junction, stop<br>-> <b>modération de trafic (ralentisseurs)</b><br>Impact estimé : 113
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_d2c89cc9a48888716c5c71f5838d70cc = L.polygon(
+            var polygon_9525937361972a0b61ae2dd0b39aa57f = L.polygon(
                 [[33.77528241077577, -117.87826421633568], [33.7787434939944, -117.87369744541965], [33.783689117984906, -117.87492675178021], [33.78517349921733, -117.8807232065714], [33.78171226857954, -117.8852898769334], [33.77676680414102, -117.88406019309781], [33.77528241077577, -117.87826421633568]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_131febc99a9185a73933da6a4ffaedc3 = L.circleMarker(
+            var circle_marker_20a3c3810dc7a8969a25a85ca514fb43 = L.circleMarker(
                 [33.78022804237354, -117.87949366066887],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.218998031372888, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_131febc99a9185a73933da6a4ffaedc3.bindTooltip(
+            circle_marker_20a3c3810dc7a8969a25a85ca514fb43.bindTooltip(
                 `<div>
-                     <b>#11</b> - 2,079 accidents (277 charge/km)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 112
+                     <b>#11</b> - 2,079 accidents (277 charge/km)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 413 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -737,21 +209,153 @@
             );
         
     
-            var polygon_97b9ca5719728f0ebafe833de22fec4b = L.polygon(
+            var polygon_81ac638a924adfbe4911864045b7de8b = L.polygon(
+                [[34.04696391883546, -118.00041472490909], [34.05042611203291, -117.99584318520206], [34.05536086174124, -117.99708019003738], [34.0568332583408, -118.00288911234782], [34.05337091919155, -118.0074605482519], [34.048436329407046, -118.00622316568847], [34.04696391883546, -118.00041472490909]],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_7a1cbad117d0be466700b4b1c940c7fb = L.circleMarker(
+                [34.05189867797487, -118.00165186747267],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.615560993794903, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_7a1cbad117d0be466700b4b1c940c7fb.bindTooltip(
+                `<div>
+                     <b>#18</b> - 1,676 accidents (502 charge/km)<br>Aléa local : <b>railway</b><br>Présent : junction, traffic_signal<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 337 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_612b607b8b7cd33e85565416348e2a1b = L.polygon(
+                [[33.92060423883408, -118.21320271317006], [33.92407371098604, -118.20864743215371], [33.92900777192354, -118.20989120716426], [33.93047219802251, -118.2156906373349], [33.927002579729276, -118.22024581000034], [33.92206868149063, -118.21900166088615], [33.92060423883408, -118.21320271317006]],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_21d868d9c0fb924f50526cb57e8c1e9e = L.circleMarker(
+                [33.925538307184524, -118.2144466240003],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.43917254173508, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_21d868d9c0fb924f50526cb57e8c1e9e.bindTooltip(
+                `<div>
+                     <b>#19</b> - 1,543 accidents (392 charge/km)<br>Aléa local : <b>railway</b><br>Présent : railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 310 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_4706cee12c82fbd229005c4e68f60e73 = L.polygon(
+                [[34.00264069833661, -117.82616135655614], [34.00609821668421, -117.82158261581932], [34.01103802537921, -117.8228124076492], [34.012520157568105, -117.82862131993909], [34.0090624927618, -117.83319996089051], [34.00412284223795, -117.83196978937713], [34.00264069833661, -117.82616135655614]],
+                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_d16be926120ad1524cb2b8c7f95bd157 = L.circleMarker(
+                [34.007580516840434, -117.82739128730957],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.411483365621722, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_d16be926120ad1524cb2b8c7f95bd157.bindTooltip(
+                `<div>
+                     <b>#21</b> - 1,932 accidents (1047 charge/km)<br>Aléa local : <b>no_exit</b><br>Présent : junction, no_exit<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 310 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_04e2bd759bbbb853942d63818cc42f34 = L.polygon(
+                [[33.92134847175626, -118.28939944651079], [33.9248201193427, -118.28484813276918], [33.92975250610672, -118.28609483126753], [33.93121308177373, -118.29189321665807], [33.9277412881955, -118.29644442033906], [33.922809064954286, -118.29519734873027], [33.92134847175626, -118.28939944651079]],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_ef270871dcc59681df7508bee0af590e = L.circleMarker(
+                [33.92628086561142, -118.2906462802567],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.00367172477624, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_ef270871dcc59681df7508bee0af590e.bindTooltip(
+                `<div>
+                     <b>#28</b> - 1,526 accidents (351 charge/km)<br>Aléa local : <b>railway</b><br>Présent : junction, traffic_signal, railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 307 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_28100975fd5a88da93ce5bd752efd403 = L.polygon(
+                [[33.73668582342685, -117.83612247149928], [33.74014602125166, -117.83155510081966], [33.74509369318912, -117.8327823607662], [33.746581008091546, -117.83857736918888], [33.74312066259657, -117.84314464033164], [33.738173149881874, -117.84191700262802], [33.73668582342685, -117.83612247149928]],
+                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_e2a0edc41ba26ad49b6f4658aea1784a = L.circleMarker(
+                [33.74163350282089, -117.83734986963715],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.80922024454553, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_e2a0edc41ba26ad49b6f4658aea1784a.bindTooltip(
+                `<div>
+                     <b>#15</b> - 1,815 accidents (521 charge/km)<br>Aléa local : <b>no_exit</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 291 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_9198a5486fe42a97faecde2d3a434f99 = L.polygon(
+                [[34.01302358967985, -118.17674592644663], [34.0164911961608, -118.17218496778257], [34.021423210803135, -118.17342837378861], [34.02288745701005, -118.17923311369896], [34.01941970474587, -118.18379396465217], [34.01448785207037, -118.18255018344603], [34.01302358967985, -118.17674592644663]],
+                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_4f678654f163188a541256af959328ca = L.circleMarker(
+                [34.01795561269505, -118.17798946877181],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.504641361633794, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_4f678654f163188a541256af959328ca.bindTooltip(
+                `<div>
+                     <b>#7</b> - 2,201 accidents (492 charge/km)<br>Aléa local : <b>traffic_calming</b><br>Présent : junction, traffic_signal<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 284 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_ff838b0a1168799d69bc5a9b22c841ae = L.polygon(
                 [[33.82135097732654, -118.20448606863987], [33.82482105623324, -118.1999343693773], [33.82975832103895, -118.20117670850921], [33.83122534398547, -118.2069711204982], [33.82775511845932, -118.21152271179706], [33.82281801661837, -118.2102799991106], [33.82135097732654, -118.20448606863987]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_860457d992dbc2adacaf14ed4a6e4475 = L.circleMarker(
+            var circle_marker_bc01e1b12ac4bca4ad74f883fdf41c21 = L.circleMarker(
                 [33.82628824871895, -118.20572854341624],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.05009633911368, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.011943640572238, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_860457d992dbc2adacaf14ed4a6e4475.bindTooltip(
+            circle_marker_bc01e1b12ac4bca4ad74f883fdf41c21.bindTooltip(
                 `<div>
-                     <b>#26</b> - 1,423 accidents (exposition n/d)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 77
+                     <b>#26</b> - 1,423 accidents (634 charge/km)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 282 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -759,21 +363,373 @@
             );
         
     
-            var polygon_f385364c58c34c276e4f1a3f66da6527 = L.polygon(
+            var polygon_0e34cb74ebe53fbaf392d8f50dcb2602 = L.polygon(
+                [[33.910996231272215, -118.10217986677254], [33.914462595423295, -118.09761917616831], [33.919399340829884, -118.0988585882067], [33.920869560573244, -118.10465906637742], [33.91740305002922, -118.10921965114196], [33.91246646614719, -118.10797986361538], [33.910996231272215, -118.10217986677254]],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_28e7372ea1cdfd72a2c400776243a178 = L.circleMarker(
+                [33.915932984488734, -118.10341941544159],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.145068215597785, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_28e7372ea1cdfd72a2c400776243a178.bindTooltip(
+                `<div>
+                     <b>#36</b> - 1,376 accidents (364 charge/km)<br>Aléa local : <b>railway</b><br>Présent : junction, traffic_signal, railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 277 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_70262db43273e924a85e28b7cb8673ed = L.polygon(
+                [[37.81874041786656, -122.26510250656997], [37.82227916780602, -122.26061723583327], [37.82697323068059, -122.26206017796694], [37.828128359041315, -122.26798873207132], [37.82458949160794, -122.27247379269492], [37.81989561331785, -122.27103050937568], [37.81874041786656, -122.26510250656997]],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_859c40daf108a9628d9a3ac6ecc94693 = L.circleMarker(
+                [37.82343450541326, -122.26654556078807],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.373795761078998, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_859c40daf108a9628d9a3ac6ecc94693.bindTooltip(
+                `<div>
+                     <b>#45</b> - 1,356 accidents (exposition n/d)<br>Aléa local : <b>railway</b><br>Présent : junction, railway<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 273 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_ddd9da600ff6c7e955a9346055f15c73 = L.polygon(
+                [[33.919399340829884, -118.0988585882067], [33.92286553507854, -118.09429738192117], [33.92780209541828, -118.09553675954739], [33.9292723000638, -118.10133771908693], [33.925805959455, -118.1058988195915], [33.920869560573244, -118.10465906637742], [33.919399340829884, -118.0988585882067]],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_565818b5ec6c8a149882bbb6e088476c = L.circleMarker(
+                [33.92433590906698, -118.10009810250907],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.944777736927706, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_565818b5ec6c8a149882bbb6e088476c.bindTooltip(
+                `<div>
+                     <b>#40</b> - 1,329 accidents (345 charge/km)<br>Aléa local : <b>railway</b><br>Présent : traffic_signal<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 267 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_6d7c2d52ac06eee77119951f355232f8 = L.polygon(
+                [[37.35752434117313, -121.90218322609617], [37.36105945042721, -121.89769518153412], [37.36578214991081, -121.89911870937863], [37.3669695563424, -121.9050306257135], [37.36343432641939, -121.90951846995347], [37.358711810743955, -121.90809459822823], [37.35752434117313, -121.90218322609617]],
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_148be9ae18a4a7f8b5a67770a4d06767 = L.circleMarker(
+                [37.36224706282535, -121.90360686812292],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0847784200385355, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_148be9ae18a4a7f8b5a67770a4d06767.bindTooltip(
+                `<div>
+                     <b>#49</b> - 1,346 accidents (exposition n/d)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 267 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_17e06b8e43227d7c762aadc691a55204 = L.polygon(
+                [[34.044995721910404, -118.21199186742669], [34.04846405687992, -118.20743144902528], [34.05339432421713, -118.20867656284348], [34.054856094364325, -118.21448247005668], [34.05138761382546, -118.21904277989283], [34.04645750872107, -118.21779729112124], [34.044995721910404, -118.21199186742669]],
+                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_bca9b2ea5696849635f9b5be3c4dba17 = L.circleMarker(
+                [34.049925997745646, -118.21323711737644],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.739333664823249, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_bca9b2ea5696849635f9b5be3c4dba17.bindTooltip(
+                `<div>
+                     <b>#39</b> - 1,419 accidents (326 charge/km)<br>Aléa local : <b>no_exit</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 227 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_168c038cc8b0c107e78b466e892cf43b = L.polygon(
+                [[34.02982247374726, -118.17011027074724], [34.03328973803596, -118.16554827876926], [34.038221378088195, -118.16679161720785], [34.03968559203034, -118.17259732306435], [34.03621818202317, -118.17715920744836], [34.0312867038047, -118.17591549360996], [34.02982247374726, -118.17011027074724]],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_361440d302cc29b4f6c192557b8ccb71 = L.circleMarker(
+                [34.03475412234664, -118.171353745596],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.129226842509452, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_361440d302cc29b4f6c192557b8ccb71.bindTooltip(
+                `<div>
+                     <b>#30</b> - 1,600 accidents (269 charge/km)<br>Aléa local : <b>railway</b><br>Présent : junction, crossing, traffic_signal, railway<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 155 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_3a04da46137fbcf1f63a1e63b7a2462b = L.polygon(
+                [[33.92298982078273, -118.24095239174207], [33.92646006765737, -118.23639846792301], [33.93139345528843, -118.23764333173327], [33.9328564330656, -118.24344249315912], [33.92938604011359, -118.24799630800022], [33.92445281547403, -118.24675107043353], [33.92298982078273, -118.24095239174207]],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_c98b5d8fd4ba568568310c333ad53194 = L.circleMarker(
+                [33.92792321572779, -118.24219739116887],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.865361187226719, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_c98b5d8fd4ba568568310c333ad53194.bindTooltip(
+                `<div>
+                     <b>#38</b> - 1,415 accidents (338 charge/km)<br>Aléa local : <b>railway</b><br>Présent : crossing, traffic_signal, railway, station<br>-> <b>sécuriser le passage à niveau (barrières/feux)</b><br>Impact estimé : 137 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_17ade6ae158d69fce23afb916d67f2b2 = L.polygon(
+                [[37.80309977498463, -122.36614352818664], [37.80664141377639, -122.36166528243874], [37.811333368479914, -122.3631116342322], [37.81248349893392, -122.3690365712966], [37.80894174302947, -122.37351460477916], [37.80424997379368, -122.37206791351116], [37.80309977498463, -122.36614352818664]],
+                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_e793331d31468624b367413b2b3eb65a = L.circleMarker(
+                [37.807791753907274, -122.36758999116297],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_e793331d31468624b367413b2b3eb65a.bindTooltip(
+                `<div>
+                     <b>#4</b> - 2,174 accidents (1761 charge/km)<br>Aléa local : <b>stop</b><br>Présent : junction, stop<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 116 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_c6357f6c80d88eb33443ac16e4594a6c = L.polygon(
+                [[33.98556543218576, -118.39797255624379], [33.98903962173086, -118.39342434806312], [33.99396767382945, -118.39467591079338], [33.995421371935265, -118.40047605385504], [33.99194703690989, -118.40502414941567], [33.987019149271134, -118.40377221457504], [33.98556543218576, -118.39797255624379]],
+                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_1b6c1ade4dd336b73595b4ad73f930cc = L.circleMarker(
+                [33.99049349146831, -118.39922425355687],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.302062930005331, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_1b6c1ade4dd336b73595b4ad73f930cc.bindTooltip(
+                `<div>
+                     <b>#33</b> - 1,359 accidents (285 charge/km)<br>Aléa local : <b>traffic_signal</b><br>Présent : traffic_signal<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 89 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_c263c539ba0116d84d3aaec4cc91dabd = L.polygon(
+                [[34.03329146390661, -118.31229923027226], [34.036762785527294, -118.30774455909621], [34.04169123798527, -118.30899338327102], [34.043148205474324, -118.31479725221985], [34.03967673842429, -118.31935181260053], [34.03474844932678, -118.31810261486805], [34.03329146390661, -118.31229923027226]],
+                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_eabdce0403fcf746411f84f795054e84 = L.circleMarker(
+                [34.0382199243299, -118.31354818979297],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.8121749949831685, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_eabdce0403fcf746411f84f795054e84.bindTooltip(
+                `<div>
+                     <b>#20</b> - 1,638 accidents (333 charge/km)<br>Aléa local : <b>station</b><br>Présent : junction, station<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 86 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_a9730b8f25f35015dae8975900b1fc0d = L.polygon(
+                [[34.05175183425868, -118.25718802736559], [34.05522140918642, -118.25262970463103], [34.06015048895632, -118.25387662578572], [34.06160983111337, -118.25968224412104], [34.058140110734065, -118.26424045726127], [34.05321119366156, -118.26299316170082], [34.05175183425868, -118.25718802736559]],
+                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_4f4a54c50f15bc90c9ca6fa0f33dcf68 = L.circleMarker(
+                [34.056680922390676, -118.25843508432726],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_4f4a54c50f15bc90c9ca6fa0f33dcf68.bindTooltip(
+                `<div>
+                     <b>#35</b> - 1,592 accidents (256 charge/km)<br>Aléa local : <b>station</b><br>Présent : junction, traffic_signal<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 83 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_b71fa8a0116ddd36b788fecd233cdb6d = L.polygon(
+                [[34.03224336437289, -118.43699671310024], [34.03571825883846, -118.43244866654177], [34.04064401822866, -118.43370224158708], [34.04209471845824, -118.4395042351375], [34.03861967880687, -118.44405216810779], [34.03369408412387, -118.44279822115634], [34.03224336437289, -118.43699671310024]],
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_267479125d0269ff2eab89ffa761b4c8 = L.circleMarker(
+                [34.037169131186, -118.43825042254551],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.6200718737596675, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_267479125d0269ff2eab89ffa761b4c8.bindTooltip(
+                `<div>
+                     <b>#32</b> - 1,466 accidents (315 charge/km)<br>Aléa local : <b>amenity</b><br>Présent : junction, crossing, traffic_signal, station<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 72 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_e150d27d5abc9c80dd6d7c8613c2f179 = L.polygon(
+                [[34.05339432421713, -118.20867656284348], [34.05686248804333, -118.20411562753252], [34.061792567541495, -118.20536070790155], [34.063254321059496, -118.21116709867502], [34.05978601169619, -118.21572792547897], [34.054856094364325, -118.21448247005668], [34.05339432421713, -118.20867656284348]],
+                {"bubblingMouseEvents": true, "color": "#1abc9c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_39aea2f0abc0c86c384622ab444a9284 = L.circleMarker(
+                [34.05832441230041, -118.20992177938955],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1abc9c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.397622434423837, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_39aea2f0abc0c86c384622ab444a9284.bindTooltip(
+                `<div>
+                     <b>#34</b> - 1,369 accidents (388 charge/km)<br>Aléa local : <b>station</b><br>Présent : junction, station<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 72 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_ed16ac78f6d39c4166d770c8ba9e8295 = L.polygon(
+                [[33.969756919681174, -118.27991811225303], [33.97322787407784, -118.27536432873468], [33.97815898533578, -118.27661120455619], [33.97961897896619, -118.28241223749448], [33.97614787878374, -118.28696591106946], [33.9712169307689, -118.28571866168976], [33.969756919681174, -118.27991811225303]],
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_487428a2a8491b64506df0daa4ec6762 = L.circleMarker(
+                [33.97468803849184, -118.28116512351086],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.420038535645472, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_487428a2a8491b64506df0daa4ec6762.bindTooltip(
+                `<div>
+                     <b>#43</b> - 1,442 accidents (exposition n/d)<br>Aléa local : <b>amenity</b><br>Présent : junction, crossing, traffic_signal<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 71 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_d2883180e19427607561d16e777678c7 = L.polygon(
+                [[34.02454273397667, -118.2774787617445], [34.02801313466648, -118.27292261591222], [34.032942614058825, -118.27417001002323], [34.034401529757304, -118.27997392396367], [34.03093098352994, -118.28452995979941], [34.02600166715393, -118.28328219173154], [34.02454273397667, -118.2774787617445]],
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_467bb08d1b28153c5a56ce127c4c9f27 = L.circleMarker(
+                [34.02947222140791, -118.27872629144315],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.063778986074977, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_467bb08d1b28153c5a56ce127c4c9f27.bindTooltip(
+                `<div>
+                     <b>#31</b> - 1,495 accidents (450 charge/km)<br>Aléa local : <b>station</b><br>Présent : crossing, traffic_signal, railway, station<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 69 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_5079d6ef01e5e82bb6e9c089ad1f2d28 = L.polygon(
+                [[33.85172976518747, -118.28809223760248], [33.855201973203236, -118.28354368654587], [33.86013650699505, -118.284789559629], [33.86159866902016, -118.29058435647238], [33.85812631468606, -118.29513279763458], [33.85319194465739, -118.29388655188791], [33.85172976518747, -118.28809223760248]],
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_6b180a87ff3aea5f985de2ec2a263efb = L.circleMarker(
+                [33.85666430546992, -118.28933824577484],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.879006754556743, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_6b180a87ff3aea5f985de2ec2a263efb.bindTooltip(
+                `<div>
+                     <b>#29</b> - 1,406 accidents (997 charge/km)<br>Aléa local : <b>station</b><br>Présent : junction, crossing, station<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 65 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_fa5f589235075183343aec6d4066983f = L.polygon(
                 [[34.053395385134145, -118.44781462797215], [34.0568704023287, -118.44326629190932], [34.06179527073649, -118.44452051720366], [34.063244957216774, -118.45032345050534], [34.05976979495603, -118.45487167269455], [34.054845091293345, -118.45361707549618], [34.053395385134145, -118.44781462797215]],
                 {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_c963efb4a4536b2a05184f22eb07702b = L.circleMarker(
+            var circle_marker_99493e378cec2f2fe54186f138ae0761 = L.circleMarker(
                 [34.058320261102395, -118.44906898763534],
                 {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_c963efb4a4536b2a05184f22eb07702b.bindTooltip(
+            circle_marker_99493e378cec2f2fe54186f138ae0761.bindTooltip(
                 `<div>
-                     <b>#50</b> - 1,262 accidents (exposition n/d)<br>Aléa local : <b>crossing</b><br>Présent : crossing, traffic_signal<br>-> <b>modération de trafic (ralentisseurs)</b><br>Impact estimé : 76
+                     <b>#50</b> - 1,262 accidents (exposition n/d)<br>Aléa local : <b>crossing</b><br>Présent : crossing, traffic_signal<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 54 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -781,21 +737,21 @@
             );
         
     
-            var polygon_ef1e5d4dd06f1ff562dd0d6e2fb9c808 = L.polygon(
-                [[37.35752434117313, -121.90218322609617], [37.36105945042721, -121.89769518153412], [37.36578214991081, -121.89911870937863], [37.3669695563424, -121.9050306257135], [37.36343432641939, -121.90951846995347], [37.358711810743955, -121.90809459822823], [37.35752434117313, -121.90218322609617]],
-                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var polygon_b0a015890b09f155295ae15c560e6e69 = L.polygon(
+                [[33.96003055441194, -118.36977186932984], [33.963504161599545, -118.3652232123759], [33.96843361395879, -118.36647341297801], [33.96988929489269, -118.37227264288627], [33.9664155420503, -118.37682118790283], [33.96148625394093, -118.3755706149888], [33.96003055441194, -118.36977186932984]],
+                {"bubblingMouseEvents": true, "color": "#9b59b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_8700b5b03d784d62e25a12845e575ec3 = L.circleMarker(
-                [37.36224706282535, -121.90360686812292],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0847784200385355, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var circle_marker_6a947f864295293e6e327cefb67166f1 = L.circleMarker(
+                [33.964960013853776, -118.37102220466642],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9b59b6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.107899807321773, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_8700b5b03d784d62e25a12845e575ec3.bindTooltip(
+            circle_marker_6a947f864295293e6e327cefb67166f1.bindTooltip(
                 `<div>
-                     <b>#49</b> - 1,346 accidents (exposition n/d)<br>Aléa local : <b>junction</b><br>Présent : junction<br>-> <b>sécuriser passage piéton</b><br>Impact estimé : 73
+                     <b>#48</b> - 1,266 accidents (exposition n/d)<br>Aléa local : <b>traffic_signal</b><br>Présent : crossing, traffic_signal<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 35 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -803,21 +759,21 @@
             );
         
     
-            var polygon_7dd710c317f319cc09cd7601d72bb33c = L.polygon(
-                [[34.02454273397667, -118.2774787617445], [34.02801313466648, -118.27292261591222], [34.032942614058825, -118.27417001002323], [34.034401529757304, -118.27997392396367], [34.03093098352994, -118.28452995979941], [34.02600166715393, -118.28328219173154], [34.02454273397667, -118.2774787617445]],
-                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var polygon_21a9cf9570e185becedc659838641c55 = L.polygon(
+                [[33.95496249393553, -118.2761776947194], [33.958433470765485, -118.27162431749468], [33.963365116722244, -118.27287088521544], [33.964825622604586, -118.27867120370955], [33.961354499913114, -118.28322447110388], [33.95642301721307, -118.28197752987471], [33.95496249393553, -118.2761776947194]],
+                {"bubblingMouseEvents": true, "color": "#3498db", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_cc332bb6b21d6f92c8df3f9d058f37b6 = L.circleMarker(
-                [34.02947222140791, -118.27872629144315],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.753371868978805, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var circle_marker_81ad2f7c18c3bb6c475762e8ba5945cf = L.circleMarker(
+                [33.95989414733255, -118.27742439786883],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.9025595807303395, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_cc332bb6b21d6f92c8df3f9d058f37b6.bindTooltip(
+            circle_marker_81ad2f7c18c3bb6c475762e8ba5945cf.bindTooltip(
                 `<div>
-                     <b>#31</b> - 1,495 accidents (exposition n/d)<br>Aléa local : <b>station</b><br>Présent : crossing, traffic_signal, railway, station<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 72
+                     <b>#23</b> - 1,548 accidents (341 charge/km)<br>Aléa local : <b>station</b><br>Présent : crossing, stop, station<br>-> <b>installer des feux</b><br>Impact estimé : 32 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -825,21 +781,21 @@
             );
         
     
-            var polygon_108ed647a6dd743703b708b73982865c = L.polygon(
-                [[34.03224336437289, -118.43699671310024], [34.03571825883846, -118.43244866654177], [34.04064401822866, -118.43370224158708], [34.04209471845824, -118.4395042351375], [34.03861967880687, -118.44405216810779], [34.03369408412387, -118.44279822115634], [34.03224336437289, -118.43699671310024]],
-                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var polygon_7be3791096745681ede1f680e4418b1d = L.polygon(
+                [[33.94460653798692, -118.08889145149116], [33.94807222115167, -118.08432869769614], [33.95300822511722, -118.08556797186546], [33.95447838467223, -118.09137037575674], [33.95101255524556, -118.0959330239473], [33.94607671253824, -118.09469337389099], [33.94460653798692, -118.08889145149116]],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_b270547525c6eeb239c3a24d6cb69694 = L.circleMarker(
-                [34.037169131186, -118.43825042254551],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.568400770712909, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var circle_marker_f8ddbd6f1249810c5cb01ad07f5348b6 = L.circleMarker(
+                [33.94954255011197, -118.09013086247309],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.505207218698749, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_b270547525c6eeb239c3a24d6cb69694.bindTooltip(
+            circle_marker_f8ddbd6f1249810c5cb01ad07f5348b6.bindTooltip(
                 `<div>
-                     <b>#32</b> - 1,466 accidents (exposition n/d)<br>Aléa local : <b>amenity</b><br>Présent : junction, crossing, traffic_signal, station<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 41
+                     <b>#27</b> - 1,444 accidents (304 charge/km)<br>Aléa local : <b>bump</b><br>Présent : junction, traffic_signal<br>-> <b>déjà équipé — revoir géométrie / abords</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -847,21 +803,21 @@
             );
         
     
-            var polygon_c11f2675db6933ed820b567e34ea6c83 = L.polygon(
-                [[33.969756919681174, -118.27991811225303], [33.97322787407784, -118.27536432873468], [33.97815898533578, -118.27661120455619], [33.97961897896619, -118.28241223749448], [33.97614787878374, -118.28696591106946], [33.9712169307689, -118.28571866168976], [33.969756919681174, -118.27991811225303]],
-                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var polygon_1105cf2ed22c05f6ef02e1faf30c910d = L.polygon(
+                [[37.68269796584191, -122.13429526885422], [37.686235046104294, -122.12980767766169], [37.69093827477112, -122.13124402964456], [37.692104239007186, -122.13716831523435], [37.68856704021409, -122.14165569973372], [37.68386399572581, -122.14021900538461], [37.68269796584191, -122.13429526885422]],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_cfb8543223358e6bc08ff80045d4853e = L.circleMarker(
-                [33.97468803849184, -118.28116512351086],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.420038535645472, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            var circle_marker_07576e50ddf82d25b01a763c3a01cb04 = L.circleMarker(
+                [37.687401218522055, -122.1357317337485],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.7177639351766, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_cfb8543223358e6bc08ff80045d4853e.bindTooltip(
+            circle_marker_07576e50ddf82d25b01a763c3a01cb04.bindTooltip(
                 `<div>
-                     <b>#43</b> - 1,442 accidents (exposition n/d)<br>Aléa local : <b>amenity</b><br>Présent : junction, crossing, traffic_signal<br>-> <b>stop / cédez-le-passage</b><br>Impact estimé : 40
+                     <b>#41</b> - 1,382 accidents (606 charge/km)<br>Aléa local : <b>bump</b><br>Présent : junction, crossing, traffic_signal, station<br>-> <b>déjà équipé — revoir géométrie / abords</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -869,43 +825,21 @@
             );
         
     
-            var polygon_e096067ada6fcb47c1c44f1bcd371339 = L.polygon(
-                [[33.92098225461938, -118.25130436951731], [33.92445281547403, -118.24675107043353], [33.92938604011359, -118.24799630800022], [33.930848540799595, -118.25379521829825], [33.92737783387806, -118.25834840817588], [33.922444772349664, -118.25710279700178], [33.92098225461938, -118.25130436951731]],
-                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_0020951c23b99d9600a10ddf5a92b044 = L.circleMarker(
-                [33.92591548651086, -118.25254974261775],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5626204238921, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_0020951c23b99d9600a10ddf5a92b044.bindTooltip(
-                `<div>
-                     <b>#42</b> - 1,391 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : traffic_signal<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_91833b3e996883d56405e63804fab7f6 = L.polygon(
+            var polygon_e890a8d68901ab92cf847e6436548efd = L.polygon(
                 [[34.0258662016036, -118.42994182583816], [34.02934095083961, -118.42539366586232], [34.034267061778486, -118.42664690021547], [34.03571825883846, -118.43244866654177], [34.03224336437289, -118.43699671310024], [34.027317418089034, -118.43574310679026], [34.0258662016036, -118.42994182583816]],
                 {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_ef36e6d720713e81ba5628126f501f12 = L.circleMarker(
+            var circle_marker_2acbdc1f23275452d8bf8e4b165b549a = L.circleMarker(
                 [34.030792319940055, -118.43119519462927],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.884483365435349, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.03662563172674, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_ef36e6d720713e81ba5628126f501f12.bindTooltip(
+            circle_marker_2acbdc1f23275452d8bf8e4b165b549a.bindTooltip(
                 `<div>
-                     <b>#6</b> - 2,163 accidents (730 charge/km)<br>Aléa local : <b>bump</b><br>Présent : crossing, stop<br>-> <b>déjà équipé — revoir géométrie / abords</b><br>Impact estimé : 0
+                     <b>#6</b> - 2,163 accidents (730 charge/km)<br>Aléa local : <b>bump</b><br>Présent : crossing, stop<br>-> <b>déjà équipé — revoir géométrie / abords</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -913,21 +847,21 @@
             );
         
     
-            var polygon_c6858e42b60349010146351fff8280a7 = L.polygon(
+            var polygon_2037945228ebc7f0969d69454ddb020a = L.polygon(
                 [[37.65921167885309, -122.10485840181177], [37.66274828447378, -122.10036998569763], [37.66745327354729, -122.10180495320422], [37.668621472959394, -122.10772867955015], [37.665084748600485, -122.11221688971158], [37.66037994357788, -122.11078157952787], [37.65921167885309, -122.10485840181177]],
                 {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_cca98f9d84d410c8f07447fa8e669c45 = L.circleMarker(
+            var circle_marker_24d36abc6a33eb210055c9fbf5b0f38b = L.circleMarker(
                 [37.66391669184882, -122.10629348243056],
                 {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.154142581888246, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_cca98f9d84d410c8f07447fa8e669c45.bindTooltip(
+            circle_marker_24d36abc6a33eb210055c9fbf5b0f38b.bindTooltip(
                 `<div>
-                     <b>#47</b> - 1,289 accidents (exposition n/d)<br>Aléa local : <b>bump</b><br>Présent : junction, crossing, stop, traffic_signal, bump, traffic_calming<br>-> <b>déjà équipé — revoir géométrie / abords</b><br>Impact estimé : 0
+                     <b>#47</b> - 1,289 accidents (exposition n/d)<br>Aléa local : <b>bump</b><br>Présent : junction, crossing, stop, traffic_signal, bump, traffic_calming<br>-> <b>déjà équipé — revoir géométrie / abords</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -935,21 +869,21 @@
             );
         
     
-            var polygon_997c33dbfa50a4441ac500be50977e99 = L.polygon(
+            var polygon_97d578ddaecf67708a9c38b6aacd9442 = L.polygon(
                 [[33.99124661075751, -117.92664947490437], [33.994707168133985, -117.92207639022399], [33.99964520261979, -117.92330993615727], [34.00112252042584, -117.92911694511871], [33.997661816711584, -117.93368992776372], [33.992723941541634, -117.93245600352249], [33.99124661075751, -117.92664947490437]],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_a4c2cce3929d5ef5d68a9e5efcad0c7f = L.circleMarker(
+            var circle_marker_85abf4ec2b227711ba95acb50b15bc93 = L.circleMarker(
                 [33.99618465451359, -117.92788315898139],
                 {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.258188824662813, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_a4c2cce3929d5ef5d68a9e5efcad0c7f.bindTooltip(
+            circle_marker_85abf4ec2b227711ba95acb50b15bc93.bindTooltip(
                 `<div>
-                     <b>#46</b> - 1,555 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
+                     <b>#46</b> - 1,555 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -957,21 +891,21 @@
             );
         
     
-            var polygon_7044aee0886cbaaa30a69876674d1965 = L.polygon(
+            var polygon_9b6431d38b57646e76272c9b3f082e00 = L.polygon(
                 [[34.02618730308911, -118.02783600005618], [34.02965048341531, -118.02326673557403], [34.034585288962404, -118.02450456613636], [34.03605675389783, -118.03031203845204], [34.032593427574035, -118.03488119855142], [34.02765878232487, -118.03364299075788], [34.02618730308911, -118.02783600005618]],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_807393783d9a74e882a764889c7f0e2a = L.circleMarker(
+            var circle_marker_8b72c94c910139eada157e4af91df295 = L.circleMarker(
                 [34.03112211776819, -118.02907396808976],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.713251771226616, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.84036299497393, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_807393783d9a74e882a764889c7f0e2a.bindTooltip(
+            circle_marker_8b72c94c910139eada157e4af91df295.bindTooltip(
                 `<div>
-                     <b>#9</b> - 2,085 accidents (900 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
+                     <b>#9</b> - 2,085 accidents (900 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -979,21 +913,21 @@
             );
         
     
-            var polygon_0c7d3c9ed021b3d50c8d479651101535 = L.polygon(
+            var polygon_9bde97ff8d1e43a5d944a5264a0e0044 = L.polygon(
                 [[34.074574687268445, -118.21946490831341], [34.07804297068931, -118.21490367308323], [34.08297216144939, -118.21614940344172], [34.084432906595005, -118.22195674412478], [34.08096447775487, -118.22651787056404], [34.076035449200724, -118.22527176515139], [34.074574687268445, -118.21946490831341]],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_15bc46095fb11251377255281dd485bf = L.circleMarker(
+            var circle_marker_1e7cac12e9c94df8bd6bf49750315b59 = L.circleMarker(
                 [34.079503886750686, -118.22071077481921],
                 {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.4123314065510595, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_15bc46095fb11251377255281dd485bf.bindTooltip(
+            circle_marker_1e7cac12e9c94df8bd6bf49750315b59.bindTooltip(
                 `<div>
-                     <b>#44</b> - 1,379 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
+                     <b>#44</b> - 1,379 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -1001,21 +935,21 @@
             );
         
     
-            var polygon_0d8a614e2c4669e3a5601d3b1a2fdebe = L.polygon(
+            var polygon_23de3bfcbf37d4fc8c075d6702005fbf = L.polygon(
                 [[33.8729674256346, -118.09806524413993], [33.87643400500515, -118.09350588859303], [33.881371996163914, -118.09474472171655], [33.88284324634763, -118.10054328571347], [33.87937652040032, -118.10510253558495], [33.87443869085843, -118.10386332717482], [33.8729674256346, -118.09806524413993]],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_cf65c3eb5affefc93bea23cad3100329 = L.circleMarker(
+            var circle_marker_e65bd6503f2f883876e3481062662fbd = L.circleMarker(
                 [33.87790542429057, -118.09930421383216],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.010108378455625, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.187905921759711, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_cf65c3eb5affefc93bea23cad3100329.bindTooltip(
+            circle_marker_e65bd6503f2f883876e3481062662fbd.bindTooltip(
                 `<div>
-                     <b>#10</b> - 2,099 accidents (556 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
+                     <b>#10</b> - 2,099 accidents (556 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -1023,21 +957,43 @@
             );
         
     
-            var polygon_23cf8856c8ce4d244599921e944eb917 = L.polygon(
+            var polygon_c2c6fb0c8ef69d0ccf25c4ed266caea0 = L.polygon(
+                [[33.92098225461938, -118.25130436951731], [33.92445281547403, -118.24675107043353], [33.92938604011359, -118.24799630800022], [33.930848540799595, -118.25379521829825], [33.92737783387806, -118.25834840817588], [33.922444772349664, -118.25710279700178], [33.92098225461938, -118.25130436951731]],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_52c34a460314ba34afb1a10d81c76b8d = L.circleMarker(
+                [33.92591548651086, -118.25254974261775],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.831882387857199, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_52c34a460314ba34afb1a10d81c76b8d.bindTooltip(
+                `<div>
+                     <b>#42</b> - 1,391 accidents (429 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : traffic_signal<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_89d921ffcbc6abaa158377a8b3e9f55e = L.polygon(
                 [[33.96981052894549, -118.07891936084687], [33.97327569896197, -118.0743550588437], [33.97821114479397, -118.07559422922509], [33.97968125956341, -118.08139807783594], [33.976215943383025, -118.08596227441141], [33.97128065860953, -118.08472272784368], [33.96981052894549, -118.07891936084687]],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_2682ef1755ca9b452b11c4d6bb823d39 = L.circleMarker(
+            var circle_marker_58915f869e5c0c234821156a1d11fb0f = L.circleMarker(
                 [33.974745983198964, -118.08015866817746],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.780570602006842, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.975197292344733, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_2682ef1755ca9b452b11c4d6bb823d39.bindTooltip(
+            circle_marker_58915f869e5c0c234821156a1d11fb0f.bindTooltip(
                 `<div>
-                     <b>#12</b> - 1,860 accidents (442 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction, traffic_signal<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
+                     <b>#12</b> - 1,860 accidents (442 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction, traffic_signal<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -1045,131 +1001,21 @@
             );
         
     
-            var polygon_1b1ab0c96ef8d7acbdf9bc5364f7c32d = L.polygon(
-                [[34.06176765986286, -118.004126459546], [34.06522982465512, -117.99955450664545], [34.070164037719834, -118.00079181844129], [34.071635926093606, -118.0066014609577], [34.06817361542391, -118.011173309944], [34.0632395622704, -118.00993562036811], [34.06176765986286, -118.004126459546]],
-                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_a9a0dd5f83171185f7cbb61566f60386 = L.circleMarker(
-                [34.06670188247059, -118.00536390907875],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.59009086408774, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_a9a0dd5f83171185f7cbb61566f60386.bindTooltip(
-                `<div>
-                     <b>#13</b> - 1,733 accidents (981 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_a5fffabe0ba2af8b70807fd3795df842 = L.polygon(
-                [[33.91181078765743, -118.17840890879985], [33.915279337926805, -118.17385216495063], [33.92021441850752, -118.17509450947207], [33.921680786478746, -118.18089397238238], [33.91821208996172, -118.18545060867835], [33.91327717173343, -118.18420788965732], [33.91181078765743, -118.17840890879985]],
-                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_da4e75317cecc5b69a0d2e64b29da970 = L.circleMarker(
-                [33.91674587572497, -118.1796513893813],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.527938342967245, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_da4e75317cecc5b69a0d2e64b29da970.bindTooltip(
-                `<div>
-                     <b>#16</b> - 1,700 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_198e2c63b4cae135c04cac38b5c604d0 = L.polygon(
-                [[34.017415403476036, -118.19415868171951], [34.02088347229801, -118.1895984553045], [34.02581497582236, -118.19084257799597], [34.02727824839722, -118.19664730214434], [34.02381003384514, -118.20120742044855], [34.018878692460646, -118.19996292275535], [34.017415403476036, -118.19415868171951]],
-                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_75b9e00ce5e05ed2277a23a88c286eb2 = L.circleMarker(
-                [34.02234691533617, -118.1954029406097],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.8824662813102115, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_75b9e00ce5e05ed2277a23a88c286eb2.bindTooltip(
-                `<div>
-                     <b>#37</b> - 1,389 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : junction, traffic_signal<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_a0bbee64af569f56d0dbf7391b38a390 = L.polygon(
-                [[34.15880820905499, -118.46381901252985], [34.16228274543243, -118.45926722189816], [34.16720398596229, -118.460523244514], [34.16865052560103, -118.46633143019801], [34.165175844674735, -118.47088310638154], [34.16025476867071, -118.46962671136984], [34.15880820905499, -118.46381901252985]],
-                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_c69a80e5657ddddd7b98b077e1b3ca3f = L.circleMarker(
-                [34.16372945799119, -118.4650751696474],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.136801541425818, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_c69a80e5657ddddd7b98b077e1b3ca3f.bindTooltip(
-                `<div>
-                     <b>#22</b> - 1,688 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_dd4d58db633793719eb83a7fa88fa061 = L.polygon(
-                [[33.8697873425837, -118.19497266886866], [33.87325673335096, -118.19041850226719], [33.878192735624175, -118.19166101468315], [33.87965918445714, -118.19745806774279], [33.8761896472782, -118.20201212650038], [33.87125380769026, -118.20076924008222], [33.8697873425837, -118.19497266886866]],
-                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            var circle_marker_2183afb450f64e750ffc6d96c3a0849d = L.circleMarker(
-                [33.874723351906574, -118.19621531711802],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.304431599229288, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
-        
-    
-            circle_marker_2183afb450f64e750ffc6d96c3a0849d.bindTooltip(
-                `<div>
-                     <b>#24</b> - 1,616 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var polygon_4d3fad208188f443b56424c840b64334 = L.polygon(
+            var polygon_24a813458e23fc2d75db4fbbf1ba6b8d = L.polygon(
                 [[33.922045533826214, -118.36556973459595], [33.92551934895154, -118.36102240173905], [33.93045005524218, -118.36227201721483], [33.93190678207546, -118.36806933770197], [33.92843282111064, -118.37261655879158], [33.9235022791642, -118.37136657120159], [33.922045533826214, -118.36556973459595]],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_b9dba412f24cc62b933a33bb3fed389d = L.circleMarker(
+            var circle_marker_82c65d9c983dd4597bff9c1aed812a18 = L.circleMarker(
                 [33.92697624688701, -118.36681948474636],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.242774566473988, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.224769207910665, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_b9dba412f24cc62b933a33bb3fed389d.bindTooltip(
+            circle_marker_82c65d9c983dd4597bff9c1aed812a18.bindTooltip(
                 `<div>
-                     <b>#25</b> - 1,536 accidents (exposition n/d)<br>Aléa local : <b>diffus</b><br>Présent : junction, traffic_signal<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
+                     <b>#25</b> - 1,536 accidents (466 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction, traffic_signal<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -1177,21 +1023,175 @@
             );
         
     
-            var polygon_61fe93aaf2fd6845efd04c60265f703d = L.polygon(
+            var polygon_888cbdab5d9a3398e19b27cc0aec6f98 = L.polygon(
+                [[34.06176765986286, -118.004126459546], [34.06522982465512, -117.99955450664545], [34.070164037719834, -118.00079181844129], [34.071635926093606, -118.0066014609577], [34.06817361542391, -118.011173309944], [34.0632395622704, -118.00993562036811], [34.06176765986286, -118.004126459546]],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_a9e005b95129b199cd50280149c78bd6 = L.circleMarker(
+                [34.06670188247059, -118.00536390907875],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.705200460637094, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_a9e005b95129b199cd50280149c78bd6.bindTooltip(
+                `<div>
+                     <b>#13</b> - 1,733 accidents (981 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_16373e68648de6a041ad303be2fc2f44 = L.polygon(
+                [[37.83389872933247, -122.29763010380495], [37.83743814037945, -122.29314622099578], [37.8421306885273, -122.29459054274294], [37.843283640865934, -122.30051908811525], [37.83974411251806, -122.30500276003563], [37.83505174914252, -122.30355809752095], [37.83389872933247, -122.29763010380495]],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_44277002704212064144d009474d0295 = L.circleMarker(
+                [37.8385913021675, -122.2990745373898],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.695220275863253, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_44277002704212064144d009474d0295.bindTooltip(
+                `<div>
+                     <b>#14</b> - 1,735 accidents (792 charge/km)<br>Aléa local : <b>bump</b><br>Présent : junction, crossing, traffic_signal<br>-> <b>déjà équipé — revoir géométrie / abords</b><br>Impact estimé : 0 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_a701aa2bd0eb24ab0e7465b97328e883 = L.polygon(
+                [[34.017415403476036, -118.19415868171951], [34.02088347229801, -118.1895984553045], [34.02581497582236, -118.19084257799597], [34.02727824839722, -118.19664730214434], [34.02381003384514, -118.20120742044855], [34.018878692460646, -118.19996292275535], [34.017415403476036, -118.19415868171951]],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_bd3f28187fd0e9d61bee85028a1f3a81 = L.circleMarker(
+                [34.02234691533617, -118.1954029406097],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.060249525419461, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_bd3f28187fd0e9d61bee85028a1f3a81.bindTooltip(
+                `<div>
+                     <b>#37</b> - 1,389 accidents (356 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction, traffic_signal<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_cedab4726758eae5aecc52173bfebff5 = L.polygon(
+                [[33.91181078765743, -118.17840890879985], [33.915279337926805, -118.17385216495063], [33.92021441850752, -118.17509450947207], [33.921680786478746, -118.18089397238238], [33.91821208996172, -118.18545060867835], [33.91327717173343, -118.18420788965732], [33.91181078765743, -118.17840890879985]],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_1b62c138bf23dc9e27133cab8546a2d2 = L.circleMarker(
+                [33.91674587572497, -118.1796513893813],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.14303028615675, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_1b62c138bf23dc9e27133cab8546a2d2.bindTooltip(
+                `<div>
+                     <b>#16</b> - 1,700 accidents (1210 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_edade553866b323f9ced53fc48645a18 = L.polygon(
+                [[34.15041207286516, -118.46711423164118], [34.15388677886215, -118.46256295883384], [34.15880820905499, -118.46381901252985], [34.16025476867071, -118.46962671136984], [34.15677991809314, -118.47417786967233], [34.15185865249257, -118.4729214436803], [34.15041207286516, -118.46711423164118]],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_60bc685f648c4ff4d04842299761c9cc = L.circleMarker(
+                [34.155333511377606, -118.46837041979357],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.94527167576093, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_60bc685f648c4ff4d04842299761c9cc.bindTooltip(
+                `<div>
+                     <b>#17</b> - 1,728 accidents (345 charge/km)<br>Aléa local : <b>bump</b><br>Présent : crossing, traffic_signal<br>-> <b>déjà équipé — revoir géométrie / abords</b><br>Impact estimé : 0 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_186df52164a5f86dd19957802cc183e1 = L.polygon(
+                [[34.15880820905499, -118.46381901252985], [34.16228274543243, -118.45926722189816], [34.16720398596229, -118.460523244514], [34.16865052560103, -118.46633143019801], [34.165175844674735, -118.47088310638154], [34.16025476867071, -118.46962671136984], [34.15880820905499, -118.46381901252985]],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_bb8ec0183cf2b0b6b0f64f527c0f9ddf = L.circleMarker(
+                [34.16372945799119, -118.4650751696474],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.070896513848867, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_bb8ec0183cf2b0b6b0f64f527c0f9ddf.bindTooltip(
+                `<div>
+                     <b>#22</b> - 1,688 accidents (451 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_fc0145a4ee08a6c0829b23eddc03ee49 = L.polygon(
+                [[33.8697873425837, -118.19497266886866], [33.87325673335096, -118.19041850226719], [33.878192735624175, -118.19166101468315], [33.87965918445714, -118.19745806774279], [33.8761896472782, -118.20201212650038], [33.87125380769026, -118.20076924008222], [33.8697873425837, -118.19497266886866]],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            var circle_marker_adacaf6ef96c79c5bae21c83d9b0d01f = L.circleMarker(
+                [33.874723351906574, -118.19621531711802],
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.428527821037066, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
+        
+    
+            circle_marker_adacaf6ef96c79c5bae21c83d9b0d01f.bindTooltip(
+                `<div>
+                     <b>#24</b> - 1,616 accidents (297 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_68653bfd56c471eefa846502ea07a029 = L.polygon(
                 [[33.936204494612305, -118.09221438068035], [33.939670348367756, -118.08765214279944], [33.94460653798692, -118.08889145149116], [33.94607671253824, -118.09469337389099], [33.94261071248815, -118.09925550610855], [33.937674684193794, -118.09801582162959], [33.936204494612305, -118.09221438068035]],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            var circle_marker_4441c53eeeb5954bcbc1b3aba06d1f4a = L.circleMarker(
+            var circle_marker_812097479955d446a1f2feb4049cc15e = L.circleMarker(
                 [33.9411406923036, -118.09345382613918],
-                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.537710939198178, "stroke": true, "weight": 1}
-            ).addTo(map_371363c66e18238c9671a573bd7de7aa);
+                {"bubblingMouseEvents": true, "color": "#222", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.694599610407089, "stroke": true, "weight": 1}
+            ).addTo(map_3377d27a8f58094bd615bea2f9960f3e);
         
     
-            circle_marker_4441c53eeeb5954bcbc1b3aba06d1f4a.bindTooltip(
+            circle_marker_812097479955d446a1f2feb4049cc15e.bindTooltip(
                 `<div>
-                     <b>#1</b> - 2,861 accidents (698 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0
+                     <b>#1</b> - 2,861 accidents (698 charge/km)<br>Aléa local : <b>diffus</b><br>Présent : junction<br>-> <b>investiguer facteur humain (vitesse / contrôle)</b><br>Impact estimé : 0 graves évités
                  </div>`,
                 {
   "sticky": true,
@@ -1199,8 +1199,8 @@
             );
         
     
-            map_371363c66e18238c9671a573bd7de7aa.fitBounds(
-                [[33.92829160672487, -118.28029643856445], [34.05189867797487, -118.00165186747267], [33.925538307184524, -118.2144466240003], [33.92628086561142, -118.2906462802567], [33.915932984488734, -118.10341941544159], [37.82343450541326, -122.26654556078807], [33.92433590906698, -118.10009810250907], [34.03475412234664, -118.171353745596], [33.92792321572779, -118.24219739116887], [34.007580516840434, -117.82739128730957], [33.74163350282089, -117.83734986963715], [34.01795561269505, -118.17798946877181], [34.0382199243299, -118.31354818979297], [33.95989414733255, -118.27742439786883], [37.8385913021675, -122.2990745373898], [34.155333511377606, -118.46837041979357], [34.049925997745646, -118.21323711737644], [33.85666430546992, -118.28933824577484], [33.94954255011197, -118.09013086247309], [34.05832441230041, -118.20992177938955], [37.687401218522055, -122.1357317337485], [34.056680922390676, -118.25843508432726], [34.03787191433192, -118.27541750695354], [34.033128092799664, -118.21986614262347], [34.05869082190819, -118.2480710007812], [33.99049349146831, -118.39922425355687], [33.964960013853776, -118.37102220466642], [37.807791753907274, -122.36758999116297], [33.78022804237354, -117.87949366066887], [33.82628824871895, -118.20572854341624], [34.058320261102395, -118.44906898763534], [37.36224706282535, -121.90360686812292], [34.02947222140791, -118.27872629144315], [34.037169131186, -118.43825042254551], [33.97468803849184, -118.28116512351086], [33.92591548651086, -118.25254974261775], [34.030792319940055, -118.43119519462927], [37.66391669184882, -122.10629348243056], [33.99618465451359, -117.92788315898139], [34.03112211776819, -118.02907396808976], [34.079503886750686, -118.22071077481921], [33.87790542429057, -118.09930421383216], [33.974745983198964, -118.08015866817746], [34.06670188247059, -118.00536390907875], [33.91674587572497, -118.1796513893813], [34.02234691533617, -118.1954029406097], [34.16372945799119, -118.4650751696474], [33.874723351906574, -118.19621531711802], [33.92697624688701, -118.36681948474636], [33.9411406923036, -118.09345382613918]],
+            map_3377d27a8f58094bd615bea2f9960f3e.fitBounds(
+                [[34.03787191433192, -118.27541750695354], [34.033128092799664, -118.21986614262347], [34.05869082190819, -118.2480710007812], [33.92829160672487, -118.28029643856445], [33.78022804237354, -117.87949366066887], [34.05189867797487, -118.00165186747267], [33.925538307184524, -118.2144466240003], [34.007580516840434, -117.82739128730957], [33.92628086561142, -118.2906462802567], [33.74163350282089, -117.83734986963715], [34.01795561269505, -118.17798946877181], [33.82628824871895, -118.20572854341624], [33.915932984488734, -118.10341941544159], [37.82343450541326, -122.26654556078807], [33.92433590906698, -118.10009810250907], [37.36224706282535, -121.90360686812292], [34.049925997745646, -118.21323711737644], [34.03475412234664, -118.171353745596], [33.92792321572779, -118.24219739116887], [37.807791753907274, -122.36758999116297], [33.99049349146831, -118.39922425355687], [34.0382199243299, -118.31354818979297], [34.056680922390676, -118.25843508432726], [34.037169131186, -118.43825042254551], [34.05832441230041, -118.20992177938955], [33.97468803849184, -118.28116512351086], [34.02947222140791, -118.27872629144315], [33.85666430546992, -118.28933824577484], [34.058320261102395, -118.44906898763534], [33.964960013853776, -118.37102220466642], [33.95989414733255, -118.27742439786883], [33.94954255011197, -118.09013086247309], [37.687401218522055, -122.1357317337485], [34.030792319940055, -118.43119519462927], [37.66391669184882, -122.10629348243056], [33.99618465451359, -117.92788315898139], [34.03112211776819, -118.02907396808976], [34.079503886750686, -118.22071077481921], [33.87790542429057, -118.09930421383216], [33.92591548651086, -118.25254974261775], [33.974745983198964, -118.08015866817746], [33.92697624688701, -118.36681948474636], [34.06670188247059, -118.00536390907875], [37.8385913021675, -122.2990745373898], [34.02234691533617, -118.1954029406097], [33.91674587572497, -118.1796513893813], [34.155333511377606, -118.46837041979357], [34.16372945799119, -118.4650751696474], [33.874723351906574, -118.19621531711802], [33.9411406923036, -118.09345382613918]],
                 {}
             );
         

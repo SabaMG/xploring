@@ -20,8 +20,10 @@ méthodologique étant explicitement justifié.
 ## Principe méthodologique clé
 
 On **ne livre pas un prédicteur de gravité**. On entraîne un modèle de gravité **comme moteur de preuve** :
-on vérifie qu'il prédit honnêtement (vraie métrique, validation temporelle), puis on l'**interroge** (SHAP)
-pour identifier *quels éléments d'infrastructure aggravent les accidents → donc quoi corriger*.
+on vérifie qu'il prédit honnêtement (vraie métrique, validation temporelle), puis on l'**interroge** —
+**odds ratios ajustés** (rég. logistique, IC 95 %) et **g-computation** (effets en points de probabilité,
+confondants contrôlés) — pour identifier *quels éléments d'infrastructure aggravent les accidents → donc
+quoi corriger* (SHAP conservé en contrôle de robustesse).
 **La prédiction est le moyen ; l'explication est le livrable.**
 
 ## Architecture
@@ -31,7 +33,9 @@ Setup → Chargement (schéma explicite) → Nettoyage explicite & défensif
    ├─ A. EDA / Visualisation (volumétrie, biais, sévérité, « QUAND »)
    ├─ B. OÙ   : scoring géospatial H3 + exposition routière OSM → zones prioritaires
    ├─ C. QUOI : modèle de gravité (Dummy → LogReg → Arbre → RandomForest → GBT)
-   │            métrique honnête (PR-AUC, rappel) + split temporel → SHAP → leviers
+   │            métrique honnête (PR-AUC, rappel) + split temporel
+   │            → effets ajustés : odds ratios (IC 95%) + g-computation → leviers
+   │            (SHAP conservé comme contrôle de robustesse)
    ├─ D. Synthèse décisionnelle (par zone : où + quoi + impact estimé)
    └─ E. Analyse critique & recul (ce qui marche / ne marche pas, limites, périmètre)
 ```
@@ -49,6 +53,27 @@ Setup → Chargement (schéma explicite) → Nettoyage explicite & défensif
 ```bash
 pip install -r requirements.txt
 jupyter notebook notebook.ipynb     # puis « Run All »
+```
+
+### Ou via Docker (Java + Spark encapsulés, zéro prérequis local)
+
+```bash
+docker build -t xploring-rendu .
+docker run --rm -m 10g -v "$PWD/out:/app/out" xploring-rendu
+# -> notebook exécuté + CSV + carte déposés dans ./out
+```
+
+## Protocole de tests
+
+Deux niveaux de validation :
+1. **Dans le notebook** : tests d'intégrité du nettoyage + tests anti-fuite du pipeline ML
+   (assertions bloquantes — le run s'arrête si les données sont mal préparées).
+2. **Sur le livrable** (`tests/`, pytest) : notebook valide et exécuté sans erreur, invariants
+   métier du CSV décisionnel (rangs, charge, sévérité, impacts ≥ 0, recommandations variées),
+   versions figées, artefacts présents.
+
+```bash
+pytest -v tests/
 ```
 
 Le notebook s'exécute **sans aucune intervention** : les données sont téléchargées automatiquement

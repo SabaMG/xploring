@@ -1,0 +1,64 @@
+# ============================================================================
+# DataValueXploring — fichier de paramétrage de la pipeline d'analyse
+#
+# Usage :  python pipeline/run_pipeline.py --config pipeline/config.yaml
+#
+# Le client renseigne ses données, choisit ses analyses et ses paramètres ;
+# la pipeline produit figures, CSV décisionnels, carte et rapport de synthèse
+# dans le dossier de sortie. Chaque section est indépendante (activable).
+# ============================================================================
+
+donnees:
+  # Chemin du CSV au format « US Accidents » (téléchargé automatiquement via
+  # kagglehub si laissé vide et que le dataset public est souhaité).
+  csv: ~/Prog/Epita/ING2/xPloring/US_Accidents_March23.csv
+  # Territoire analysé pour les parties OÙ / synthèse (code État, ex. CA, TX…)
+  territoire: CA
+  # Périmètre d'entraînement du modèle : "us" (générique, recommandé) ou
+  # "territoire" (modèle local au territoire ci-dessus)
+  perimetre_entrainement: us
+
+sorties:
+  dossier: pipeline/out          # tout est écrit ici (créé si absent)
+  prefixe: ""                    # préfixe optionnel des fichiers produits
+
+spark:
+  memoire: 6g                    # mémoire driver Spark
+
+# ---------------------------------------------------------------------------
+# ANALYSES — activer/désactiver chaque brique indépendamment
+# ---------------------------------------------------------------------------
+analyses:
+  quand: true       # patterns temporels/météo (figures)
+  ou: true          # zones prioritaires H3 (CSV + carte + concentration)
+  quoi: true        # modèle de gravité + effets ajustés (métriques + figures)
+  synthese: true    # recommandations par zone + impact (CSV) — requiert ou + quoi
+
+# ---------------------------------------------------------------------------
+# PARAMÈTRES MÉTIER
+# ---------------------------------------------------------------------------
+parametres:
+  seuil_grave: 3            # sévérité >= seuil  =>  accident « grave »
+  h3_resolution: 8          # ~0,7 km² (échelle d'un carrefour)
+  zones_prioritaires: 50    # top-N zones retenues
+  lift_min: 1.5             # sur-représentation minimale pour attribuer un aléa
+  presence_min: 0.05        # part d'accidents pour considérer un équipement présent
+  min_effectif: 200         # effectif minimal pour un effet conditionnel fiable
+
+# ---------------------------------------------------------------------------
+# MODÈLE (partie QUOI)
+# ---------------------------------------------------------------------------
+modele:
+  # dummy | logistic | tree | random_forest | hist_gradient_boosting
+  algorithme: hist_gradient_boosting
+  lignes_max: 400000        # plafond de lignes d'entraînement (coût/repro)
+  class_weight_balanced: true
+  split_temporel:
+    train_avant: 2022       # entraînement < 2022, test >= 2022
+  hyperparametres:          # passés tels quels au modèle scikit-learn
+    max_iter: 300
+    learning_rate: 0.1
+  effets:
+    odds_ratios: true       # rég. logistique + IC 95 % (statsmodels)
+    g_computation: true     # effets ajustés du modèle retenu
+    echantillon_gcomp: 50000
