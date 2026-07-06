@@ -543,9 +543,11 @@ with tab_quand:
 with tab_tech:
     from sklearn.metrics import confusion_matrix, precision_recall_curve
     _ht = " (+ historique du lieu - mode ciblage)" if use_zone_hist else " (features du notebook)"
-    st.caption(f"Modèle : {model_name}{_ht} , train {res['n_tr']:,} lignes (< 2022) , "
-               f"test {res['n_te']:,} (2022-23) , PR-AUC {res['pr_auc']:.3f} "
-               f"(plancher {res['baseline_pr']:.3f}) , ROC-AUC {res['roc_auc']:.3f}")
+    perim = "l'ensemble des États-Unis" if scope is None else state_label(scope)
+    st.caption(f"Modèle : {model_name}{_ht} , entraîné et évalué sur {perim} , "
+               f"train {res['n_tr']:,} lignes (< 2022) , test {res['n_te']:,} (2022-23) , "
+               f"PR-AUC {res['pr_auc']:.3f} (plancher {res['baseline_pr']:.3f}) , "
+               f"ROC-AUC {res['roc_auc']:.3f}")
     st.info("**Comment juger ce modèle ?** La gravité d'un accident dépend surtout de facteurs "
             "absents des données (vitesse réelle, alcool, état du conducteur) : viser une "
             "prédiction quasi-parfaite est impossible, quel que soit l'algorithme. "
