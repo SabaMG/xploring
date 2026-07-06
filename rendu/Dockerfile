@@ -1,13 +1,5 @@
-# Reproductibilité totale : Python 3.12 + JDK (PySpark) encapsulés.
-#
-# Build :  docker build -t xploring-rendu .
-# Run   :  docker run --rm -m 10g -v "$PWD/out:/app/out" xploring-rendu
-#          -> exécute le notebook de bout en bout (données téléchargées via kagglehub)
-#             et dépose notebook exécuté + CSV + carte dans ./out
-#
-# Un CSV local peut être monté pour éviter le téléchargement (~3 Go) :
-#          docker run --rm -m 10g -v "$PWD/out:/app/out" \
-#            -v "/chemin/US_Accidents_March23.csv:/app/US_Accidents_March23.csv:ro" xploring-rendu
+# Build : docker build -t xploring-rendu .
+# Run   : docker run --rm -m 10g -v "$PWD/out:/app/out" xploring-rendu
 
 FROM python:3.12-slim
 

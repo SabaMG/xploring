@@ -98,8 +98,6 @@ def fix_map_in_tab(m, pts):
         f"{m.get_name()}.fitBounds({bounds});"
         f"}}catch(e){{}} if(++_n>20) clearInterval(_t);}},600);</script>"))
 
-
-# chargement
 @st.cache_data(show_spinner="Chargement des données préparées…")
 def load_data():
     need = ["accidents_sample.parquet", "zones.parquet", "quand_hour.parquet",
@@ -124,7 +122,6 @@ def _span_years(state_key):
     return max(d.groupby(["year", "month"]).size().shape[0] / 12.0, 1e-9)
 STATES = ["US"] + sorted(zones["state"].dropna().unique().tolist())
 
-# sidebar
 st.sidebar.title("DataValueXploring")
 st.sidebar.caption("Aide à la décision : **où** rénover, **quoi** installer, "
                    "avec quel **gain attendu**.")
@@ -164,7 +161,6 @@ with st.sidebar.expander("Réglages avancés (analyste)"):
     threshold = st.slider("Seuil de décision « grave »", 0.05, 0.95, 0.50, 0.05)
     balanced = st.checkbox("class_weight='balanced'", value=True)
     if model_name == "HistGradientBoosting":
-        # 300/0.1 en mode standard, 800/0.05 avec historique du lieu
         hp = {"max_iter": st.slider("max_iter", 100, 1000, 800 if use_zone_hist else 300, 50),
               "learning_rate": st.select_slider("learning_rate", [0.01, 0.03, 0.05, 0.1, 0.2],
                                                 0.05 if use_zone_hist else 0.1)}
@@ -177,7 +173,6 @@ with st.sidebar.expander("Réglages avancés (analyste)"):
     else:
         hp = {"C": st.select_slider("C (inverse régularisation)", [0.01, 0.1, 1.0, 10.0], 1.0)}
 
-# entraînement
 @st.cache_resource(show_spinner="Entraînement du modèle…")
 def train(model_name, hp_tuple, balanced, scope_state, max_rows, zone_hist=False):
     from sklearn.compose import ColumnTransformer
@@ -197,7 +192,6 @@ def train(model_name, hp_tuple, balanced, scope_state, max_rows, zone_hist=False
     tr = tr_full.sample(max_rows, random_state=SEED) if len(tr_full) > max_rows else tr_full
     if len(te) > max_rows // 4: te = te.sample(max_rows // 4, random_state=SEED)
 
-    # taux de graves passé de la zone, calculé sur le train uniquement (anti-fuite)
     def _zone_feats(res, name):
         ref = tr_full.copy()
         ref["_z"] = [_h3.latlng_to_cell(a, b, res) for a, b in zip(ref.start_lat, ref.start_lng)]
@@ -243,7 +237,6 @@ hp_t = tuple(sorted(hp.items()))
 scope = STATE if train_scope == "Ce territoire uniquement" else None
 res = train(model_name, hp_t, balanced, scope, max_rows, use_zone_hist)
 
-# effets & recommandations
 @st.cache_data(show_spinner="Calcul des effets ajustés…")
 def adjusted_effects(model_name, hp_t, balanced, scope, max_rows, zone_hist=False, cap=30_000):
     rr = train(model_name, hp_t, balanced, scope, max_rows, zone_hist)
@@ -309,7 +302,6 @@ def build_plan(state_key, model_name, hp_t, balanced, scope, max_rows,
     plan["graves_évités_par_an"] = (plan["graves_évités_estimés"] / span).round(1)
     return plan
 
-# entête
 st.title(f"Aide à la décision voirie - {etat}")
 with st.expander("Guide de lecture - que fait cet outil, dans quel ordre le lire ?"):
     st.markdown(
@@ -349,7 +341,6 @@ tab_ou, tab_plan, tab_quand, tab_tech = st.tabs([
     "3. Quand - le complément temporaire",
     "4. Modèle - la preuve (analyste)"])
 
-# PLAN D'ACTION
 with tab_plan:
     st.markdown("#### Ce que le gestionnaire de voirie doit faire, zone par zone")
     st.caption("Pour chaque zone prioritaire : le défaut d'infrastructure dominant, "
@@ -425,7 +416,6 @@ with tab_plan:
     st.info("Estimations **associationnelles** (pas de preuve causale - pas d'avant/après "
             "disponible). À utiliser pour **prioriser les études terrain**, pas comme garantie.")
 
-# OÙ
 with tab_ou:
     st.markdown("#### Où le risque se concentre-t-il ?")
     left, right = st.columns([3, 2])
@@ -518,7 +508,6 @@ with tab_ou:
                       "l'amélioration de la collecte)", fontsize=7)
         st.pyplot(fig, use_container_width=True)
 
-# QUAND
 with tab_quand:
     st.markdown("#### Quand renforcer la vigilance (mesures temporaires, pas de travaux)")
     key = STATE if STATE is not None else "US"
@@ -543,7 +532,6 @@ with tab_quand:
             "variables, limitations temporaires, patrouilles ciblées - pas de travaux. "
             "Le budget rénovation reste sur le risque **structurel** (onglets précédents).")
 
-# TECHNIQUE
 with tab_tech:
     from sklearn.metrics import confusion_matrix, precision_recall_curve
     _ht = " (+ historique du lieu - mode ciblage)" if use_zone_hist else " (features du notebook)"
@@ -558,7 +546,6 @@ with tab_tech:
             "ajustés fiables. La matrice de confusion à seuil fixe est l'angle de lecture "
             "le plus défavorable ; elle est fournie pour l'analyste.")
 
-    # pouvoir de ciblage (lecture métier)
     order = np.argsort(-res["proba"]); yy = res["y_te"][order]
     frac = np.arange(1, len(yy) + 1) / len(yy)
     capture = np.cumsum(yy) / max(yy.sum(), 1)

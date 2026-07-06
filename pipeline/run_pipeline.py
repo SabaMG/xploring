@@ -29,7 +29,6 @@ SEED = 42
 T0 = time.time()
 def log(msg): print(f"[{time.time()-T0:6.0f}s] {msg}", flush=True)
 
-# config
 def load_config(path):
     with open(path, encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
@@ -40,7 +39,6 @@ def load_config(path):
 def outpath(cfg, out, name):
     return os.path.join(out, cfg["sorties"].get("prefixe", "") + name)
 
-# données
 def load_clean(cfg):
     from pyspark.sql import SparkSession, functions as F
     from pyspark.sql.types import (StructType, StructField, StringType, IntegerType,
@@ -97,13 +95,11 @@ def load_clean(cfg):
     for col in INFRA:
         df = df.withColumn(col, F.coalesce(F.col(col), F.lit(False)).cast("int"))
     df = df.cache()
-    # garde-fous (mêmes invariants que le notebook)
     assert df.filter(F.col("start_lat").isNull()).count() == 0
     log(f"nettoyage : {df.count():,} lignes (part grave "
         f"{df.agg(F.mean('grave')).first()[0]*100:.1f} %)")
     return spark, df
 
-# QUAND
 def run_quand(cfg, out, df):
     from pyspark.sql import functions as F
     log("QUAND : patterns temporels/météo")
@@ -121,7 +117,6 @@ def run_quand(cfg, out, df):
     return {"heure_max_grave": int(hourly.loc[hourly["pg"].idxmax(), "hour"]),
             "pct_max": round(float(hourly["pg"].max()*100), 1)}
 
-# OÙ
 def run_ou(cfg, out, df):
     from pyspark.sql import functions as F
     import h3
@@ -167,7 +162,6 @@ def run_ou(cfg, out, df):
         f"{cum[topn-1]*100:.1f} %)")
     return zone, terr
 
-# QUOI
 def make_model(cfg):
     from sklearn.dummy import DummyClassifier
     from sklearn.linear_model import LogisticRegression
@@ -291,14 +285,13 @@ def run_quoi(cfg, out, df):
             log("  statsmodels absent - odds ratios sautés")
     return metrics, pipe, X_te, adj
 
-# SYNTHÈSE
 def run_synthese(cfg, out, zone, pipe, X_te):
     p = cfg["parametres"]
     log("SYNTHÈSE : recommandations par zone")
     topn = int(p["zones_prioritaires"]); prio = zone.head(topn).copy()
     charge_tot = zone["charge"].sum()
     for e in INFRA:
-        zone["charge_"+e] = 0  # part pondérée approx. par comptages (proxy léger CLI)
+        zone["charge_"+e] = 0
     nat = {e: zone["n_"+e].sum() / max(zone["n_accidents"].sum(), 1) for e in INFRA}
 
     def hazard(r):
@@ -337,7 +330,6 @@ def run_synthese(cfg, out, zone, pipe, X_te):
         f"{prio['impact_graves_evites'].sum():.0f} graves évités (ex-ante)")
     return prio
 
-# main
 def main():
     ap = argparse.ArgumentParser(description="Pipeline DataValueXploring")
     ap.add_argument("--config", required=True, help="chemin du fichier YAML")

@@ -1,10 +1,5 @@
-# DataValueXploring - fichier de paramétrage de la pipeline d'analyse
-#
-# Usage :  python pipeline/run_pipeline.py --config pipeline/config.yaml
-#
-# Le client renseigne ses données, choisit ses analyses et ses paramètres ;
-# la pipeline produit figures, CSV décisionnels, carte et rapport de synthèse
-# dans le dossier de sortie. Chaque section est indépendante (activable).
+# Paramétrage de la pipeline d'analyse.
+# Usage : python pipeline/run_pipeline.py --config pipeline/config.yaml
 
 donnees:
   # Chemin du CSV au format « US Accidents » (téléchargé automatiquement via

@@ -20,7 +20,7 @@ if CSV is None:
     d = kagglehub.dataset_download("sobhanmoosavi/us-accidents")
     CSV = next(os.path.join(d, f) for f in os.listdir(d) if f.endswith(".csv"))
 
-PER_STATE_CAP = 40_000   # lignes max par État dans l'échantillon d'entraînement
+PER_STATE_CAP = 40_000
 SEED = 42
 
 from pyspark.sql import SparkSession, functions as F, Window
@@ -64,7 +64,6 @@ t0 = time.time()
 raw = spark.read.option("header", True).schema(schema).csv(CSV)
 raw = raw.toDF(*[c.lower().replace("(","_").replace(")","").replace("%","pct") for c in raw.columns])
 
-# même nettoyage que le notebook
 def bucket_weather(col):
     c = F.lower(F.coalesce(col, F.lit("")))
     return (F.when(c.contains("snow")|c.contains("sleet")|c.contains("wintry")|c.contains("ice"),"Snow")
@@ -87,7 +86,6 @@ for c in ["hour","is_night"]:
 df = df.cache()
 print(f"[{time.time()-t0:5.0f}s] nettoyage : {df.count():,} lignes", flush=True)
 
-# échantillon d'entraînement stratifié par État
 cols = INFRA + WEATHER_NUM + ["hour","dow","month","year","is_night",
                               "weather_bucket","state","grave","severity",
                               "start_lat","start_lng"]
@@ -102,7 +100,6 @@ else:
     print(f"[{time.time()-t0:5.0f}s] échantillon : {len(samp):,} lignes "
           f"({samp['state'].nunique()} États)", flush=True)
 
-# agrégats zones H3, encodage pandas par État
 import h3 as h3lib
 import pandas as pd
 zp = os.path.join(OUT, "zones.parquet")
@@ -128,7 +125,6 @@ zones = pd.concat(parts, ignore_index=True)
 zones.to_parquet(zp, index=False)
 print(f"[{time.time()-t0:5.0f}s] zones : {len(zones):,} cellules H3", flush=True)
 
-# zones x année (pour le backtest)
 parts_y = []
 for i, stt in enumerate(sorted(states), 1):
     t = (df.filter(F.col("state") == stt)
@@ -145,14 +141,12 @@ zones_year = pd.concat(parts_y, ignore_index=True)
 zones_year.to_parquet(os.path.join(OUT, "zones_year.parquet"), index=False)
 print(f"[{time.time()-t0:5.0f}s] zones x année : {len(zones_year):,} lignes", flush=True)
 
-# tendance par territoire et par année
 qa = df.groupBy("state","year").agg(F.count("*").alias("n"), F.sum("grave").alias("graves"))
 qb = df.groupBy("year").agg(F.count("*").alias("n"), F.sum("grave").alias("graves")) \
        .withColumn("state", F.lit("US"))
 qa.unionByName(qb).toPandas().to_parquet(os.path.join(OUT, "quand_year.parquet"), index=False)
 print(f"[{time.time()-t0:5.0f}s] tendance annuelle écrite", flush=True)
 
-# agrégats temporels par État (+ US entier)
 def quand(dim):
     a = df.groupBy("state", dim).agg(F.count("*").alias("n"), F.mean("grave").alias("part_grave"))
     b = df.groupBy(dim).agg(F.count("*").alias("n"), F.mean("grave").alias("part_grave")) \
