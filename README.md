@@ -22,6 +22,7 @@ pip install streamlit
 python interface/prepare_data.py               # 1 fois (~1 min)
 streamlit run interface/app.py                 # la démo interactive
 
+pip install pyyaml
 python pipeline/run_pipeline.py --config pipeline/config.yaml   # le produit client
 ```
 

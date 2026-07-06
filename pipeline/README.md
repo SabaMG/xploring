@@ -5,6 +5,7 @@ et ses choix** dans `config.yaml`, lance une commande, et récupère figures,
 CSV décisionnels, carte et résumé - sans toucher au code.
 
 ```bash
+pip install -r rendu/requirements.txt pyyaml
 python pipeline/run_pipeline.py --config pipeline/config.yaml
 ```
 

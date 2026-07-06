@@ -73,6 +73,7 @@ Deux niveaux de validation :
    versions figées, artefacts présents.
 
 ```bash
+pip install pytest
 pytest -v tests/
 ```
 

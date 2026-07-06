@@ -12,7 +12,13 @@ os.environ["PYSPARK_PYTHON"] = sys.executable
 os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "data"); os.makedirs(OUT, exist_ok=True)
-CSV = os.path.expanduser("~/Prog/Epita/ING2/xPloring/US_Accidents_March23.csv")
+CANDIDATS = ["US_Accidents_March23.csv", "../US_Accidents_March23.csv",
+             os.path.expanduser("~/Prog/Epita/ING2/xPloring/US_Accidents_March23.csv")]
+CSV = next((p for p in CANDIDATS if os.path.exists(p)), None)
+if CSV is None:
+    import kagglehub
+    d = kagglehub.dataset_download("sobhanmoosavi/us-accidents")
+    CSV = next(os.path.join(d, f) for f in os.listdir(d) if f.endswith(".csv"))
 
 PER_STATE_CAP = 40_000   # lignes max par État dans l'échantillon d'entraînement
 SEED = 42
