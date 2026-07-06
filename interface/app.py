@@ -329,19 +329,31 @@ with st.expander("Guide de lecture - que fait cet outil, dans quel ordre le lire
         "justifient les recommandations.\n\n"
         "*Les estimations sont associationnelles (pas de preuve causale) : elles servent à "
         "prioriser les études terrain.*")
-q = res['pr_auc'] / max(res['baseline_pr'], 1e-9)
-k1, k2, k3 = st.columns(3)
+@st.cache_data
+def backtest_headline(state_key, topn=50):
+    zy = zones_year if state_key is None else zones_year[zones_year["state"] == state_key]
+    past = zy[zy["year"] <= 2019].groupby("h3_cell")["charge"].sum().sort_values(ascending=False)
+    fut = zy[zy["year"] >= 2020]
+    if not len(past) or fut["graves"].sum() == 0:
+        return None
+    share = fut.loc[fut["h3_cell"].isin(set(past.head(topn).index)), "graves"].sum() / fut["graves"].sum()
+    poids = topn / max(fut["h3_cell"].nunique(), 1)
+    return share, poids
+
 zs = zones if STATE is None else zones[zones["state"] == STATE]
-k1.metric("Zones analysées", f"{len(zs):,}")
-k2.metric("Fiabilité du moteur d'analyse", f"×{q:.1f}",
-          help="Capacité du modèle à repérer les accidents graves, comparée au hasard "
-               f"(PR-AUC {res['pr_auc']:.3f} vs plancher {res['baseline_pr']:.3f}). "
-               "×1 = n'apprend rien ; plus c'est haut, plus les effets estimés sont fiables.")
-k3.metric("Détection des graves (ROC-AUC)", f"{res['roc_auc']:.2f}",
-          help="0,5 = hasard, 1 = parfait.")
-if q < 1.3:
-    st.warning("Le moteur apprend peu sur ce périmètre (probablement trop peu de données "
-               "locales). Pour un plan d'action fiable, repassez sur **US entier (générique)**.")
+k1, k2, k3 = st.columns(3)
+k1.metric("Accidents 2016-2023", f"{int(zs['n_accidents'].sum()):,}",
+          help="Total des accidents recensés sur le territoire (dataset complet).")
+k2.metric("Zones analysées (H3)", f"{len(zs):,}",
+          help="Cellules hexagonales d'environ 0,7 km², l'échelle d'un carrefour.")
+bt = backtest_headline(STATE)
+if bt:
+    k3.metric("Backtest : graves 2020-23 dans les 50 zones désignées fin 2019",
+              f"{bt[0]*100:.0f} %", delta=f"×{bt[0]/max(bt[1],1e-9):.0f} vs leur poids",
+              help="On rejoue la méthode avec les seules données 2016-2019 : les zones "
+                   "qu'elle désignait concentrent bien les accidents graves des années "
+                   "suivantes. Détail dans l'onglet Où.")
+q = res['pr_auc'] / max(res['baseline_pr'], 1e-9)
 
 tab_ou, tab_plan, tab_quand, tab_tech = st.tabs([
     "1. Où - le diagnostic",
@@ -544,6 +556,16 @@ with tab_tech:
     from sklearn.metrics import confusion_matrix, precision_recall_curve
     _ht = " (+ historique du lieu - mode ciblage)" if use_zone_hist else " (features du notebook)"
     perim = "l'ensemble des États-Unis" if scope is None else state_label(scope)
+    m1, m2, m3 = st.columns(3)
+    m1.metric(f"Fiabilité ({perim})", f"×{q:.1f}",
+              help=f"PR-AUC {res['pr_auc']:.3f} vs plancher {res['baseline_pr']:.3f}. "
+                   "×1 = n'apprend rien ; plus c'est haut, plus les effets estimés sont fiables.")
+    m2.metric("Détection des graves (ROC-AUC)", f"{res['roc_auc']:.2f}",
+              help="0,5 = hasard, 1 = parfait.")
+    m3.metric("Jeu de test", f"{res['n_te']:,} accidents", help="Années 2022-2023, jamais vues.")
+    if q < 1.3:
+        st.warning("Le moteur apprend peu sur ce périmètre (trop peu de données locales). "
+                   "Pour un plan d'action fiable, repassez sur **US entier (générique)**.")
     st.caption(f"Modèle : {model_name}{_ht} , entraîné et évalué sur {perim} , "
                f"train {res['n_tr']:,} lignes (< 2022) , test {res['n_te']:,} (2022-23) , "
                f"PR-AUC {res['pr_auc']:.3f} (plancher {res['baseline_pr']:.3f}) , "
