@@ -11,7 +11,6 @@
 | 2 | `rendu/` | **Notebook exécutable de bout en bout** + README + requirements figés + tests pytest + Dockerfile + source LaTeX du rapport + source du poster | **L2** |
 | 3 | `interface/` | Explorateur Streamlit : diagnostic -> plan d'action -> validation, modèles paramétrables, tous les États | bonus |
 | 4 | `pipeline/` | Pipeline CLI paramétrable par `config.yaml` (produit client) | bonus |
-| 5 | `presentation/` | Sources des slides (markdown + générateur pptx + figures) | - |
 
 ## Démarrage rapide
 

@@ -99,11 +99,9 @@ aucun choix n'est codé en dur pour la CA au-delà de la variable `STATE`.
 
 - **`notebook.ipynb`** - chaque étape est précédée d'un bloc markdown qui dit *pourquoi* (choix de nettoyage,
   de features, de métrique, de modèle).
-- **`CLAUDE.md`** - cahier des charges complet : justification approfondie de l'ensemble des choix
-  méthodologiques, deuils & hypothèses, et checklist de conformité.
 
 ## Limites assumées (« deuils »)
 
 Résultats **corrélationnels, pas causaux** (pas de panel avant/après) , biais de reporting (couverture
 inégale) , pas de profil conducteur ni de coût réel (`severity` = seul proxy) , univers = lieux déjà
-accidentogènes. Détail et périmètre d'usage dans la partie E du notebook et dans `CLAUDE.md`.
+accidentogènes. Détail et périmètre d'usage dans la partie E du notebook.
