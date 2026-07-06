@@ -86,17 +86,25 @@ def make_map(cells):
     return m, pts
 
 def fix_map_in_tab(m, pts):
-    """Recale la carte si l'onglet était caché au moment du chargement."""
+    """Recale la carte quand son conteneur devient visible (onglet ouvert plus tard)."""
     import folium
     if not pts:
         return
     lats = [p_[0] for p_ in pts]; lngs = [p_[1] for p_ in pts]
     bounds = [[min(lats), min(lngs)], [max(lats), max(lngs)]]
     m.get_root().html.add_child(folium.Element(
-        f"<script>var _n=0;var _t=setInterval(function(){{try{{"
-        f"{m.get_name()}.invalidateSize();"
-        f"{m.get_name()}.fitBounds({bounds});"
-        f"}}catch(e){{}} if(++_n>20) clearInterval(_t);}},600);</script>"))
+        f"""<script>(function(){{
+        var el = document.getElementById("{m.get_name()}");
+        function refit(){{ try{{ {m.get_name()}.invalidateSize();
+            {m.get_name()}.fitBounds({bounds}); }}catch(e){{}} }}
+        setTimeout(refit, 400);
+        if (window.ResizeObserver && el) {{
+            new ResizeObserver(refit).observe(el);
+        }} else {{
+            var n = 0; var t = setInterval(function(){{ refit();
+                if (++n > 40) clearInterval(t); }}, 700);
+        }}
+        }})();</script>"""))
 
 @st.cache_data(show_spinner="Chargement des données préparées…")
 def load_data():
