@@ -437,7 +437,10 @@ with tab_plan:
                        "recommandation", "graves_évités_par_an", "justification"]],
                  use_container_width=True, height=330, hide_index=True)
     st.info("Estimations **associationnelles** (pas de preuve causale - pas d'avant/après "
-            "disponible). À utiliser pour **prioriser les études terrain**, pas comme garantie.")
+            "disponible), à utiliser pour **prioriser les études terrain**. Les effets mesurés "
+            "portent sur la **gravité** des accidents (un accident devient moins grave), pas sur "
+            "leur **nombre** : si un équipement prévient aussi des collisions, ce bénéfice "
+            "supplémentaire n'est pas compté - les estimations sont donc conservatrices.")
 
 with tab_ou:
     st.markdown("#### Où le risque se concentre-t-il ?")
