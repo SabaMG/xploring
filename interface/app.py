@@ -86,7 +86,7 @@ def make_map(cells):
     return m, pts
 
 def fix_map_in_tab(m, pts):
-    """Recale la carte quand son conteneur devient visible (onglet ouvert plus tard)."""
+    """Recadre une seule fois quand la carte devient visible, puis laisse la main."""
     import folium
     if not pts:
         return
@@ -95,15 +95,16 @@ def fix_map_in_tab(m, pts):
     m.get_root().html.add_child(folium.Element(
         f"""<script>(function(){{
         var el = document.getElementById("{m.get_name()}");
-        function refit(){{ try{{ {m.get_name()}.invalidateSize();
-            {m.get_name()}.fitBounds({bounds}); }}catch(e){{}} }}
-        setTimeout(refit, 400);
-        if (window.ResizeObserver && el) {{
-            new ResizeObserver(refit).observe(el);
-        }} else {{
-            var n = 0; var t = setInterval(function(){{ refit();
-                if (++n > 40) clearInterval(t); }}, 700);
+        var done = false;
+        function refit(){{
+            if (done || !el || el.clientWidth < 50) return;
+            try {{ {m.get_name()}.invalidateSize();
+                   {m.get_name()}.fitBounds({bounds});
+                   done = true; if (ro) ro.disconnect(); }} catch(e) {{}}
         }}
+        var ro = window.ResizeObserver ? new ResizeObserver(refit) : null;
+        if (ro && el) ro.observe(el);
+        setTimeout(refit, 400); setTimeout(refit, 1500);
         }})();</script>"""))
 
 @st.cache_data(show_spinner="Chargement des données préparées…")
@@ -392,11 +393,11 @@ with tab_plan:
                                fill=True, fill_color=col, fill_opacity=0.25).add_to(m)
                 folium.CircleMarker([la, ln], radius=6 + 12 * r["graves_évités_estimés"] / imax,
                                     color="#222", weight=1, fill=True, fill_color=col,
-                                    fill_opacity=0.9, tooltip=folium.Tooltip(tip)).add_to(m)
+                                    fill_opacity=0.9, tooltip=folium.Tooltip(tip, sticky=True)).add_to(m)
                 folium.map.Marker(
                     [la, ln], icon=folium.DivIcon(
                         html=f"<div style='font-size:9px;font-weight:bold;color:#222;"
-                             f"transform:translate(-4px,-7px)'>{r['rang']}</div>")).add_to(m)
+                             f"pointer-events:none;transform:translate(-4px,-7px)'>{r['rang']}</div>")).add_to(m)
             except Exception:
                 pass
         if pts: m.fit_bounds(pts)
@@ -466,7 +467,7 @@ with tab_ou:
                                fill=True, fill_color=col, fill_opacity=0.25).add_to(m)
                 folium.CircleMarker([la, ln], radius=5 + 13 * float(r["charge"]) / nmax,
                                     color="#222", weight=1, fill=True, fill_color=col,
-                                    fill_opacity=0.9, tooltip=folium.Tooltip(tip)).add_to(m)
+                                    fill_opacity=0.9, tooltip=folium.Tooltip(tip, sticky=True)).add_to(m)
             except Exception:
                 pass
         if pts: m.fit_bounds(pts)
