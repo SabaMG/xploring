@@ -1,14 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Protocole de tests du livrable (pytest).
-
-Ces tests garantissent que le livrable est cohérent et exploitable :
-  - le notebook est valide, exécuté, et sans erreur ;
-  - le CSV décisionnel respecte ses invariants métier ;
-  - l'environnement est reproductible (versions figées).
-
-Lancer depuis rendu/ :  pytest -v tests/
-(complète les tests d'intégrité/anti-fuite exécutés DANS le notebook,
- qui valident les données au moment du run)
+"""Tests du livrable : notebook valide et exécuté, invariants du CSV,
+versions figées. Lancer depuis rendu/ : pytest tests/
 """
 from pathlib import Path
 
@@ -17,7 +9,7 @@ import pytest
 
 RENDU = Path(__file__).resolve().parent.parent
 
-# ---------------------------------------------------------------- notebook
+# notebook
 
 @pytest.fixture(scope="module")
 def nb():
@@ -47,7 +39,7 @@ def test_notebook_est_execute(nb):
 
 
 def test_notebook_contient_les_parties(nb):
-    """Les sections A→E du cahier des charges sont présentes."""
+    """Les sections A->E du cahier des charges sont présentes."""
     md = "\n".join("".join(c.source) for c in nb.cells if c.cell_type == "markdown")
     for section in ["## A", "## B", "## C", "## D", "## E"]:
         assert section in md, f"section manquante : {section}"
@@ -60,7 +52,7 @@ def test_notebook_sans_chemin_en_dur_specifique(nb):
     for interdit in ["01_eda", "02_points", "03_modele", "04_expo", "accidents.parquet"]:
         assert interdit not in code, f"dépendance au brouillon détectée : {interdit}"
 
-# ---------------------------------------------------------------- CSV décisionnel
+# CSV décisionnel
 
 @pytest.fixture(scope="module")
 def zones():
@@ -104,7 +96,7 @@ def test_csv_recommandations_variees(zones):
     """Garde-fou anti-artefact : la prescription ne doit pas être identique partout."""
     assert zones["amenagement"].nunique() >= 3
 
-# ---------------------------------------------------------------- reproductibilité
+# reproductibilité
 
 def test_requirements_versions_figees():
     txt = (RENDU / "requirements.txt").read_text()

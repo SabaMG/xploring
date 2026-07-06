@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Prépare les artefacts légers de l'interface (à lancer UNE fois, ~3-5 min).
+"""Prépare les données de l'interface (à lancer une fois).
 
 Produit dans interface/data/ :
   - accidents_sample.parquet : échantillon stratifié par État (features + cible)
@@ -58,7 +58,7 @@ t0 = time.time()
 raw = spark.read.option("header", True).schema(schema).csv(CSV)
 raw = raw.toDF(*[c.lower().replace("(","_").replace(")","").replace("%","pct") for c in raw.columns])
 
-# --- même nettoyage que le notebook (répliqué à l'identique) ---
+# même nettoyage que le notebook
 def bucket_weather(col):
     c = F.lower(F.coalesce(col, F.lit("")))
     return (F.when(c.contains("snow")|c.contains("sleet")|c.contains("wintry")|c.contains("ice"),"Snow")
@@ -81,13 +81,13 @@ for c in ["hour","is_night"]:
 df = df.cache()
 print(f"[{time.time()-t0:5.0f}s] nettoyage : {df.count():,} lignes", flush=True)
 
-# --- 1) échantillon d'entraînement stratifié par État ---
+# échantillon d'entraînement stratifié par État
 cols = INFRA + WEATHER_NUM + ["hour","dow","month","year","is_night",
                               "weather_bucket","state","grave","severity",
                               "start_lat","start_lng"]
 sp = os.path.join(OUT, "accidents_sample.parquet")
 if os.path.exists(sp):
-    print(f"[{time.time()-t0:5.0f}s] échantillon déjà présent — sauté", flush=True)
+    print(f"[{time.time()-t0:5.0f}s] échantillon déjà présent - sauté", flush=True)
 else:
     w = Window.partitionBy("state").orderBy(F.rand(SEED))
     samp = (df.select(*cols).withColumn("_rn", F.row_number().over(w))
@@ -96,12 +96,12 @@ else:
     print(f"[{time.time()-t0:5.0f}s] échantillon : {len(samp):,} lignes "
           f"({samp['state'].nunique()} États)", flush=True)
 
-# --- 2) agrégats zones H3 (tous États) — SANS UDF : encodage pandas par État ---
+# agrégats zones H3, encodage pandas par État
 import h3 as h3lib
 import pandas as pd
 zp = os.path.join(OUT, "zones.parquet")
 if os.path.exists(zp) and os.path.exists(os.path.join(OUT, "zones_year.parquet")):
-    print(f"[{time.time()-t0:5.0f}s] zones déjà présentes — recalcul quand même de zones_year si absent", flush=True)
+    print(f"[{time.time()-t0:5.0f}s] zones déjà présentes - recalcul quand même de zones_year si absent", flush=True)
 states = [r["state"] for r in df.select("state").distinct().collect() if r["state"]]
 parts = []
 for i, stt in enumerate(sorted(states), 1):
@@ -122,7 +122,7 @@ zones = pd.concat(parts, ignore_index=True)
 zones.to_parquet(zp, index=False)
 print(f"[{time.time()-t0:5.0f}s] zones : {len(zones):,} cellules H3", flush=True)
 
-# --- 2bis) zones x ANNÉE (pour le backtest « la prévision d'hier s'est réalisée ») ---
+# zones x année (pour le backtest)
 parts_y = []
 for i, stt in enumerate(sorted(states), 1):
     t = (df.filter(F.col("state") == stt)
@@ -139,14 +139,14 @@ zones_year = pd.concat(parts_y, ignore_index=True)
 zones_year.to_parquet(os.path.join(OUT, "zones_year.parquet"), index=False)
 print(f"[{time.time()-t0:5.0f}s] zones x année : {len(zones_year):,} lignes", flush=True)
 
-# --- 2ter) tendance par territoire x année ---
+# tendance par territoire et par année
 qa = df.groupBy("state","year").agg(F.count("*").alias("n"), F.sum("grave").alias("graves"))
 qb = df.groupBy("year").agg(F.count("*").alias("n"), F.sum("grave").alias("graves")) \
        .withColumn("state", F.lit("US"))
 qa.unionByName(qb).toPandas().to_parquet(os.path.join(OUT, "quand_year.parquet"), index=False)
 print(f"[{time.time()-t0:5.0f}s] tendance annuelle écrite", flush=True)
 
-# --- 3) agrégats QUAND par État (+ 'US' pour l'ensemble) ---
+# agrégats temporels par État (+ US entier)
 def quand(dim):
     a = df.groupBy("state", dim).agg(F.count("*").alias("n"), F.mean("grave").alias("part_grave"))
     b = df.groupBy(dim).agg(F.count("*").alias("n"), F.mean("grave").alias("part_grave")) \
@@ -157,5 +157,5 @@ quand("weather_bucket").to_parquet(os.path.join(OUT, "quand_weather.parquet"), i
 quand("month").to_parquet(os.path.join(OUT, "quand_month.parquet"), index=False)
 print(f"[{time.time()-t0:5.0f}s] agrégats QUAND écrits", flush=True)
 
-print(f"PREP DONE en {time.time()-t0:.0f}s — artefacts dans interface/data/", flush=True)
+print(f"PREP DONE en {time.time()-t0:.0f}s - artefacts dans interface/data/", flush=True)
 spark.stop()

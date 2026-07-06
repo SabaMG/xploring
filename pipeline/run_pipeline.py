@@ -1,13 +1,8 @@
 # -*- coding: utf-8 -*-
-"""DataValueXploring — pipeline d'analyse paramétrable (produit client).
+"""Pipeline d'analyse paramétrable.
 
-Usage :
-    python pipeline/run_pipeline.py --config pipeline/config.yaml
-
-Exécute les analyses activées dans le fichier de configuration (QUAND, OÙ,
-QUOI, SYNTHÈSE) et écrit figures, CSV décisionnels, carte et rapport de
-synthèse dans le dossier de sortie. Même logique que le notebook de référence
-(`rendu/notebook.ipynb`) — le notebook explique, la pipeline industrialise.
+Usage : python pipeline/run_pipeline.py --config pipeline/config.yaml
+Même méthode que le notebook de référence (rendu/notebook.ipynb).
 """
 import argparse, json, os, sys, time, warnings
 warnings.filterwarnings("ignore")
@@ -34,7 +29,7 @@ SEED = 42
 T0 = time.time()
 def log(msg): print(f"[{time.time()-T0:6.0f}s] {msg}", flush=True)
 
-# ---------------------------------------------------------------- config
+# config
 def load_config(path):
     with open(path, encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
@@ -45,7 +40,7 @@ def load_config(path):
 def outpath(cfg, out, name):
     return os.path.join(out, cfg["sorties"].get("prefixe", "") + name)
 
-# ---------------------------------------------------------------- données
+# données
 def load_clean(cfg):
     from pyspark.sql import SparkSession, functions as F
     from pyspark.sql.types import (StructType, StructField, StringType, IntegerType,
@@ -108,7 +103,7 @@ def load_clean(cfg):
         f"{df.agg(F.mean('grave')).first()[0]*100:.1f} %)")
     return spark, df
 
-# ---------------------------------------------------------------- QUAND
+# QUAND
 def run_quand(cfg, out, df):
     from pyspark.sql import functions as F
     log("QUAND : patterns temporels/météo")
@@ -126,7 +121,7 @@ def run_quand(cfg, out, df):
     return {"heure_max_grave": int(hourly.loc[hourly["pg"].idxmax(), "hour"]),
             "pct_max": round(float(hourly["pg"].max()*100), 1)}
 
-# ---------------------------------------------------------------- OÙ
+# OÙ
 def run_ou(cfg, out, df):
     from pyspark.sql import functions as F
     import h3
@@ -135,7 +130,7 @@ def run_ou(cfg, out, df):
     terr = (df.filter(F.col("state") == state)
               .select("start_lat","start_lng","severity","year",*INFRA)).toPandas()
     if terr.empty:
-        log(f"  !! aucun accident pour le territoire {state} — section sautée")
+        log(f"  !! aucun accident pour le territoire {state} - section sautée")
         return None, None
     res = int(p["h3_resolution"])
     terr["h3_cell"] = [h3.latlng_to_cell(a, b, res)
@@ -153,7 +148,7 @@ def run_ou(cfg, out, df):
     ax.axvline(topn/len(ch)*100, ls="--", c="grey",
                label=f"top {topn} = {cum[topn-1]*100:.0f}% de la charge")
     ax.set_xlim(0, 15); ax.set_xlabel("% des zones"); ax.set_ylabel("% charge cumulée")
-    ax.set_title(f"Concentration du risque — {state}"); ax.legend(fontsize=8)
+    ax.set_title(f"Concentration du risque - {state}"); ax.legend(fontsize=8)
     plt.tight_layout(); fig.savefig(outpath(cfg, out, "ou_concentration.png"), dpi=130); plt.close(fig)
 
     import folium
@@ -163,16 +158,16 @@ def run_ou(cfg, out, df):
         la, ln = h3.cell_to_latlng(r["h3_cell"]); pts.append([la, ln])
         folium.Polygon(list(h3.cell_to_boundary(r["h3_cell"])), color="#c0392b", weight=1,
                        fill=True, fill_opacity=0.15+0.55*float(r["charge"])/cmax,
-                       tooltip=f"#{int(r['rank'])} — {int(r['n_accidents']):,} accidents "
+                       tooltip=f"#{int(r['rank'])} - {int(r['n_accidents']):,} accidents "
                                f"(charge {r['charge']:.0f})").add_to(m)
     if pts: m.fit_bounds(pts)
     m.save(outpath(cfg, out, "ou_carte.html"))
     top.to_csv(outpath(cfg, out, "ou_zones_prioritaires.csv"), index=False)
-    log(f"  {len(zone):,} zones — top {topn} exporté (part de charge "
+    log(f"  {len(zone):,} zones - top {topn} exporté (part de charge "
         f"{cum[topn-1]*100:.1f} %)")
     return zone, terr
 
-# ---------------------------------------------------------------- QUOI
+# QUOI
 def make_model(cfg):
     from sklearn.dummy import DummyClassifier
     from sklearn.linear_model import LogisticRegression
@@ -230,8 +225,8 @@ def run_quoi(cfg, out, df):
     cm = confusion_matrix(y_te, (proba >= 0.5).astype(int))
     tn, fp, fn, tp = cm.ravel()
     metrics["rappel_grave@0.5"] = round(tp/max(tp+fn, 1), 3)
-    log(f"  PR-AUC {metrics['pr_auc']} (plancher {metrics['plancher_pr_auc']}) · "
-        f"ROC {metrics['roc_auc']} · rappel {metrics['rappel_grave@0.5']}")
+    log(f"  PR-AUC {metrics['pr_auc']} (plancher {metrics['plancher_pr_auc']}) , "
+        f"ROC {metrics['roc_auc']} , rappel {metrics['rappel_grave@0.5']}")
 
     p, r, _ = precision_recall_curve(y_te, proba)
     fig, ax = plt.subplots(1, 2, figsize=(11, 4))
@@ -260,7 +255,7 @@ def run_quoi(cfg, out, df):
         ax.barh(adj.index, adj.values*100,
                 color=["#27ae60" if v < 0 else "#c0392b" for v in adj.values])
         ax.axvline(0, color="#333", lw=.8)
-        ax.set_xlabel("Δ probabilité de gravité (pts de %) — effets ajustés (g-computation)")
+        ax.set_xlabel("Δ probabilité de gravité (pts de %) - effets ajustés (g-computation)")
         plt.tight_layout(); fig.savefig(outpath(cfg, out, "quoi_effets_ajustes.png"), dpi=130); plt.close(fig)
         log("  effets ajustés (g-computation) exportés")
 
@@ -288,15 +283,15 @@ def run_quoi(cfg, out, df):
                         fmt="o", color="#2c3e50", ecolor="#7f8c8d", capsize=3)
             ax.axvline(1, ls="--", c="#c0392b", lw=1)
             ax.set_yticks(yp, ors.index); ax.set_xscale("log")
-            ax.set_xlabel("odds ratio ajusté (IC 95 %) — <1 protecteur")
+            ax.set_xlabel("odds ratio ajusté (IC 95 %) - <1 protecteur")
             plt.tight_layout(); fig.savefig(outpath(cfg, out, "quoi_odds_ratios.png"), dpi=130); plt.close(fig)
             ors.round(4).to_csv(outpath(cfg, out, "quoi_odds_ratios.csv"))
             log("  odds ratios exportés")
         except ImportError:
-            log("  statsmodels absent — odds ratios sautés")
+            log("  statsmodels absent - odds ratios sautés")
     return metrics, pipe, X_te, adj
 
-# ---------------------------------------------------------------- SYNTHÈSE
+# SYNTHÈSE
 def run_synthese(cfg, out, zone, pipe, X_te):
     p = cfg["parametres"]
     log("SYNTHÈSE : recommandations par zone")
@@ -329,7 +324,7 @@ def run_synthese(cfg, out, zone, pipe, X_te):
                         key=lambda x: x[1])
         missing = [(P, v) for P, v in ranked if present[P] < float(p["presence_min"])]
         if not missing:
-            return pd.Series({"amenagement": "déjà équipé — revoir géométrie", "impact_graves_evites": 0.0})
+            return pd.Series({"amenagement": "déjà équipé - revoir géométrie", "impact_graves_evites": 0.0})
         P, v = missing[0]
         lab = "sécuriser le passage à niveau" if H == "railway" else LABELS[P]
         return pd.Series({"amenagement": lab, "impact_graves_evites": abs(v) * r["n_accidents"]})
@@ -338,18 +333,18 @@ def run_synthese(cfg, out, zone, pipe, X_te):
     cols = ["rank","h3_cell","n_accidents","avg_severity","charge","dominant","lift",
             "amenagement","impact_graves_evites"]
     prio[cols].round(3).to_csv(outpath(cfg, out, "synthese_recommandations.csv"), index=False)
-    log(f"  {topn} zones — impact total estimé "
+    log(f"  {topn} zones - impact total estimé "
         f"{prio['impact_graves_evites'].sum():.0f} graves évités (ex-ante)")
     return prio
 
-# ---------------------------------------------------------------- main
+# main
 def main():
     ap = argparse.ArgumentParser(description="Pipeline DataValueXploring")
     ap.add_argument("--config", required=True, help="chemin du fichier YAML")
     cfg, out = load_config(ap.parse_args().config)
     a = cfg["analyses"]
-    log(f"config chargée — analyses actives : "
-        f"{[k for k, v in a.items() if v]} → sorties dans {out}")
+    log(f"config chargée - analyses actives : "
+        f"{[k for k, v in a.items() if v]} -> sorties dans {out}")
 
     spark, df = load_clean(cfg)
     resume = {"territoire": cfg["donnees"]["territoire"], "analyses": {}}
@@ -368,7 +363,7 @@ def main():
             "impact_total_graves_evites": round(float(prio["impact_graves_evites"].sum()), 1)}
     with open(outpath(cfg, out, "resume.json"), "w", encoding="utf-8") as f:
         json.dump(resume, f, ensure_ascii=False, indent=2)
-    log(f"PIPELINE OK — résumé : {outpath(cfg, out, 'resume.json')}")
+    log(f"PIPELINE OK - résumé : {outpath(cfg, out, 'resume.json')}")
     spark.stop()
 
 if __name__ == "__main__":

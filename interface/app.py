@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Interface interactive — DataValueXploring.
+"""Interface d'aide à la décision voirie.
 
-Pensée pour l'utilisateur MÉTIER (ingénieur voirie / décideur) : où intervenir,
-quoi installer, avec quel gain attendu — et un onglet technique pour l'analyste.
-
-Lancer :  streamlit run interface/app.py
-Prérequis : python interface/prepare_data.py  (une fois, génère interface/data/)
+Lancer : streamlit run interface/app.py
+(après python interface/prepare_data.py, une seule fois)
 """
 import os
 import numpy as np
@@ -37,12 +34,12 @@ RECO_COLOR = {"Installer des feux": "#e67e22",
               "Modération de trafic (ralentisseurs)": "#9b59b6",
               "Sécuriser le passage à niveau": "#e74c3c",
               "Investiguer facteur humain (vitesse/contrôles)": "#7f8c8d",
-              "Déjà équipé — étude géométrie/abords": "#34495e"}
+              "Déjà équipé - étude géométrie/abords": "#34495e"}
 ALGOS = {
-    "HistGradientBoosting": "Le plus précis (recommandé) — capte les interactions complexes",
-    "LogisticRegression":   "Le plus lisible — chaque équipement a un coefficient interprétable",
-    "RandomForest":         "Robuste — bon compromis précision / stabilité",
-    "DecisionTree":         "Règles simples — entièrement transparent, moins précis",
+    "HistGradientBoosting": "Le plus précis (recommandé) - capte les interactions complexes",
+    "LogisticRegression":   "Le plus lisible - chaque équipement a un coefficient interprétable",
+    "RandomForest":         "Robuste - bon compromis précision / stabilité",
+    "DecisionTree":         "Règles simples - entièrement transparent, moins précis",
 }
 SEED = 42
 
@@ -65,11 +62,10 @@ STATE_NAMES = {
 def state_label(c):
     return "États-Unis (entier)" if c == "US" else f"{STATE_NAMES.get(c, c)} ({c})"
 
-st.set_page_config(page_title="DataValueXploring — aide à la décision voirie", layout="wide")
+st.set_page_config(page_title="DataValueXploring - aide à la décision voirie", layout="wide")
 
 def make_map(cells):
-    """Carte folium PRÉ-CENTRÉE sur les cellules H3 (centre+zoom calculés en Python,
-    indépendamment du JS) — évite la vue monde quand Leaflet s'initialise mal."""
+    """Carte folium centrée sur les cellules H3 (centre et zoom calculés ici)."""
     import math
     import h3 as _h3
     import folium
@@ -90,8 +86,7 @@ def make_map(cells):
     return m, pts
 
 def fix_map_in_tab(m, pts):
-    """Corrige l'initialisation Leaflet dans un onglet caché (taille 0 -> vue monde) :
-    invalide la taille et recadre sur les points, plusieurs fois après le chargement."""
+    """Recale la carte si l'onglet était caché au moment du chargement."""
     import folium
     if not pts:
         return
@@ -104,7 +99,7 @@ def fix_map_in_tab(m, pts):
         f"}}catch(e){{}} if(++_n>20) clearInterval(_t);}},600);</script>"))
 
 
-# ----------------------------------------------------------------- chargement
+# chargement
 @st.cache_data(show_spinner="Chargement des données préparées…")
 def load_data():
     need = ["accidents_sample.parquet", "zones.parquet", "quand_hour.parquet",
@@ -129,7 +124,7 @@ def _span_years(state_key):
     return max(d.groupby(["year", "month"]).size().shape[0] / 12.0, 1e-9)
 STATES = ["US"] + sorted(zones["state"].dropna().unique().tolist())
 
-# ----------------------------------------------------------------- sidebar
+# sidebar
 st.sidebar.title("DataValueXploring")
 st.sidebar.caption("Aide à la décision : **où** rénover, **quoi** installer, "
                    "avec quel **gain attendu**.")
@@ -142,16 +137,16 @@ etat = state_label(code)
 st.sidebar.divider()
 st.sidebar.subheader("Moteur d'analyse (modèle)")
 model_name = st.sidebar.selectbox(
-    "Méthode", list(ALGOS), format_func=lambda k: ALGOS[k].split(" — ")[0],
+    "Méthode", list(ALGOS), format_func=lambda k: ALGOS[k].split(" - ")[0],
     help="\n\n".join(f"**{k}** : {v}" for k, v in ALGOS.items()))
 st.sidebar.caption(ALGOS[model_name])
 with st.sidebar.expander("Quelle méthode choisir ?"):
     st.markdown(
-        "- **Pour décider** (plan d'action) : gardez *HistGradientBoosting* — le plus précis, "
+        "- **Pour décider** (plan d'action) : gardez *HistGradientBoosting* - le plus précis, "
         "donc les effets ajustés les plus fiables.\n"
         "- **Pour expliquer** à un élu : la *régression logistique* donne des coefficients lisibles.\n"
         "- **Le point clé** : si plusieurs méthodes désignent les **mêmes équipements**, "
-        "la recommandation est robuste — testez-en deux !")
+        "la recommandation est robuste - testez-en deux !")
 
 train_scope = st.sidebar.radio("Entraîné sur", ["US entier (générique)", "Ce territoire uniquement"],
     help="Le modèle générique (recommandé) apprend sur tout le pays et s'applique partout ; "
@@ -169,8 +164,7 @@ with st.sidebar.expander("Réglages avancés (analyste)"):
     threshold = st.slider("Seuil de décision « grave »", 0.05, 0.95, 0.50, 0.05)
     balanced = st.checkbox("class_weight='balanced'", value=True)
     if model_name == "HistGradientBoosting":
-        # défauts issus du sweep : mode notebook -> 300/0.1 (optimal à bruit près, cohérent
-        # avec le rendu) ; mode ciblage (historique du lieu) -> 800/0.05 (PR-AUC 0.184 vs 0.179)
+        # 300/0.1 en mode standard, 800/0.05 avec historique du lieu
         hp = {"max_iter": st.slider("max_iter", 100, 1000, 800 if use_zone_hist else 300, 50),
               "learning_rate": st.select_slider("learning_rate", [0.01, 0.03, 0.05, 0.1, 0.2],
                                                 0.05 if use_zone_hist else 0.1)}
@@ -183,7 +177,7 @@ with st.sidebar.expander("Réglages avancés (analyste)"):
     else:
         hp = {"C": st.select_slider("C (inverse régularisation)", [0.01, 0.1, 1.0, 10.0], 1.0)}
 
-# ----------------------------------------------------------------- entraînement
+# entraînement
 @st.cache_resource(show_spinner="Entraînement du modèle…")
 def train(model_name, hp_tuple, balanced, scope_state, max_rows, zone_hist=False):
     from sklearn.compose import ColumnTransformer
@@ -203,8 +197,7 @@ def train(model_name, hp_tuple, balanced, scope_state, max_rows, zone_hist=False
     tr = tr_full.sample(max_rows, random_state=SEED) if len(tr_full) > max_rows else tr_full
     if len(te) > max_rows // 4: te = te.sample(max_rows // 4, random_state=SEED)
 
-    # Historique du LIEU (amélioration v2) : taux de graves de la zone, calculé sur le
-    # TRAIN uniquement (anti-fuite), lissage bayésien ; zones inconnues -> taux global.
+    # taux de graves passé de la zone, calculé sur le train uniquement (anti-fuite)
     def _zone_feats(res, name):
         ref = tr_full.copy()
         ref["_z"] = [_h3.latlng_to_cell(a, b, res) for a, b in zip(ref.start_lat, ref.start_lng)]
@@ -250,7 +243,7 @@ hp_t = tuple(sorted(hp.items()))
 scope = STATE if train_scope == "Ce territoire uniquement" else None
 res = train(model_name, hp_t, balanced, scope, max_rows, use_zone_hist)
 
-# --------------------------------------------------- effets & recommandations
+# effets & recommandations
 @st.cache_data(show_spinner="Calcul des effets ajustés…")
 def adjusted_effects(model_name, hp_t, balanced, scope, max_rows, zone_hist=False, cap=30_000):
     rr = train(model_name, hp_t, balanced, scope, max_rows, zone_hist)
@@ -297,7 +290,7 @@ def build_plan(state_key, model_name, hp_t, balanced, scope, max_rows,
                           key=lambda x: x[1])
             missing = [(P, v) for P, v in opts if present[P] < presence_min]
             if not missing:
-                reco, impact, why = "Déjà équipé — étude géométrie/abords", 0.0, \
+                reco, impact, why = "Déjà équipé - étude géométrie/abords", 0.0, \
                     f"aléa « {INFRA_FR[H]} » mais les mesures efficaces sont déjà en place"
             else:
                 P, v = missing[0]
@@ -316,23 +309,23 @@ def build_plan(state_key, model_name, hp_t, balanced, scope, max_rows,
     plan["graves_évités_par_an"] = (plan["graves_évités_estimés"] / span).round(1)
     return plan
 
-# ----------------------------------------------------------------- entête
-st.title(f"Aide à la décision voirie — {etat}")
-with st.expander("Guide de lecture — que fait cet outil, dans quel ordre le lire ?"):
+# entête
+st.title(f"Aide à la décision voirie - {etat}")
+with st.expander("Guide de lecture - que fait cet outil, dans quel ordre le lire ?"):
     st.markdown(
         "**Ce que l'outil calcule :** un modèle apprend à estimer, pour chaque accident "
         "historique, la probabilité qu'il soit grave à partir de son seul contexte "
         "(météo, heure, lieu, équipements). Cette prédiction n'est pas le produit : elle sert à "
-        "**mesurer l'effet net de chaque équipement** sur la gravité, à contexte égal — "
+        "**mesurer l'effet net de chaque équipement** sur la gravité, à contexte égal - "
         "c'est cette mesure qui fonde les recommandations.\n\n"
         "**Ordre de lecture :**\n"
-        "1. **Où** — le diagnostic : les zones qui concentrent le risque, et la validation "
+        "1. **Où** - le diagnostic : les zones qui concentrent le risque, et la validation "
         "temporelle (les zones désignées hier concentrent bien les graves d'aujourd'hui) ;\n"
-        "2. **Plan d'action** — la prescription : pour chaque zone, l'aménagement qui manque "
+        "2. **Plan d'action** - la prescription : pour chaque zone, l'aménagement qui manque "
         "et le gain attendu par an ;\n"
-        "3. **Quand** — le complément : les risques liés à l'heure et à la météo, qui relèvent "
+        "3. **Quand** - le complément : les risques liés à l'heure et à la météo, qui relèvent "
         "de mesures temporaires, pas de travaux ;\n"
-        "4. **Modèle** — la preuve : la qualité du moteur d'analyse et les effets ajustés qui "
+        "4. **Modèle** - la preuve : la qualité du moteur d'analyse et les effets ajustés qui "
         "justifient les recommandations.\n\n"
         "*Les estimations sont associationnelles (pas de preuve causale) : elles servent à "
         "prioriser les études terrain.*")
@@ -351,12 +344,12 @@ if q < 1.3:
                "locales). Pour un plan d'action fiable, repassez sur **US entier (générique)**.")
 
 tab_ou, tab_plan, tab_quand, tab_tech = st.tabs([
-    "1. Où — le diagnostic",
-    "2. Plan d'action — la prescription",
-    "3. Quand — le complément temporaire",
-    "4. Modèle — la preuve (analyste)"])
+    "1. Où - le diagnostic",
+    "2. Plan d'action - la prescription",
+    "3. Quand - le complément temporaire",
+    "4. Modèle - la preuve (analyste)"])
 
-# ================================================================= PLAN D'ACTION
+# PLAN D'ACTION
 with tab_plan:
     st.markdown("#### Ce que le gestionnaire de voirie doit faire, zone par zone")
     st.caption("Pour chaque zone prioritaire : le défaut d'infrastructure dominant, "
@@ -380,7 +373,7 @@ with tab_plan:
             try:
                 la, ln = h3lib.cell_to_latlng(r["h3_cell"])
                 col = RECO_COLOR.get(r["recommandation"], "#7f8c8d")
-                tip = (f"<b>#{r['rang']}</b> — {r['accidents']:,} accidents · "
+                tip = (f"<b>#{r['rang']}</b> - {r['accidents']:,} accidents , "
                        f"gravité {r['gravité_moy']}<br>Aléa : <b>{r['aléa_dominant']}</b><br>"
                        f" <b>{r['recommandation']}</b><br>"
                        f"≈ {r['graves_évités_par_an']:.0f} graves évités / an")
@@ -404,7 +397,7 @@ with tab_plan:
         legend = ("<div style='position:absolute;bottom:12px;left:12px;z-index:9999;"
                   "background:white;color:#222;padding:8px 10px;border:1px solid #999;"
                   "border-radius:4px;font-size:11px'><b>Aménagement recommandé</b>"
-                  "<br><i>taille du point = gain attendu · numéro = rang</i>" + items + "</div>")
+                  "<br><i>taille du point = gain attendu , numéro = rang</i>" + items + "</div>")
         m.get_root().html.add_child(folium.Element(legend))
         st.components.v1.html(m._repr_html_(), height=520)
 
@@ -429,10 +422,10 @@ with tab_plan:
     st.dataframe(plan[["rang", "accidents", "gravité_moy", "aléa_dominant",
                        "recommandation", "graves_évités_par_an", "justification"]],
                  use_container_width=True, height=330, hide_index=True)
-    st.info("Estimations **associationnelles** (pas de preuve causale — pas d'avant/après "
+    st.info("Estimations **associationnelles** (pas de preuve causale - pas d'avant/après "
             "disponible). À utiliser pour **prioriser les études terrain**, pas comme garantie.")
 
-# ================================================================= OÙ
+# OÙ
 with tab_ou:
     st.markdown("#### Où le risque se concentre-t-il ?")
     left, right = st.columns([3, 2])
@@ -456,7 +449,7 @@ with tab_ou:
                 la, ln = h3lib.cell_to_latlng(r["h3_cell"])
                 col = cmap(r["avg_severity"])
                 dominant = max(INFRA, key=lambda e: r["n_" + e] / max(r["n_accidents"], 1))
-                tip = (f"<b>#{int(r['rang'])}</b> — {int(r['n_accidents']):,} accidents<br>"
+                tip = (f"<b>#{int(r['rang'])}</b> - {int(r['n_accidents']):,} accidents<br>"
                        f"gravité moyenne {r['avg_severity']:.2f}<br>"
                        f"élément le plus présent : {INFRA_FR[dominant]}")
                 folium.Polygon(list(h3lib.cell_to_boundary(r["h3_cell"])), color=col, weight=1,
@@ -506,7 +499,7 @@ with tab_ou:
             captured = fut.loc[fut["h3_cell"].isin(top_past), "graves"].sum()
             share = captured / fut["graves"].sum()
             weight = topn2 / max(fut["h3_cell"].nunique(), 1)
-            st.metric(f"Backtest — zones désignées avec les données ≤ 2019",
+            st.metric(f"Backtest - zones désignées avec les données ≤ 2019",
                       f"{share*100:.0f} % des graves 2020-2023",
                       delta=f"×{share/max(weight,1e-9):.0f} vs leur poids ({weight*100:.2f} % des zones)")
             st.caption("On rejoue la méthode comme si on était fin 2019 : les zones qu'elle "
@@ -525,7 +518,7 @@ with tab_ou:
                       "l'amélioration de la collecte)", fontsize=7)
         st.pyplot(fig, use_container_width=True)
 
-# ================================================================= QUAND
+# QUAND
 with tab_quand:
     st.markdown("#### Quand renforcer la vigilance (mesures temporaires, pas de travaux)")
     key = STATE if STATE is not None else "US"
@@ -546,26 +539,26 @@ with tab_quand:
             ax.set_xlabel(dimcol); ax.set_ylabel("% d'accidents graves")
         ax.set_title(titre)
         col.pyplot(fig, use_container_width=True)
-    st.info("Ces variations relèvent de **mesures dynamiques** — panneaux à messages "
-            "variables, limitations temporaires, patrouilles ciblées — pas de travaux. "
+    st.info("Ces variations relèvent de **mesures dynamiques** - panneaux à messages "
+            "variables, limitations temporaires, patrouilles ciblées - pas de travaux. "
             "Le budget rénovation reste sur le risque **structurel** (onglets précédents).")
 
-# ================================================================= TECHNIQUE
+# TECHNIQUE
 with tab_tech:
     from sklearn.metrics import confusion_matrix, precision_recall_curve
-    _ht = " (+ historique du lieu — mode ciblage)" if use_zone_hist else " (features du notebook)"
-    st.caption(f"Modèle : {model_name}{_ht} · train {res['n_tr']:,} lignes (< 2022) · "
-               f"test {res['n_te']:,} (2022-23) · PR-AUC {res['pr_auc']:.3f} "
-               f"(plancher {res['baseline_pr']:.3f}) · ROC-AUC {res['roc_auc']:.3f}")
+    _ht = " (+ historique du lieu - mode ciblage)" if use_zone_hist else " (features du notebook)"
+    st.caption(f"Modèle : {model_name}{_ht} , train {res['n_tr']:,} lignes (< 2022) , "
+               f"test {res['n_te']:,} (2022-23) , PR-AUC {res['pr_auc']:.3f} "
+               f"(plancher {res['baseline_pr']:.3f}) , ROC-AUC {res['roc_auc']:.3f}")
     st.info("**Comment juger ce modèle ?** La gravité d'un accident dépend surtout de facteurs "
             "absents des données (vitesse réelle, alcool, état du conducteur) : viser une "
             "prédiction quasi-parfaite est impossible, quel que soit l'algorithme. "
             "Le bon critère est le **pouvoir de ciblage** ci-dessous : concentrer les graves "
-            "dans le haut du classement — c'est ce qui rend la priorisation et les effets "
+            "dans le haut du classement - c'est ce qui rend la priorisation et les effets "
             "ajustés fiables. La matrice de confusion à seuil fixe est l'angle de lecture "
             "le plus défavorable ; elle est fournie pour l'analyste.")
 
-    # ---- pouvoir de ciblage (lecture métier) ----
+    # pouvoir de ciblage (lecture métier)
     order = np.argsort(-res["proba"]); yy = res["y_te"][order]
     frac = np.arange(1, len(yy) + 1) / len(yy)
     capture = np.cumsum(yy) / max(yy.sum(), 1)
@@ -605,9 +598,9 @@ with tab_tech:
         ax.set_title(f"Matrice de confusion (seuil {threshold:.2f})")
         st.pyplot(fig, use_container_width=False)
         prec = tp / max(tp + fp, 1)
-        st.markdown(f"Rappel « grave » : **{tp/max(tp+fn,1):.2f}** · précision : {prec:.2f} "
+        st.markdown(f"Rappel « grave » : **{tp/max(tp+fn,1):.2f}** , précision : {prec:.2f} "
                     f"(**×{prec/max(res['baseline_pr'],1e-9):.1f}** vs taux de base "
-                    f"{res['baseline_pr']:.2f}) · graves ratés : {fn:,} · fausses alertes : {fp:,}")
+                    f"{res['baseline_pr']:.2f}) , graves ratés : {fn:,} , fausses alertes : {fp:,}")
     with c2:
         p, r, _ = precision_recall_curve(res["y_te"], res["proba"])
         rec_now = tp / max(tp + fn, 1); prec_now = tp / max(tp + fp, 1)
@@ -620,22 +613,22 @@ with tab_tech:
         ax.annotate(f"seuil {threshold:.2f}", (rec_now, prec_now),
                     textcoords="offset points", xytext=(8, 8), fontsize=9, color="#c0392b")
         ax.set_xlabel("rappel"); ax.set_ylabel("précision"); ax.legend(fontsize=8)
-        ax.set_title("Courbe précision-rappel — votre point de fonctionnement")
+        ax.set_title("Courbe précision-rappel - votre point de fonctionnement")
         st.pyplot(fig, use_container_width=False)
         st.caption("La matrice de gauche N'EST QUE ce point rouge : changer le seuil ou "
-                   "class_weight déplace le point **le long de la même courbe** — "
+                   "class_weight déplace le point **le long de la même courbe** - "
                    "le modèle (la courbe) ne change pas.")
 
     st.divider()
-    st.markdown("**Effets ajustés (g-computation)** — fondement des recommandations du plan d'action")
+    st.markdown("**Effets ajustés (g-computation)** - fondement des recommandations du plan d'action")
     adj = adjusted_effects(model_name, hp_t, balanced, scope, max_rows, use_zone_hist)
     fig, ax = plt.subplots(figsize=(8, 4))
     labels = [INFRA_FR[i] for i in adj.index]
     ax.barh(labels, adj.values * 100,
             color=["#27ae60" if v < 0 else "#c0392b" for v in adj.values])
     ax.axvline(0, color="#333", lw=0.8)
-    ax.set_xlabel("Δ probabilité de gravité (points de %) — vert = protecteur")
+    ax.set_xlabel("Δ probabilité de gravité (points de %) - vert = protecteur")
     st.pyplot(fig, use_container_width=True)
     st.info("Une moyenne brute « avec/sans feux » donnerait l'inverse (les feux sont là où "
-            "c'est dense) : ces effets sont **ajustés** — météo, heure, État maintenus constants "
+            "c'est dense) : ces effets sont **ajustés** - météo, heure, État maintenus constants "
             "par le modèle. Associationnels, pas causaux.")
