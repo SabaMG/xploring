@@ -380,6 +380,8 @@ with tab_plan:
         import h3 as h3lib
         import folium
         m, pts = make_map(plan["h3_cell"])
+        m.get_root().html.add_child(folium.Element(
+            "<style>.rank-label{pointer-events:none !important;}</style>"))
         imax = max(plan["graves_évités_estimés"].max(), 1e-9)
         for _, r in plan.iterrows():
             try:
@@ -395,9 +397,9 @@ with tab_plan:
                                     color="#222", weight=1, fill=True, fill_color=col,
                                     fill_opacity=0.9, tooltip=folium.Tooltip(tip, sticky=True)).add_to(m)
                 folium.map.Marker(
-                    [la, ln], icon=folium.DivIcon(
+                    [la, ln], icon=folium.DivIcon(class_name="rank-label",
                         html=f"<div style='font-size:9px;font-weight:bold;color:#222;"
-                             f"pointer-events:none;transform:translate(-4px,-7px)'>{r['rang']}</div>")).add_to(m)
+                             f"transform:translate(-4px,-7px)'>{r['rang']}</div>")).add_to(m)
             except Exception:
                 pass
         if pts: m.fit_bounds(pts)
