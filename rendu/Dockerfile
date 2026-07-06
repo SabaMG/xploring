@@ -23,9 +23,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt \
  && pip install --no-cache-dir nbconvert ipykernel
 
-# Livrable + cache OSM (permet l'exposition routière hors-ligne) + tests
+# Livrable + tests
 COPY notebook.ipynb .
-COPY cache/ cache/
 COPY tests/ tests/
 
 # Exécution top->bottom sans intervention ; les artefacts sont copiés dans /app/out

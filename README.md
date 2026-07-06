@@ -8,7 +8,7 @@
 | # | Dossier | Contenu | Livrable |
 |---|---|---|---|
 | 1 | `final/` | Rapport (PDF), présentation (pptx), poster A3 (PDF) | L1, L3, L4 |
-| 2 | `rendu/` | **Notebook exécutable de bout en bout** + README + requirements figés + tests pytest + Dockerfile + source LaTeX du rapport + source du poster | **L2** |
+| 2 | `rendu/` | **Notebook exécutable de bout en bout** + requirements figés + tests + Dockerfile + CSV et carte produits | **L2** |
 | 3 | `interface/` | Explorateur Streamlit : diagnostic -> plan d'action -> validation, modèles paramétrables, tous les États | bonus |
 | 4 | `pipeline/` | Pipeline CLI paramétrable par `config.yaml` (produit client) | bonus |
 
